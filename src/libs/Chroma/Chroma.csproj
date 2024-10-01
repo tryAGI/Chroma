@@ -5,6 +5,7 @@
   </PropertyGroup>
   
   <PropertyGroup Label="Nuget">
+    <PackageId>tryAGI.Chroma</PackageId>
     <Description>C# SDK based on Chroma OpenAPI specification.</Description>
     <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;generated;nswag</PackageTags>
   </PropertyGroup>
