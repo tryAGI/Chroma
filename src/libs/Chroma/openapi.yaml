@@ -5,6 +5,8 @@ info:
   version: 1.0.0
   x-logo:
     url: https://www.trychroma.com/chroma-logo.png
+servers:
+  - url: http://localhost:8080
 paths:
   /api/v1:
     get:

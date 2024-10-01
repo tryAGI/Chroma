@@ -13,7 +13,7 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "";
+        public const string BaseUrl = "http://localhost:8080";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private global::System.Collections.Generic.List<global::Chroma.EndPointAuthorization> _authorizations;
