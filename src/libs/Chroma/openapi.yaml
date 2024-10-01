@@ -1,0 +1,957 @@
+openapi: 3.0.1
+info:
+  title: ChromaDB API
+  description: This is OpenAPI schema for ChromaDB API.
+  version: 1.0.0
+  x-logo:
+    url: https://www.trychroma.com/chroma-logo.png
+paths:
+  /api/v1:
+    get:
+      summary: Root
+      operationId: root
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Root Api V1 Get
+                type: object
+                additionalProperties:
+                  type: number
+  /api/v1/reset:
+    post:
+      summary: Reset
+      operationId: reset
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Reset Api V1 Reset Post
+                type: boolean
+  /api/v1/version:
+    get:
+      summary: Version
+      operationId: version
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Version Api V1 Version Get
+                type: string
+  /api/v1/heartbeat:
+    get:
+      summary: Heartbeat
+      operationId: heartbeat
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Heartbeat Api V1 Heartbeat Get
+                type: object
+                additionalProperties:
+                  type: number
+  /api/v1/tenants:
+    post:
+      summary: Create Tenant
+      operationId: create_tenant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTenant'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/tenants/{tenant}':
+    get:
+      summary: Get Tenant
+      operationId: get_tenant
+      parameters:
+        - name: tenant
+          in: path
+          required: true
+          schema:
+            title: Tenant Name
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/databases:
+    post:
+      summary: Create Database
+      operationId: create_database
+      parameters:
+        - name: tenant
+          in: query
+          schema:
+            title: Tenant Name
+            type: string
+            default: default_tenant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDatabase'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Database'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/databases/{database}':
+    get:
+      summary: Get Database
+      operationId: get_database
+      parameters:
+        - name: tenant
+          in: query
+          schema:
+            title: Tenant Name
+            type: string
+            default: default_tenant
+        - name: database
+          in: path
+          required: true
+          schema:
+            title: Database Name
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Database'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/pre-flight-checks:
+    get:
+      summary: Pre Flight Checks
+      operationId: pre_flight_checks
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PreflightChecks'
+  /api/v1/collections:
+    get:
+      summary: List Collections
+      operationId: list_collections
+      parameters:
+        - name: tenant
+          in: query
+          schema:
+            title: Tenant Name
+            type: string
+            default: default_tenant
+        - name: database
+          in: query
+          schema:
+            title: Database Name
+            type: string
+            default: default_database
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response List Collections Api V1 Collections Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Collection'
+    post:
+      summary: Create Collection
+      operationId: create_collection
+      parameters:
+        - name: tenant
+          in: query
+          schema:
+            title: Tenant Name
+            type: string
+            default: default_tenant
+        - name: database
+          in: query
+          schema:
+            title: Database Name
+            type: string
+            default: default_database
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCollection'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/count_collections:
+    get:
+      summary: Count Collections
+      operationId: count_collections
+      parameters:
+        - name: tenant
+          in: query
+          schema:
+            title: Tenant Name
+            type: string
+            default: default_tenant
+        - name: database
+          in: query
+          schema:
+            title: Database Name
+            type: string
+            default: default_database
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Count Collections Api V1 Count Collections Get
+                type: integer
+  '/api/v1/collections/{collection_id}/add':
+    post:
+      summary: Add
+      operationId: add
+      parameters:
+        - name: collection_id
+          in: path
+          required: true
+          schema:
+            title: Collection Id
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddEmbedding'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Add Api V1 Collections  Collection Id  Add Post
+                type: boolean
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/collections/{collection_id}/update':
+    post:
+      summary: Update
+      operationId: update
+      parameters:
+        - name: collection_id
+          in: path
+          required: true
+          schema:
+            title: Collection Id
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEmbedding'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Update Api V1 Collections  Collection Id  Update Post
+                type: boolean
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/collections/{collection_id}/upsert':
+    post:
+      summary: Upsert
+      operationId: upsert
+      parameters:
+        - name: collection_id
+          in: path
+          required: true
+          schema:
+            title: Collection Id
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddEmbedding'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Upsert Api V1 Collections  Collection Id  Upsert Post
+                type: boolean
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/collections/{collection_id}/get':
+    post:
+      summary: Get
+      operationId: get
+      parameters:
+        - name: collection_id
+          in: path
+          required: true
+          schema:
+            title: Collection Id
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetEmbedding'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResult'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/collections/{collection_id}/delete':
+    post:
+      summary: Delete
+      operationId: delete
+      parameters:
+        - name: collection_id
+          in: path
+          required: true
+          schema:
+            title: Collection Id
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteEmbedding'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Delete Api V1 Collections  Collection Id  Delete Post
+                type: array
+                items:
+                  type: string
+                  format: uuid
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/collections/{collection_id}/count':
+    get:
+      summary: Count
+      operationId: count
+      parameters:
+        - name: collection_id
+          in: path
+          required: true
+          schema:
+            title: Collection Id
+            type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Count Api V1 Collections  Collection Id  Count Get
+                type: integer
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/collections/{collection_id}/query':
+    post:
+      summary: Get Nearest Neighbors
+      operationId: get_nearest_neighbors
+      parameters:
+        - name: collection_id
+          in: path
+          required: true
+          schema:
+            title: Collection Id
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryEmbedding'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryResult'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  '/api/v1/collections/{collection_name}':
+    get:
+      summary: Get Collection
+      operationId: get_collection
+      parameters:
+        - name: collection_name
+          in: path
+          required: true
+          schema:
+            title: Collection Name
+            type: string
+        - name: tenant
+          in: query
+          schema:
+            title: Tenant Name
+            type: string
+            default: default_tenant
+        - name: database
+          in: query
+          schema:
+            title: Database Name
+            type: string
+            default: default_database
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    delete:
+      summary: Delete Collection
+      operationId: delete_collection
+      parameters:
+        - name: collection_name
+          in: path
+          required: true
+          schema:
+            title: Collection Name
+            type: string
+        - name: tenant
+          in: query
+          schema:
+            title: Tenant Name
+            type: string
+            default: default_tenant
+        - name: database
+          in: query
+          schema:
+            title: Database Name
+            type: string
+            default: default_database
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+    put:
+      summary: Update Collection
+      operationId: update_collection
+      parameters:
+        - name: collection_name
+          in: path
+          required: true
+          schema:
+            title: Collection Id
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCollection'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    AddEmbedding:
+      title: AddEmbedding
+      required:
+        - ids
+      type: object
+      properties:
+        embeddings:
+          title: Embeddings
+          items:
+            anyOf:
+              - type: array
+                items:
+                  type: number
+              - type: array
+                items:
+                  type: integer
+        metadatas:
+          title: Metadatas
+          type: array
+          items:
+            type: object
+        documents:
+          title: Documents
+          type: array
+          items:
+            type: string
+        ids:
+          title: Ids
+          type: array
+          items:
+            type: string
+    Collection:
+      title: Collection
+      required:
+        - name
+        - id
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        id:
+          title: Id
+          type: string
+          format: uuid
+        metadata:
+          title: Metadata
+          type: object
+          additionalProperties:
+            anyOf:
+              - type: string
+              - type: integer
+                format: int32
+              - type: number
+                format: float
+              - type: boolean
+    CreateCollection:
+      title: CreateCollection
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        metadata:
+          title: Metadata
+          type: object
+        get_or_create:
+          title: Get Or Create
+          type: boolean
+          default: false
+    DeleteEmbedding:
+      title: DeleteEmbedding
+      type: object
+      properties:
+        ids:
+          title: Ids
+          type: array
+          items:
+            type: string
+        where:
+          title: Where
+          type: object
+        where_document:
+          title: Where Document
+          type: object
+    GetEmbedding:
+      title: GetEmbedding
+      type: object
+      properties:
+        ids:
+          title: Ids
+          type: array
+          items:
+            type: string
+        where:
+          title: Where
+          type: object
+        where_document:
+          title: Where Document
+          type: object
+        sort:
+          title: Sort
+          type: string
+        limit:
+          title: Limit
+          type: integer
+        offset:
+          title: Offset
+          type: integer
+        include:
+          title: Include
+          type: array
+          items:
+            anyOf:
+              - enum:
+                  - documents
+                type: string
+              - enum:
+                  - embeddings
+                type: string
+              - enum:
+                  - metadatas
+                type: string
+              - enum:
+                  - distances
+                type: string
+          default:
+            - ns
+            - documents
+    GetResult:
+      title: GetResult
+      required:
+        - ids
+        - embeddings
+        - documents
+        - metadatas
+      type: object
+      properties:
+        ids:
+          title: Ids
+          type: array
+          items:
+            type: string
+        embeddings:
+          title: Embeddings
+          type: array
+          items:
+            anyOf:
+              - type: array
+                items:
+                  type: number
+              - type: array
+                items:
+                  type: integer
+        documents:
+          title: Documents
+          type: array
+          items:
+            type: string
+        metadatas:
+          title: Metadatas
+          type: array
+          items:
+            type: object
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    QueryEmbedding:
+      title: QueryEmbedding
+      required:
+        - query_embeddings
+      type: object
+      properties:
+        where:
+          title: Where
+          type: object
+        where_document:
+          title: Where Document
+          type: object
+        query_embeddings:
+          title: Query Embeddings
+          type: array
+          items:
+            anyOf:
+              - type: array
+                items:
+                  type: number
+              - type: array
+                items:
+                  type: integer
+        n_results:
+          title: N Results
+          type: integer
+          default: 10
+        include:
+          title: Include
+          type: array
+          items:
+            anyOf:
+              - enum:
+                  - documents
+                type: string
+              - enum:
+                  - embeddings
+                type: string
+              - enum:
+                  - metadatas
+                type: string
+              - enum:
+                  - distances
+                type: string
+          default:
+            - metadatas
+            - documents
+            - distances
+    QueryResult:
+      title: QueryResult
+      required:
+        - ids
+        - embeddings
+        - documents
+        - metadatas
+        - distances
+      type: object
+      properties:
+        ids:
+          title: Ids
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+        embeddings:
+          title: Embeddings
+          type: array
+          items:
+            type: array
+            items:
+              anyOf:
+                - type: array
+                  items:
+                    type: number
+                - type: array
+                  items:
+                    type: integer
+        documents:
+          title: Documents
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+        metadatas:
+          title: Metadatas
+          type: array
+          items:
+            type: array
+            items:
+              type: object
+        distances:
+          title: Distances
+          type: array
+          items:
+            type: array
+            items:
+              type: number
+    UpdateCollection:
+      title: UpdateCollection
+      type: object
+      properties:
+        new_name:
+          title: New Name
+          type: string
+        new_metadata:
+          title: New Metadata
+          type: object
+    UpdateEmbedding:
+      title: UpdateEmbedding
+      required:
+        - ids
+      type: object
+      properties:
+        embeddings:
+          title: Embeddings
+          items:
+            anyOf:
+              - type: array
+                items:
+                  type: number
+              - type: array
+                items:
+                  type: integer
+        metadatas:
+          title: Metadatas
+          type: array
+          items:
+            type: object
+        documents:
+          title: Documents
+          type: array
+          items:
+            type: string
+        ids:
+          title: Ids
+          type: array
+          items:
+            type: string
+    ValidationError:
+      title: ValidationError
+      required:
+        - loc
+        - msg
+        - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    CreateDatabase:
+      title: CreateDatabase
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+    CreateTenant:
+      title: CreateTenant
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+    Database:
+      title: Database
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        id:
+          title: Id
+          type: string
+          format: uuid
+        tenant:
+          title: Tenant
+          type: string
+    Tenant:
+      title: Tenant
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+    PreflightChecks:
+      title: Response Pre Flight Checks Api V1 Pre Flight Checks Get
+      type: object
