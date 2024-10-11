@@ -19,7 +19,7 @@ namespace Chroma
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::Chroma.CreateCollectionMetadata? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Default Value: false

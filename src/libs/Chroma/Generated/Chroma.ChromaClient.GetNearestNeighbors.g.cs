@@ -122,8 +122,8 @@ namespace Chroma
         public async global::System.Threading.Tasks.Task<global::Chroma.QueryResult> GetNearestNeighborsAsync(
             string collectionId,
             global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>> queryEmbeddings,
-            global::Chroma.QueryEmbeddingWhere? where = default,
-            global::Chroma.QueryEmbeddingWhereDocument? whereDocument = default,
+            object? where = default,
+            object? whereDocument = default,
             int? nResults = 10,
             global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::Chroma.QueryEmbeddingIncludeItemVariant1?, global::Chroma.QueryEmbeddingIncludeItemVariant2?, global::Chroma.QueryEmbeddingIncludeItemVariant3?, global::Chroma.QueryEmbeddingIncludeItemVariant4?>>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)

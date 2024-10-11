@@ -18,13 +18,13 @@ namespace Chroma
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("where")]
-        public global::Chroma.DeleteEmbeddingWhere? Where { get; set; }
+        public object? Where { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("where_document")]
-        public global::Chroma.DeleteEmbeddingWhereDocument? WhereDocument { get; set; }
+        public object? WhereDocument { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

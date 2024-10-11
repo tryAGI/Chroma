@@ -30,7 +30,7 @@ namespace Chroma
             string collectionId,
             global::System.Collections.Generic.IList<string> ids,
             global::Chroma.UpdateEmbeddingEmbeddings? embeddings = default,
-            global::System.Collections.Generic.IList<global::Chroma.UpdateEmbeddingMetadata>? metadatas = default,
+            global::System.Collections.Generic.IList<object>? metadatas = default,
             global::System.Collections.Generic.IList<string>? documents = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

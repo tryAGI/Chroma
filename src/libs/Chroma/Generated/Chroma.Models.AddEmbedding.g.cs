@@ -18,7 +18,7 @@ namespace Chroma
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadatas")]
-        public global::System.Collections.Generic.IList<global::Chroma.AddEmbeddingMetadata>? Metadatas { get; set; }
+        public global::System.Collections.Generic.IList<object>? Metadatas { get; set; }
 
         /// <summary>
         /// 

@@ -138,7 +138,7 @@ namespace Chroma
             string name,
             string? tenant = "default_tenant",
             string? database = "default_database",
-            global::Chroma.CreateCollectionMetadata? metadata = default,
+            object? metadata = default,
             bool? getOrCreate = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

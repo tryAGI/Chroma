@@ -115,7 +115,7 @@ namespace Chroma
         public async global::System.Threading.Tasks.Task<global::Chroma.Collection> UpdateCollectionAsync(
             string collectionName,
             string? newName = default,
-            global::Chroma.UpdateCollectionNewMetadata? newMetadata = default,
+            object? newMetadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Chroma.UpdateCollection
