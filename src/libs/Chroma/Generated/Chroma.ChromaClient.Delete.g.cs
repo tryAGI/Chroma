@@ -116,8 +116,8 @@ namespace Chroma
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::System.Guid>> DeleteAsync(
             string collectionId,
             global::System.Collections.Generic.IList<string>? ids = default,
-            global::Chroma.DeleteEmbeddingWhere? where = default,
-            global::Chroma.DeleteEmbeddingWhereDocument? whereDocument = default,
+            object? where = default,
+            object? whereDocument = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Chroma.DeleteEmbedding

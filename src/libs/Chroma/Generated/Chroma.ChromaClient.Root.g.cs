@@ -24,7 +24,7 @@ namespace Chroma
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Chroma.RootResponse> RootAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, double>> RootAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -80,7 +80,7 @@ namespace Chroma
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Chroma.RootResponse), JsonSerializerContext) as global::Chroma.RootResponse ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.Dictionary<string, double>), JsonSerializerContext) as global::System.Collections.Generic.Dictionary<string, double> ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

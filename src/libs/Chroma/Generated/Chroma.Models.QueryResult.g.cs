@@ -36,7 +36,7 @@ namespace Chroma
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadatas")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.QueryResultMetadataItem>> Metadatas { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>> Metadatas { get; set; }
 
         /// <summary>
         /// 

@@ -14,13 +14,13 @@ namespace Chroma
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("where")]
-        public global::Chroma.QueryEmbeddingWhere? Where { get; set; }
+        public object? Where { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("where_document")]
-        public global::Chroma.QueryEmbeddingWhereDocument? WhereDocument { get; set; }
+        public object? WhereDocument { get; set; }
 
         /// <summary>
         /// 

@@ -34,8 +34,8 @@ namespace Chroma
         global::System.Threading.Tasks.Task<global::Chroma.GetResult> GetAsync(
             string collectionId,
             global::System.Collections.Generic.IList<string>? ids = default,
-            global::Chroma.GetEmbeddingWhere? where = default,
-            global::Chroma.GetEmbeddingWhereDocument? whereDocument = default,
+            object? where = default,
+            object? whereDocument = default,
             string? sort = default,
             int? limit = default,
             int? offset = default,

@@ -18,7 +18,7 @@ namespace Chroma
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_metadata")]
-        public global::Chroma.UpdateCollectionNewMetadata? NewMetadata { get; set; }
+        public object? NewMetadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

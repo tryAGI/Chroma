@@ -27,7 +27,7 @@ namespace Chroma
         global::System.Threading.Tasks.Task<global::Chroma.Collection> UpdateCollectionAsync(
             string collectionName,
             string? newName = default,
-            global::Chroma.UpdateCollectionNewMetadata? newMetadata = default,
+            object? newMetadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
