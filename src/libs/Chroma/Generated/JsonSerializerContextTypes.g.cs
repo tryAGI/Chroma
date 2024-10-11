@@ -74,11 +74,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.CreateCollection? Type14 { get; set; }
+        public global::Chroma.AnyOf<string, int?, float?, bool?>? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.CreateCollectionMetadata? Type15 { get; set; }
+        public float? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -86,210 +86,218 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.DeleteEmbedding? Type17 { get; set; }
+        public global::Chroma.CreateCollection? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.DeleteEmbeddingWhere? Type18 { get; set; }
+        public global::Chroma.CreateCollectionMetadata? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.DeleteEmbeddingWhereDocument? Type19 { get; set; }
+        public global::Chroma.DeleteEmbedding? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.GetEmbedding? Type20 { get; set; }
+        public global::Chroma.DeleteEmbeddingWhere? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.GetEmbeddingWhere? Type21 { get; set; }
+        public global::Chroma.DeleteEmbeddingWhereDocument? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.GetEmbeddingWhereDocument? Type22 { get; set; }
+        public global::Chroma.GetEmbedding? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::Chroma.GetEmbeddingIncludeItemVariant1?, global::Chroma.GetEmbeddingIncludeItemVariant2?, global::Chroma.GetEmbeddingIncludeItemVariant3?, global::Chroma.GetEmbeddingIncludeItemVariant4?>>? Type23 { get; set; }
+        public global::Chroma.GetEmbeddingWhere? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.AnyOf<global::Chroma.GetEmbeddingIncludeItemVariant1?, global::Chroma.GetEmbeddingIncludeItemVariant2?, global::Chroma.GetEmbeddingIncludeItemVariant3?, global::Chroma.GetEmbeddingIncludeItemVariant4?>? Type24 { get; set; }
+        public global::Chroma.GetEmbeddingWhereDocument? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.GetEmbeddingIncludeItemVariant1? Type25 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::Chroma.GetEmbeddingIncludeItemVariant1?, global::Chroma.GetEmbeddingIncludeItemVariant2?, global::Chroma.GetEmbeddingIncludeItemVariant3?, global::Chroma.GetEmbeddingIncludeItemVariant4?>>? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.GetEmbeddingIncludeItemVariant2? Type26 { get; set; }
+        public global::Chroma.AnyOf<global::Chroma.GetEmbeddingIncludeItemVariant1?, global::Chroma.GetEmbeddingIncludeItemVariant2?, global::Chroma.GetEmbeddingIncludeItemVariant3?, global::Chroma.GetEmbeddingIncludeItemVariant4?>? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.GetEmbeddingIncludeItemVariant3? Type27 { get; set; }
+        public global::Chroma.GetEmbeddingIncludeItemVariant1? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.GetEmbeddingIncludeItemVariant4? Type28 { get; set; }
+        public global::Chroma.GetEmbeddingIncludeItemVariant2? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.GetResult? Type29 { get; set; }
+        public global::Chroma.GetEmbeddingIncludeItemVariant3? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>>? Type30 { get; set; }
+        public global::Chroma.GetEmbeddingIncludeItemVariant4? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.GetResultMetadata>? Type31 { get; set; }
+        public global::Chroma.GetResult? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.GetResultMetadata? Type32 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>>? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.HTTPValidationError? Type33 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.GetResultMetadata>? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.ValidationError>? Type34 { get; set; }
+        public global::Chroma.GetResultMetadata? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.ValidationError? Type35 { get; set; }
+        public global::Chroma.HTTPValidationError? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<string, int?>>? Type36 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.ValidationError>? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.AnyOf<string, int?>? Type37 { get; set; }
+        public global::Chroma.ValidationError? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.QueryEmbedding? Type38 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<string, int?>>? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.QueryEmbeddingWhere? Type39 { get; set; }
+        public global::Chroma.AnyOf<string, int?>? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.QueryEmbeddingWhereDocument? Type40 { get; set; }
+        public global::Chroma.QueryEmbedding? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::Chroma.QueryEmbeddingIncludeItemVariant1?, global::Chroma.QueryEmbeddingIncludeItemVariant2?, global::Chroma.QueryEmbeddingIncludeItemVariant3?, global::Chroma.QueryEmbeddingIncludeItemVariant4?>>? Type41 { get; set; }
+        public global::Chroma.QueryEmbeddingWhere? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.AnyOf<global::Chroma.QueryEmbeddingIncludeItemVariant1?, global::Chroma.QueryEmbeddingIncludeItemVariant2?, global::Chroma.QueryEmbeddingIncludeItemVariant3?, global::Chroma.QueryEmbeddingIncludeItemVariant4?>? Type42 { get; set; }
+        public global::Chroma.QueryEmbeddingWhereDocument? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.QueryEmbeddingIncludeItemVariant1? Type43 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::Chroma.QueryEmbeddingIncludeItemVariant1?, global::Chroma.QueryEmbeddingIncludeItemVariant2?, global::Chroma.QueryEmbeddingIncludeItemVariant3?, global::Chroma.QueryEmbeddingIncludeItemVariant4?>>? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.QueryEmbeddingIncludeItemVariant2? Type44 { get; set; }
+        public global::Chroma.AnyOf<global::Chroma.QueryEmbeddingIncludeItemVariant1?, global::Chroma.QueryEmbeddingIncludeItemVariant2?, global::Chroma.QueryEmbeddingIncludeItemVariant3?, global::Chroma.QueryEmbeddingIncludeItemVariant4?>? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.QueryEmbeddingIncludeItemVariant3? Type45 { get; set; }
+        public global::Chroma.QueryEmbeddingIncludeItemVariant1? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.QueryEmbeddingIncludeItemVariant4? Type46 { get; set; }
+        public global::Chroma.QueryEmbeddingIncludeItemVariant2? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.QueryResult? Type47 { get; set; }
+        public global::Chroma.QueryEmbeddingIncludeItemVariant3? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Type48 { get; set; }
+        public global::Chroma.QueryEmbeddingIncludeItemVariant4? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>>>? Type49 { get; set; }
+        public global::Chroma.QueryResult? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.QueryResultMetadataItem>>? Type50 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.QueryResultMetadataItem>? Type51 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>>>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.QueryResultMetadataItem? Type52 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.QueryResultMetadataItem>>? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type53 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.QueryResultMetadataItem>? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.UpdateCollection? Type54 { get; set; }
+        public global::Chroma.QueryResultMetadataItem? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.UpdateCollectionNewMetadata? Type55 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.UpdateEmbedding? Type56 { get; set; }
+        public global::Chroma.UpdateCollection? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.UpdateEmbeddingEmbeddings? Type57 { get; set; }
+        public global::Chroma.UpdateCollectionNewMetadata? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.UpdateEmbeddingMetadata>? Type58 { get; set; }
+        public global::Chroma.UpdateEmbedding? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.UpdateEmbeddingMetadata? Type59 { get; set; }
+        public global::Chroma.UpdateEmbeddingEmbeddings? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.CreateDatabase? Type60 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.UpdateEmbeddingMetadata>? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.CreateTenant? Type61 { get; set; }
+        public global::Chroma.UpdateEmbeddingMetadata? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.Database? Type62 { get; set; }
+        public global::Chroma.CreateDatabase? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.Tenant? Type63 { get; set; }
+        public global::Chroma.CreateTenant? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.PreflightChecks? Type64 { get; set; }
+        public global::Chroma.Database? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.RootResponse? Type65 { get; set; }
+        public global::Chroma.Tenant? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Chroma.HeartbeatResponse? Type66 { get; set; }
+        public object? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.Collection>? Type67 { get; set; }
+        public global::Chroma.RootResponse? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Guid>? Type68 { get; set; }
+        public global::Chroma.HeartbeatResponse? Type68 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Chroma.Collection>? Type69 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Guid>? Type70 { get; set; }
     }
 }
