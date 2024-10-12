@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Chroma
@@ -12,7 +14,7 @@ namespace Chroma
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
-        public global::Chroma.AddEmbeddingEmbeddings? Embeddings { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>>? Embeddings { get; set; }
 
         /// <summary>
         /// 

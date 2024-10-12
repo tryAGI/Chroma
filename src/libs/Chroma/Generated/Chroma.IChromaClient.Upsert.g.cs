@@ -29,7 +29,7 @@ namespace Chroma
         global::System.Threading.Tasks.Task<bool> UpsertAsync(
             string collectionId,
             global::System.Collections.Generic.IList<string> ids,
-            global::Chroma.AddEmbeddingEmbeddings? embeddings = default,
+            global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>>? embeddings = default,
             global::System.Collections.Generic.IList<object>? metadatas = default,
             global::System.Collections.Generic.IList<string>? documents = default,
             global::System.Threading.CancellationToken cancellationToken = default);
