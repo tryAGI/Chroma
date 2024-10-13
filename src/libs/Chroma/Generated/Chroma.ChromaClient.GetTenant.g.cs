@@ -86,7 +86,7 @@ namespace Chroma
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Chroma.Tenant), JsonSerializerContext) as global::Chroma.Tenant ??
+                global::Chroma.Tenant.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
