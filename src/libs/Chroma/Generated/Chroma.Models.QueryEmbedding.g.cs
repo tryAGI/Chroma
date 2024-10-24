@@ -33,7 +33,7 @@ namespace Chroma
         /// Default Value: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_results")]
-        public int? NResults { get; set; } = 10;
+        public int? NResults { get; set; }
 
         /// <summary>
         /// Default Value: [metadatas, documents, distances]

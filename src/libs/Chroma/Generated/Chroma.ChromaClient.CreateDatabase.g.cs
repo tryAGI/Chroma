@@ -34,7 +34,7 @@ namespace Chroma
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Chroma.Database> CreateDatabaseAsync(
             global::Chroma.CreateDatabase request,
-            string? tenant = "default_tenant",
+            string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -120,7 +120,7 @@ namespace Chroma
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Chroma.Database> CreateDatabaseAsync(
             string name,
-            string? tenant = "default_tenant",
+            string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Chroma.CreateDatabase

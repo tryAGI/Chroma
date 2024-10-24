@@ -15,7 +15,7 @@ namespace Chroma
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.Database> CreateDatabaseAsync(
             global::Chroma.CreateDatabase request,
-            string? tenant = "default_tenant",
+            string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Chroma
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.Database> CreateDatabaseAsync(
             string name,
-            string? tenant = "default_tenant",
+            string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

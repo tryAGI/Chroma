@@ -18,8 +18,8 @@ namespace Chroma
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.Collection> CreateCollectionAsync(
             global::Chroma.CreateCollection request,
-            string? tenant = "default_tenant",
-            string? database = "default_database",
+            string? tenant = default,
+            string? database = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -40,10 +40,10 @@ namespace Chroma
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.Collection> CreateCollectionAsync(
             string name,
-            string? tenant = "default_tenant",
-            string? database = "default_database",
+            string? tenant = default,
+            string? database = default,
             object? metadata = default,
-            bool? getOrCreate = false,
+            bool? getOrCreate = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

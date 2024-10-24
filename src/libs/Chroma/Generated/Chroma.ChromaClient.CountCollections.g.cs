@@ -35,8 +35,8 @@ namespace Chroma
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<int> CountCollectionsAsync(
-            string? tenant = "default_tenant",
-            string? database = "default_database",
+            string? tenant = default,
+            string? database = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

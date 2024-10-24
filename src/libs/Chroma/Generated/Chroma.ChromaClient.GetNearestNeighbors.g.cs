@@ -124,7 +124,7 @@ namespace Chroma
             global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>> queryEmbeddings,
             object? where = default,
             object? whereDocument = default,
-            int? nResults = 10,
+            int? nResults = default,
             global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::Chroma.QueryEmbeddingIncludeItemVariant1?, global::Chroma.QueryEmbeddingIncludeItemVariant2?, global::Chroma.QueryEmbeddingIncludeItemVariant3?, global::Chroma.QueryEmbeddingIncludeItemVariant4?>>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
