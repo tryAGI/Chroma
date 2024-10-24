@@ -39,8 +39,8 @@ namespace Chroma
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Chroma.Collection> GetCollectionAsync(
             string collectionName,
-            string? tenant = "default_tenant",
-            string? database = "default_database",
+            string? tenant = default,
+            string? database = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

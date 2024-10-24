@@ -34,7 +34,7 @@ namespace Chroma
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Chroma.Database> GetDatabaseAsync(
             string database,
-            string? tenant = "default_tenant",
+            string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

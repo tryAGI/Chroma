@@ -25,7 +25,7 @@ namespace Chroma
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("get_or_create")]
-        public bool? GetOrCreate { get; set; } = false;
+        public bool? GetOrCreate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
