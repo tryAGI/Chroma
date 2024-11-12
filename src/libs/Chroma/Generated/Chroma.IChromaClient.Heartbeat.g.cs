@@ -8,7 +8,7 @@ namespace Chroma
         /// Heartbeat
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Chroma.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, double>> HeartbeatAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }

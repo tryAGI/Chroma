@@ -8,7 +8,7 @@ namespace Chroma
         /// Version
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Chroma.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> VersionAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }
