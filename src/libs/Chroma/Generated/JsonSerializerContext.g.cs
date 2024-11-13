@@ -29,8 +29,15 @@ namespace Chroma
             typeof(global::Chroma.JsonConverters.QueryEmbeddingIncludeItemVariant3NullableJsonConverter),
             typeof(global::Chroma.JsonConverters.QueryEmbeddingIncludeItemVariant4JsonConverter),
             typeof(global::Chroma.JsonConverters.QueryEmbeddingIncludeItemVariant4NullableJsonConverter),
-            typeof(global::Chroma.JsonConverters.AnyOfJsonConverterFactory2),
-            typeof(global::Chroma.JsonConverters.AnyOfJsonConverterFactory4),
+            typeof(global::Chroma.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>),
+            typeof(global::Chroma.JsonConverters.AnyOfJsonConverter<string, int?, float?, bool?>),
+            typeof(global::Chroma.JsonConverters.AnyOfJsonConverter<global::Chroma.GetEmbeddingIncludeItemVariant1?, global::Chroma.GetEmbeddingIncludeItemVariant2?, global::Chroma.GetEmbeddingIncludeItemVariant3?, global::Chroma.GetEmbeddingIncludeItemVariant4?>),
+            typeof(global::Chroma.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>),
+            typeof(global::Chroma.JsonConverters.AnyOfJsonConverter<string, int?>),
+            typeof(global::Chroma.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>),
+            typeof(global::Chroma.JsonConverters.AnyOfJsonConverter<global::Chroma.QueryEmbeddingIncludeItemVariant1?, global::Chroma.QueryEmbeddingIncludeItemVariant2?, global::Chroma.QueryEmbeddingIncludeItemVariant3?, global::Chroma.QueryEmbeddingIncludeItemVariant4?>),
+            typeof(global::Chroma.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>),
+            typeof(global::Chroma.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.JsonSerializerContextTypes))]
