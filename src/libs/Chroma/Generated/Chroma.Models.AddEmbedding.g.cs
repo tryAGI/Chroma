@@ -48,7 +48,9 @@ namespace Chroma
         /// <param name="metadatas"></param>
         /// <param name="documents"></param>
         /// <param name="ids"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddEmbedding(
             global::System.Collections.Generic.IList<string> ids,
             global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>>? embeddings,

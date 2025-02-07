@@ -38,7 +38,9 @@ namespace Chroma
         /// <param name="ids"></param>
         /// <param name="where"></param>
         /// <param name="whereDocument"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteEmbedding(
             global::System.Collections.Generic.IList<string>? ids,
             object? where,

@@ -59,7 +59,9 @@ namespace Chroma
         /// <param name="documents"></param>
         /// <param name="metadatas"></param>
         /// <param name="distances"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public QueryResult(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> ids,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>>> embeddings,

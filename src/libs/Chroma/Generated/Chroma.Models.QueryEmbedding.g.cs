@@ -59,7 +59,9 @@ namespace Chroma
         /// <param name="include">
         /// Default Value: [metadatas, documents, distances]
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public QueryEmbedding(
             global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>> queryEmbeddings,
             object? where,
