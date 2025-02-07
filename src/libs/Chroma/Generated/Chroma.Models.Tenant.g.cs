@@ -24,7 +24,9 @@ namespace Chroma
         /// Initializes a new instance of the <see cref="Tenant" /> class.
         /// </summary>
         /// <param name="name"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Tenant(
             string? name)
         {

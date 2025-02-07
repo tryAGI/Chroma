@@ -40,7 +40,9 @@ namespace Chroma
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <param name="metadata"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Collection(
             string name,
             global::System.Guid id,

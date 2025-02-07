@@ -38,7 +38,9 @@ namespace Chroma
         /// <param name="name"></param>
         /// <param name="id"></param>
         /// <param name="tenant"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Database(
             string? name,
             global::System.Guid? id,

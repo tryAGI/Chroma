@@ -31,7 +31,9 @@ namespace Chroma
         /// </summary>
         /// <param name="newName"></param>
         /// <param name="newMetadata"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateCollection(
             string? newName,
             object? newMetadata)
