@@ -96,7 +96,7 @@ namespace Chroma
                 }
 
                 throw new global::Chroma.ApiException<global::Chroma.HTTPValidationError>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
