@@ -28,6 +28,10 @@ namespace Chroma.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Chroma.QueryEmbeddingIncludeItemVariant2)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Chroma.QueryEmbeddingIncludeItemVariant2);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
