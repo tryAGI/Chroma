@@ -53,7 +53,7 @@ namespace Chroma
                 database: ref database,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Chroma.PathBuilder(
                 path: "/api/v1/collections",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
