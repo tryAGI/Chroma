@@ -32,7 +32,7 @@ namespace Chroma
             PrepareHeartbeatArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Chroma.PathBuilder(
                 path: "/api/v1/heartbeat",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

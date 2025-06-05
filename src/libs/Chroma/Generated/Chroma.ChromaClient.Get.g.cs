@@ -44,7 +44,7 @@ namespace Chroma
                 collectionId: ref collectionId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Chroma.PathBuilder(
                 path: $"/api/v1/collections/{collectionId}/get",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

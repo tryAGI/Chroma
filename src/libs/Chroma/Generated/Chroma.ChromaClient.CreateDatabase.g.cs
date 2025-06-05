@@ -46,7 +46,7 @@ namespace Chroma
                 tenant: ref tenant,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Chroma.PathBuilder(
                 path: "/api/v1/databases",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
