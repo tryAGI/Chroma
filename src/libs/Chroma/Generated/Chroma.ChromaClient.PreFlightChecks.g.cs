@@ -83,8 +83,10 @@ namespace Chroma
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return __content;
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::Chroma.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -98,16 +100,22 @@ namespace Chroma
                             h => h.Value),
                     };
                 }
-
-                return __content;
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return __content;
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::Chroma.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -120,14 +128,6 @@ namespace Chroma
                             h => h.Value),
                     };
                 }
-
-                var __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return __content;
             }
         }
     }
