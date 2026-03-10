@@ -10,10 +10,10 @@ C# SDK for [Chroma](https://www.trychroma.com/), the open-source AI-native embed
 
 ```bash
 # Build the solution
-dotnet build Chroma.sln
+dotnet build Chroma.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build Chroma.sln -c Release
+dotnet build Chroma.slnx -c Release
 
 # Run integration tests (no API key needed -- Chroma is a local database)
 dotnet test src/tests/IntegrationTests/Chroma.IntegrationTests.csproj
