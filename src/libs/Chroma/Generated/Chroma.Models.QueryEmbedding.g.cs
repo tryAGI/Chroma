@@ -27,7 +27,7 @@ namespace Chroma
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query_embeddings")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>> QueryEmbeddings { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>> QueryEmbeddings { get; set; } = default!;
 
         /// <summary>
         /// Default Value: 10
