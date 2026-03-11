@@ -14,6 +14,7 @@ namespace Chroma
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.Database> CreateDatabaseAsync(
+
             global::Chroma.CreateDatabase request,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);

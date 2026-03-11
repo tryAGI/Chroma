@@ -11,4 +11,5 @@ autosdk generate openapi.yaml \
   --clientClassName ChromaClient \
   --targetFramework net8.0 \
   --output Generated \
-  --exclude-deprecated-operations
+  --exclude-deprecated-operations \
+  --base-url http://localhost:8080

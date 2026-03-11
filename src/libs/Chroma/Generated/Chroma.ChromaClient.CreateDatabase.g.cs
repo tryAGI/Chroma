@@ -33,6 +33,7 @@ namespace Chroma
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Chroma.Database> CreateDatabaseAsync(
+
             global::Chroma.CreateDatabase request,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -49,7 +50,7 @@ namespace Chroma
             var __pathBuilder = new global::Chroma.PathBuilder(
                 path: "/api/v1/databases",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();

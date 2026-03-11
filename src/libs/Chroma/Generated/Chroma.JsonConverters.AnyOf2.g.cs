@@ -39,8 +39,9 @@ namespace Chroma.JsonConverters
             {
             }
 
-            var result = new global::Chroma.AnyOf<T1, T2>(
+            var __value = new global::Chroma.AnyOf<T1, T2>(
                 value1,
+
                 value2
                 );
 
@@ -57,7 +58,7 @@ namespace Chroma.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

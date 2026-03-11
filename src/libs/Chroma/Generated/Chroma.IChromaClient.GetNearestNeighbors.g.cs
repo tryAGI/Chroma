@@ -13,6 +13,7 @@ namespace Chroma
         /// <exception cref="global::Chroma.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.QueryResult> GetNearestNeighborsAsync(
             string collectionId,
+
             global::Chroma.QueryEmbedding request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

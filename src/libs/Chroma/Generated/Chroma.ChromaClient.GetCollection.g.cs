@@ -54,8 +54,8 @@ namespace Chroma
             var __pathBuilder = new global::Chroma.PathBuilder(
                 path: $"/api/v1/collections/{collectionName}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("tenant", tenant) 
+            __pathBuilder
+                .AddOptionalParameter("tenant", tenant)
                 .AddOptionalParameter("database", database) 
                 ; 
             var __path = __pathBuilder.ToString();

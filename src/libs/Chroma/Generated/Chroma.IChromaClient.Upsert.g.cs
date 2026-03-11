@@ -13,6 +13,7 @@ namespace Chroma
         /// <exception cref="global::Chroma.ApiException"></exception>
         global::System.Threading.Tasks.Task<bool> UpsertAsync(
             string collectionId,
+
             global::Chroma.AddEmbedding request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

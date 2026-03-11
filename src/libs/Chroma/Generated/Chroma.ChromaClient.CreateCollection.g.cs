@@ -38,6 +38,7 @@ namespace Chroma
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Chroma.Collection> CreateCollectionAsync(
+
             global::Chroma.CreateCollection request,
             string? tenant = default,
             string? database = default,
@@ -56,8 +57,8 @@ namespace Chroma
             var __pathBuilder = new global::Chroma.PathBuilder(
                 path: "/api/v1/collections",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("tenant", tenant) 
+            __pathBuilder
+                .AddOptionalParameter("tenant", tenant)
                 .AddOptionalParameter("database", database) 
                 ; 
             var __path = __pathBuilder.ToString();

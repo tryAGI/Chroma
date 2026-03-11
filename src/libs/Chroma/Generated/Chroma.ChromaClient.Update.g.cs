@@ -32,6 +32,7 @@ namespace Chroma
         /// <exception cref="global::Chroma.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<bool> UpdateAsync(
             string collectionId,
+
             global::Chroma.UpdateEmbedding request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

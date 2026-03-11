@@ -13,6 +13,7 @@ namespace Chroma
         /// <exception cref="global::Chroma.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::System.Guid>> DeleteAsync(
             string collectionId,
+
             global::Chroma.DeleteEmbedding request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

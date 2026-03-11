@@ -13,6 +13,7 @@ namespace Chroma
         /// <exception cref="global::Chroma.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.GetResult> GetAsync(
             string collectionId,
+
             global::Chroma.GetEmbedding request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

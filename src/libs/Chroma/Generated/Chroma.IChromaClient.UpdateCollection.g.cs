@@ -13,6 +13,7 @@ namespace Chroma
         /// <exception cref="global::Chroma.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.Collection> UpdateCollectionAsync(
             string collectionName,
+
             global::Chroma.UpdateCollection request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
