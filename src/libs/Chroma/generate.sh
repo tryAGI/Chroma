@@ -54,10 +54,8 @@ else
 fi
 
 rm -rf Generated
-dotnet run --project ../../helpers/FixOpenApiSpec openapi.json
-mv openapi.json openapi.yaml
 
-autosdk generate openapi.yaml \
+autosdk generate openapi.json \
   --namespace Chroma \
   --clientClassName ChromaClient \
   --targetFramework net10.0 \

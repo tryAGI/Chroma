@@ -28,10 +28,9 @@ cd src/libs/Chroma && ./generate.sh
 
 The SDK code is **entirely auto-generated** -- do not manually edit files in `src/libs/Chroma/Generated/`.
 
-1. `src/libs/Chroma/openapi.yaml` -- the Chroma OpenAPI spec (fetched from the `chroma-go` repo)
-2. `src/helpers/FixOpenApiSpec/` -- converts OpenAPI 3.1 to 3.0 format for compatibility
-3. `src/libs/Chroma/generate.sh` -- orchestrates: download spec, fix spec, run AutoSDK CLI, output to `Generated/`
-4. CI auto-updates the spec and creates PRs if changes are detected
+1. `src/libs/Chroma/openapi.json` -- the committed Chroma OpenAPI spec snapshot
+2. `src/libs/Chroma/generate.sh` -- starts a temporary official Chroma server, downloads `/openapi.json`, and runs AutoSDK CLI to update `Generated/`
+3. CI auto-updates the spec and creates PRs if changes are detected
 
 ### Project Layout
 
@@ -39,7 +38,6 @@ The SDK code is **entirely auto-generated** -- do not manually edit files in `sr
 |---------|---------|
 | `src/libs/Chroma/` | Main SDK library (`ChromaClient`) |
 | `src/tests/IntegrationTests/` | Integration tests against a Chroma instance |
-| `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
 | `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
 | `src/helpers/TrimmingHelper/` | NativeAOT/trimming compatibility validator |
 
