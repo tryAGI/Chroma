@@ -1,0 +1,89 @@
+
+#nullable enable
+
+namespace Chroma
+{
+    /// <summary>
+    /// Payload for adding records to a collection.<br/>
+    /// Records are added in batches. All arrays must have the same length, with each index<br/>
+    /// representing a single record. For example, `ids[0]`, `embeddings[0]`, `documents[0]`, etc.<br/>
+    /// all belong to the same record.
+    /// </summary>
+    public sealed partial class AddCollectionRecordsPayload
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
+        public global::System.Collections.Generic.IList<string>? Documents { get; set; }
+
+        /// <summary>
+        /// Embeddings for each record. Can contain the raw f32 arrays or base64 encoded strings.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.EmbeddingsPayloadJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Chroma.EmbeddingsPayload Embeddings { get; set; }
+
+        /// <summary>
+        /// Unique identifiers for each record.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ids")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> Ids { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadatas")]
+        public global::System.Collections.Generic.IList<object>? Metadatas { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("uris")]
+        public global::System.Collections.Generic.IList<string>? Uris { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddCollectionRecordsPayload" /> class.
+        /// </summary>
+        /// <param name="documents"></param>
+        /// <param name="embeddings">
+        /// Embeddings for each record. Can contain the raw f32 arrays or base64 encoded strings.
+        /// </param>
+        /// <param name="ids">
+        /// Unique identifiers for each record.
+        /// </param>
+        /// <param name="metadatas"></param>
+        /// <param name="uris"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public AddCollectionRecordsPayload(
+            global::Chroma.EmbeddingsPayload embeddings,
+            global::System.Collections.Generic.IList<string> ids,
+            global::System.Collections.Generic.IList<string>? documents,
+            global::System.Collections.Generic.IList<object>? metadatas,
+            global::System.Collections.Generic.IList<string>? uris)
+        {
+            this.Embeddings = embeddings;
+            this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
+            this.Documents = documents;
+            this.Metadatas = metadatas;
+            this.Uris = uris;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddCollectionRecordsPayload" /> class.
+        /// </summary>
+        public AddCollectionRecordsPayload()
+        {
+        }
+    }
+}

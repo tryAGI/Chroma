@@ -4,7 +4,6 @@
 namespace Chroma
 {
     /// <summary>
-    /// This is OpenAPI schema for ChromaDB API.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -13,7 +12,7 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "http://localhost:8080";
+        public const string DefaultBaseUrl = "http://localhost:8000";
 
         private bool _disposeHttpClient = true;
 
@@ -36,6 +35,69 @@ namespace Chroma
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::Chroma.SourceGenerationContext.Default;
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AuthenticationClient Authentication => new AuthenticationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CollectionClient Collection => new CollectionClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SystemClient System => new SystemClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TenantClient Tenant => new TenantClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DatabaseClient Database => new DatabaseClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RecordClient Record => new RecordClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FunctionClient Function => new FunctionClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// Creates a new instance of the ChromaClient.

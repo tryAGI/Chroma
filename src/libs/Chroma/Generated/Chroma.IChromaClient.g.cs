@@ -4,7 +4,6 @@
 namespace Chroma
 {
     /// <summary>
-    /// This is OpenAPI schema for ChromaDB API.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -36,6 +35,41 @@ namespace Chroma
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AuthenticationClient Authentication { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CollectionClient Collection { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SystemClient System { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TenantClient Tenant { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DatabaseClient Database { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RecordClient Record { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FunctionClient Function { get; }
 
     }
 }

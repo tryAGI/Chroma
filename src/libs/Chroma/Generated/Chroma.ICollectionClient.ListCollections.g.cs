@@ -1,0 +1,24 @@
+#nullable enable
+
+namespace Chroma
+{
+    public partial interface ICollectionClient
+    {
+        /// <summary>
+        /// List collections<br/>
+        /// Lists all collections in a database.
+        /// </summary>
+        /// <param name="tenant"></param>
+        /// <param name="database"></param>
+        /// <param name="limit"></param>
+        /// <param name="offset"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Chroma.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Chroma.VecItem>> ListCollectionsAsync(
+            string tenant,
+            string database,
+            int? limit = default,
+            int? offset = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

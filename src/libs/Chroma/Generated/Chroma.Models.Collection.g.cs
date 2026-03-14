@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Chroma
@@ -11,22 +13,70 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("configuration_json")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required global::Chroma.CollectionConfiguration ConfigurationJson { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("database")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Database { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dimension")]
+        public int? Dimension { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid Id { get; set; } = default!;
+        public required global::System.Guid Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("log_position")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required long LogPosition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Schema3>))]
+        public global::Chroma.OneOf<object, global::Chroma.Schema3>? Schema { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tenant")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Tenant { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("version")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Version { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,20 +87,41 @@ namespace Chroma
         /// <summary>
         /// Initializes a new instance of the <see cref="Collection" /> class.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="configurationJson"></param>
+        /// <param name="database"></param>
+        /// <param name="dimension"></param>
         /// <param name="id"></param>
+        /// <param name="logPosition"></param>
         /// <param name="metadata"></param>
+        /// <param name="name"></param>
+        /// <param name="schema"></param>
+        /// <param name="tenant"></param>
+        /// <param name="version"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Collection(
-            string name,
+            global::Chroma.CollectionConfiguration configurationJson,
+            string database,
             global::System.Guid id,
-            object? metadata)
+            long logPosition,
+            string name,
+            string tenant,
+            int version,
+            int? dimension,
+            object? metadata,
+            global::Chroma.OneOf<object, global::Chroma.Schema3>? schema)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.ConfigurationJson = configurationJson ?? throw new global::System.ArgumentNullException(nameof(configurationJson));
+            this.Database = database ?? throw new global::System.ArgumentNullException(nameof(database));
             this.Id = id;
+            this.LogPosition = logPosition;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Tenant = tenant ?? throw new global::System.ArgumentNullException(nameof(tenant));
+            this.Version = version;
+            this.Dimension = dimension;
             this.Metadata = metadata;
+            this.Schema = schema;
         }
 
         /// <summary>

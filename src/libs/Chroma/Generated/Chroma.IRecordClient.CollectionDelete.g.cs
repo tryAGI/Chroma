@@ -1,0 +1,40 @@
+#nullable enable
+
+namespace Chroma
+{
+    public partial interface IRecordClient
+    {
+        /// <summary>
+        /// Delete records<br/>
+        /// Deletes records in a collection. Can filter by IDs or metadata.
+        /// </summary>
+        /// <param name="tenant"></param>
+        /// <param name="database"></param>
+        /// <param name="collectionId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Chroma.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Chroma.DeleteCollectionRecordsResponse> CollectionDeleteAsync(
+            string tenant,
+            string database,
+            string collectionId,
+
+            global::Chroma.DeleteCollectionRecordsPayload request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete records<br/>
+        /// Deletes records in a collection. Can filter by IDs or metadata.
+        /// </summary>
+        /// <param name="tenant"></param>
+        /// <param name="database"></param>
+        /// <param name="collectionId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::Chroma.DeleteCollectionRecordsResponse> CollectionDeleteAsync(
+            string tenant,
+            string database,
+            string collectionId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -11,20 +11,23 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public global::System.Guid? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant")]
-        public string? Tenant { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Tenant { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,20 +38,20 @@ namespace Chroma
         /// <summary>
         /// Initializes a new instance of the <see cref="Database" /> class.
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="id"></param>
+        /// <param name="name"></param>
         /// <param name="tenant"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Database(
-            string? name,
-            global::System.Guid? id,
-            string? tenant)
+            global::System.Guid id,
+            string name,
+            string tenant)
         {
-            this.Name = name;
             this.Id = id;
-            this.Tenant = tenant;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Tenant = tenant ?? throw new global::System.ArgumentNullException(nameof(tenant));
         }
 
         /// <summary>

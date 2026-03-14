@@ -1,0 +1,46 @@
+
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace Chroma
+{
+    /// <summary>
+    /// Float list value type index configurations (for vectors)
+    /// </summary>
+    public sealed partial class FloatListValueType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("vector_index")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.VectorIndexType>))]
+        public global::Chroma.OneOf<object, global::Chroma.VectorIndexType>? VectorIndex { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FloatListValueType" /> class.
+        /// </summary>
+        /// <param name="vectorIndex"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public FloatListValueType(
+            global::Chroma.OneOf<object, global::Chroma.VectorIndexType>? vectorIndex)
+        {
+            this.VectorIndex = vectorIndex;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FloatListValueType" /> class.
+        /// </summary>
+        public FloatListValueType()
+        {
+        }
+    }
+}
