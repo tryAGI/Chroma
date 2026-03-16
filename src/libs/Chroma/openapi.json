@@ -113,6 +113,7 @@
             "ApiKeyAuth": []
           }
         ],
+        "x-hidden": true,
         "x-codeSamples": [
           {
             "label": "Get collection by CRN",
@@ -124,8 +125,7 @@
             "lang": "python",
             "source": "collection = client.get_collection_by_crn('my_tenant:my_database:my_collection')"
           }
-        ],
-        "x-hidden": true
+        ]
       }
     },
     "/api/v2/healthcheck": {
