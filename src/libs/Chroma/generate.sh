@@ -13,8 +13,10 @@ openapi_url="${CHROMA_OPENAPI_URL:-http://${openapi_host}:${openapi_port}/openap
 temp_dir="$(mktemp -d)"
 venv_dir="${temp_dir}/venv"
 db_dir="${temp_dir}/db"
+raw_openapi="${temp_dir}/openapi.raw.json"
 server_log="${temp_dir}/chroma.log"
 server_pid=""
+downloaded_openapi=0
 
 cleanup() {
   if [ -n "${server_pid}" ] && kill -0 "${server_pid}" 2>/dev/null; then
@@ -27,6 +29,20 @@ cleanup() {
 
 trap cleanup EXIT
 
+format_openapi() {
+  if command -v jq >/dev/null 2>&1; then
+    jq --indent 2 . "${raw_openapi}" > openapi.json
+  else
+    echo "Failed to format OpenAPI spec: jq is not available."
+    exit 1
+  fi
+}
+
+fetch_openapi() {
+  curl -fsS "${openapi_url}" -o "${raw_openapi}"
+  format_openapi
+}
+
 if [ -z "${CHROMA_OPENAPI_URL:-}" ]; then
   python3 -m venv "${venv_dir}"
   # shellcheck disable=SC1091
@@ -37,20 +53,21 @@ if [ -z "${CHROMA_OPENAPI_URL:-}" ]; then
   server_pid=$!
 
   for _ in $(seq 1 60); do
-    if curl -fsS "${openapi_url}" -o openapi.json; then
+    if fetch_openapi; then
+      downloaded_openapi=1
       break
     fi
 
     sleep 1
   done
 
-  if [ ! -s openapi.json ]; then
+  if [ "${downloaded_openapi}" -eq 0 ]; then
     echo "Failed to fetch OpenAPI spec from ${openapi_url}."
     cat "${server_log}"
     exit 1
   fi
 else
-  curl -fsS "${openapi_url}" -o openapi.json
+  fetch_openapi
 fi
 
 rm -rf Generated
