@@ -13,7 +13,7 @@ namespace Chroma
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nanosecond heartbeat")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Nanosecond_heartbeat { get; set; }
+        public required long Nanosecond_heartbeat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public HeartbeatResponse(
-            int nanosecond_heartbeat)
+            long nanosecond_heartbeat)
         {
             this.Nanosecond_heartbeat = nanosecond_heartbeat;
         }
