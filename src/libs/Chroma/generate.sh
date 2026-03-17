@@ -31,7 +31,7 @@ trap cleanup EXIT
 
 format_openapi() {
   if command -v jq >/dev/null 2>&1; then
-    jq --indent 2 . "${raw_openapi}" > openapi.json
+    jq -S --indent 2 . "${raw_openapi}" > openapi.json
   else
     echo "Failed to format OpenAPI spec: jq is not available."
     exit 1
