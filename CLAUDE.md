@@ -39,7 +39,6 @@ The SDK code is **entirely auto-generated** -- do not manually edit files in `sr
 | `src/libs/Chroma/` | Main SDK library (`ChromaClient`) |
 | `src/tests/IntegrationTests/` | Integration tests against a Chroma instance |
 | `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
-| `src/helpers/TrimmingHelper/` | NativeAOT/trimming compatibility validator |
 
 ### Build Configuration
 
