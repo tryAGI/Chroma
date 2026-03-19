@@ -3,7 +3,7 @@ nav:
 - Overview: index.md
 # EXAMPLES:START
 - Examples:
-  - Test: samples/Test.md
+  - Test: examples/test.md
 # EXAMPLES:END
         
 theme:

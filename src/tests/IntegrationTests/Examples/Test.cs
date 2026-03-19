@@ -1,3 +1,9 @@
+/*
+order: 10
+title: Test
+slug: test
+*/
+
 namespace Chroma.IntegrationTests;
 
 public partial class Tests
