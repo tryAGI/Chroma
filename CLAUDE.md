@@ -63,7 +63,7 @@ Tests in `src/tests/IntegrationTests/Examples` are the single source of truth fo
 - No hand-written extension files -- the SDK is purely generated code
 - The client class is named `ChromaClient`
 - The namespace is `Chroma`
-- Chroma is a self-hosted database, so no cloud API key is required for testing
+- Chroma is a self-hosted database, so no cloud API key is required for testing (Docker is needed for CI via Testcontainers)
 
 ### CI/CD
 
