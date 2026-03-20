@@ -19,6 +19,6 @@ public partial class Tests
 
         heartbeat.Should().NotBeNull();
 
-        Console.WriteLine($"Heartbeat: {heartbeat.NanosecondHeartbeat}");
+        Console.WriteLine($"Heartbeat: {heartbeat.Nanosecond_heartbeat}");
     }
 }
