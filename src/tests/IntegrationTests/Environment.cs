@@ -5,7 +5,9 @@ namespace Chroma.IntegrationTests;
 
 public sealed class Environment : IAsyncDisposable
 {
+    private const string ChromaImage = "chromadb/chroma:latest";
     private const ushort ChromaPort = 8000;
+    private static readonly TimeSpan StartupTimeout = TimeSpan.FromMinutes(2);
 
     public IContainer? Container { get; init; }
     public required ChromaClient Client { get; init; }
@@ -36,7 +38,7 @@ public sealed class Environment : IAsyncDisposable
             }
             case EnvironmentType.Container:
             {
-                var container = new ContainerBuilder("chromadb/chroma")
+                var container = new ContainerBuilder(ChromaImage)
                     .WithPortBinding(ChromaPort, assignRandomHostPort: true)
                     .WithWaitStrategy(
                         Wait.ForUnixContainer()
@@ -45,7 +47,8 @@ public sealed class Environment : IAsyncDisposable
                                 .ForPort(ChromaPort)))
                     .Build();
 
-                await container.StartAsync();
+                using var cts = new CancellationTokenSource(StartupTimeout);
+                await container.StartAsync(cts.Token);
 
                 var client = new ChromaClient(
                     baseUri: new UriBuilder(
