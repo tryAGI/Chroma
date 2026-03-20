@@ -14,6 +14,9 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// await collection.add({ ids: ['id1', 'id2'], embeddings: [[0.1, 0.2], [0.3, 0.4]], documents: ['doc1', 'doc2'] });
+        /// </remarks>
         global::System.Threading.Tasks.Task<string> CollectionAddAsync(
             string tenant,
             string database,
@@ -21,7 +24,6 @@ namespace Chroma
 
             global::Chroma.AddCollectionRecordsPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add records<br/>
         /// Adds records to a collection.

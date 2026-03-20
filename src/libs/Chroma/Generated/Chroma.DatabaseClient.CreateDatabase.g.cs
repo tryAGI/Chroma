@@ -31,6 +31,9 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// chroma db create my-new-db
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<string> CreateDatabaseAsync(
             string tenant,
 
@@ -258,7 +261,6 @@ namespace Chroma
                 }
             }
         }
-
         /// <summary>
         /// Create database<br/>
         /// Creates a new database for a tenant.

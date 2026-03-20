@@ -37,6 +37,9 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// await collection.delete({ ids: ['id1', 'id2'] });
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::Chroma.DeleteCollectionRecordsResponse> CollectionDeleteAsync(
             string tenant,
             string database,
@@ -310,7 +313,6 @@ namespace Chroma
                 }
             }
         }
-
         /// <summary>
         /// Delete records<br/>
         /// Deletes records in a collection. Can filter by IDs or metadata.

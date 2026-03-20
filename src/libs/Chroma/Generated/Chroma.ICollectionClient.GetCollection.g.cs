@@ -13,6 +13,9 @@ namespace Chroma
         /// <param name="collectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// const collection = await client.getCollection({ name: 'my_collection' });
+        /// </remarks>
         global::System.Threading.Tasks.Task<global::Chroma.Collection> GetCollectionAsync(
             string tenant,
             string database,

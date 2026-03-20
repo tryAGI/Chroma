@@ -21,7 +21,6 @@ namespace Chroma
 
             global::Chroma.AttachFunctionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Attach function<br/>
         /// Attaches a function to a collection.

@@ -31,6 +31,9 @@ namespace Chroma
         /// <param name="database"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// chroma db delete my-db
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<string> DeleteDatabaseAsync(
             string tenant,
             string database,

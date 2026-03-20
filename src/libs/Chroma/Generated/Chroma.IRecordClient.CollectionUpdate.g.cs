@@ -14,6 +14,9 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// await collection.update({ ids: ['id1'], documents: ['updated doc'], metadatas: [{ key: 'value' }] });
+        /// </remarks>
         global::System.Threading.Tasks.Task<string> CollectionUpdateAsync(
             string tenant,
             string database,
@@ -21,7 +24,6 @@ namespace Chroma
 
             global::Chroma.UpdateCollectionRecordsPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update records<br/>
         /// Updates records in a collection by ID.

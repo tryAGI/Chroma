@@ -37,6 +37,9 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// const results = await collection.get({ ids: ['id1', 'id2'] });
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::Chroma.GetResponse> CollectionGetAsync(
             string tenant,
             string database,
@@ -310,7 +313,6 @@ namespace Chroma
                 }
             }
         }
-
         /// <summary>
         /// Get records<br/>
         /// Returns records from a collection by ID or metadata filter.

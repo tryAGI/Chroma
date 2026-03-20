@@ -14,6 +14,9 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// await collection.modify({ name: 'new_name', metadata: { key: 'value' } });
+        /// </remarks>
         global::System.Threading.Tasks.Task<string> UpdateCollectionAsync(
             string tenant,
             string database,
@@ -21,7 +24,6 @@ namespace Chroma
 
             global::Chroma.UpdateCollectionPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update collection<br/>
         /// Updates an existing collection's name or metadata.

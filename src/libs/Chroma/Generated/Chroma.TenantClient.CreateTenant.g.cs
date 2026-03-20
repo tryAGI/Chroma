@@ -252,7 +252,6 @@ namespace Chroma
                 }
             }
         }
-
         /// <summary>
         /// Create tenant<br/>
         /// Creates a new tenant.

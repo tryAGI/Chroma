@@ -14,6 +14,9 @@ namespace Chroma
         /// <param name="readLevel"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// const count = await collection.count();
+        /// </remarks>
         global::System.Threading.Tasks.Task<int> CollectionCountAsync(
             string tenant,
             string database,

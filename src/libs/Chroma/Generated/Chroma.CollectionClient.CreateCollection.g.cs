@@ -34,6 +34,9 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// const collection = await client.createCollection({ name: 'my_collection' });
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::Chroma.Collection> CreateCollectionAsync(
             string tenant,
             string database,
@@ -268,7 +271,6 @@ namespace Chroma
                 }
             }
         }
-
         /// <summary>
         /// Create collection<br/>
         /// Creates a new collection in a database.

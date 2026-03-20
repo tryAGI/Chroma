@@ -14,6 +14,9 @@ namespace Chroma
         /// <param name="offset"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// const collections = await client.listCollections({ limit: 10, offset: 0 });
+        /// </remarks>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Chroma.VecItem>> ListCollectionsAsync(
             string tenant,
             string database,

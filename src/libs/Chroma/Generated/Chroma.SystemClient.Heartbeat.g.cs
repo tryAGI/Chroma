@@ -25,6 +25,9 @@ namespace Chroma
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// const timestamp = await client.heartbeat();
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::Chroma.HeartbeatResponse> HeartbeatAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -280,7 +280,6 @@ namespace Chroma
                 }
             }
         }
-
         /// <summary>
         /// Detach function<br/>
         /// Detaches a function from a collection.

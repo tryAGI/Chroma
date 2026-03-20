@@ -23,7 +23,6 @@ namespace Chroma
 
             global::Chroma.DetachFunctionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Detach function<br/>
         /// Detaches a function from a collection.
