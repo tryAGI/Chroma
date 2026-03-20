@@ -17,7 +17,6 @@ namespace Chroma
 
             global::Chroma.UpdateTenantPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update tenant<br/>
         /// Updates an existing tenant by name.

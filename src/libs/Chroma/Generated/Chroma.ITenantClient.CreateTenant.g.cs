@@ -15,7 +15,6 @@ namespace Chroma
 
             global::Chroma.CreateTenantPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create tenant<br/>
         /// Creates a new tenant.

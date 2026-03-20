@@ -274,7 +274,6 @@ namespace Chroma
                 }
             }
         }
-
         /// <summary>
         /// Attach function<br/>
         /// Attaches a function to a collection.

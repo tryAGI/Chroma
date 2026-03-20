@@ -34,6 +34,9 @@ namespace Chroma
         /// <param name="collectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// const status: IndexingStatus = await collection.getIndexingStatus();
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::Chroma.IndexStatusResponse> IndexingStatusAsync(
             string tenant,
             string database,

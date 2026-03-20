@@ -43,6 +43,9 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// const results = await collection.query({ queryEmbeddings: [[0.1, 0.2, 0.3]], nResults: 10 });
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::Chroma.QueryResponse> CollectionQueryAsync(
             string tenant,
             string database,
@@ -326,7 +329,6 @@ namespace Chroma
                 }
             }
         }
-
         /// <summary>
         /// Query collection<br/>
         /// Queries a collection using dense vector search with metadata and full-text search filtering.

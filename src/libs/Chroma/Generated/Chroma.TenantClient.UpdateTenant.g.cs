@@ -334,7 +334,6 @@ namespace Chroma
                 }
             }
         }
-
         /// <summary>
         /// Update tenant<br/>
         /// Updates an existing tenant by name.

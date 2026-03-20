@@ -12,6 +12,9 @@ namespace Chroma
         /// <param name="database"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// const count: number = await client.countCollections();
+        /// </remarks>
         global::System.Threading.Tasks.Task<int> CountCollectionsAsync(
             string tenant,
             string database,
