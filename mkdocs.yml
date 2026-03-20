@@ -4,6 +4,9 @@ nav:
 # EXAMPLES:START
 - Examples:
   - Test: examples/test.md
+  - Heartbeat: examples/heartbeat.md
+  - Version: examples/version.md
+  - List Collections: examples/list-collections.md
 # EXAMPLES:END
         
 theme:
