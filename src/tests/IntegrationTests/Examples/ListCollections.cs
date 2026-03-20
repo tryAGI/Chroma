@@ -13,7 +13,7 @@ public partial class Tests
     [TestMethod]
     public async Task Example_ListCollections()
     {
-        using var client = new ChromaClient();
+        var client = Client;
 
         var collections = await client.Collection.ListCollectionsAsync(
             tenant: "default_tenant",

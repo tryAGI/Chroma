@@ -13,7 +13,7 @@ public partial class Tests
     [TestMethod]
     public async Task Example_Version()
     {
-        using var client = new ChromaClient();
+        var client = Client;
 
         string version = await client.System.VersionAsync();
 

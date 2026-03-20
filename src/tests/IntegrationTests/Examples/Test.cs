@@ -11,7 +11,7 @@ public partial class Tests
     [TestMethod]
     public void Generate()
     {
-        using var client = new ChromaClient();
+        var client = Client;
 
         client.Authentication.HttpClient.Should().BeSameAs(client.HttpClient);
         client.Collection.HttpClient.Should().BeSameAs(client.HttpClient);

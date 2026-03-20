@@ -13,7 +13,7 @@ public partial class Tests
     [TestMethod]
     public async Task Example_Heartbeat()
     {
-        using var client = new ChromaClient();
+        var client = Client;
 
         HeartbeatResponse heartbeat = await client.System.HeartbeatAsync();
 
