@@ -57,25 +57,16 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        public SystemClient System => new SystemClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TenantClient Tenant => new TenantClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public DatabaseClient Database => new DatabaseClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FunctionClient Function => new FunctionClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -93,7 +84,16 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        public FunctionClient Function => new FunctionClient(HttpClient, authorizations: Authorizations)
+        public SystemClient System => new SystemClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TenantClient Tenant => new TenantClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
