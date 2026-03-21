@@ -52,17 +52,12 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        public SystemClient System { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TenantClient Tenant { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public DatabaseClient Database { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FunctionClient Function { get; }
 
         /// <summary>
         /// 
@@ -72,7 +67,12 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        public FunctionClient Function { get; }
+        public SystemClient System { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TenantClient Tenant { get; }
 
     }
 }
