@@ -11,15 +11,15 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        L2,
-        /// <summary>
-        /// 
-        /// </summary>
         Cosine,
         /// <summary>
         /// 
         /// </summary>
         Ip,
+        /// <summary>
+        /// 
+        /// </summary>
+        L2,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Chroma
         {
             return value switch
             {
-                Space2.L2 => "l2",
                 Space2.Cosine => "cosine",
                 Space2.Ip => "ip",
+                Space2.L2 => "l2",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Chroma
         {
             return value switch
             {
-                "l2" => Space2.L2,
                 "cosine" => Space2.Cosine,
                 "ip" => Space2.Ip,
+                "l2" => Space2.L2,
                 _ => null,
             };
         }
