@@ -11,11 +11,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
-        None,
+        FourBitRabitQWithUSearch,
         /// <summary>
         /// 
         /// </summary>
-        FourBitRabitQWithUSearch,
+        None,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Chroma
         {
             return value switch
             {
-                Quantization.None => "none",
                 Quantization.FourBitRabitQWithUSearch => "four_bit_rabit_q_with_u_search",
+                Quantization.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Chroma
         {
             return value switch
             {
-                "none" => Quantization.None,
                 "four_bit_rabit_q_with_u_search" => Quantization.FourBitRabitQWithUSearch,
+                "none" => Quantization.None,
                 _ => null,
             };
         }
