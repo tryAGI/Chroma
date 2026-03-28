@@ -31,7 +31,7 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> UpdateTenantAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.UpdateTenantResponse> UpdateTenantAsync(
             string tenantName,
 
             global::Chroma.UpdateTenantPayload request,
@@ -274,7 +274,9 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::Chroma.UpdateTenantResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -297,13 +299,15 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::Chroma.UpdateTenantResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -342,7 +346,7 @@ namespace Chroma
         /// <param name="resourceName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> UpdateTenantAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.UpdateTenantResponse> UpdateTenantAsync(
             string tenantName,
             string resourceName,
             global::System.Threading.CancellationToken cancellationToken = default)

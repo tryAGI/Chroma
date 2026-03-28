@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Chroma
@@ -48,7 +46,8 @@ namespace Chroma
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>))]
+        public global::Chroma.OneOf<object, global::Chroma.HashMap>? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -109,7 +108,7 @@ namespace Chroma
             string tenant,
             int version,
             int? dimension,
-            object? metadata,
+            global::Chroma.OneOf<object, global::Chroma.HashMap>? metadata,
             global::Chroma.OneOf<object, global::Chroma.Schema3>? schema)
         {
             this.ConfigurationJson = configurationJson ?? throw new global::System.ArgumentNullException(nameof(configurationJson));

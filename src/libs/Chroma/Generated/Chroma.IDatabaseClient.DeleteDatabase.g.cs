@@ -15,7 +15,7 @@ namespace Chroma
         /// <remarks>
         /// chroma db delete my-db
         /// </remarks>
-        global::System.Threading.Tasks.Task<string> DeleteDatabaseAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.DeleteDatabaseResponse> DeleteDatabaseAsync(
             string tenant,
             string database,
             global::System.Threading.CancellationToken cancellationToken = default);

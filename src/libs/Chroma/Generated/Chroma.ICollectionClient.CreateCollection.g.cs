@@ -41,7 +41,7 @@ namespace Chroma
             string name,
             global::Chroma.OneOf<object, global::Chroma.CollectionConfiguration>? configuration = default,
             bool? getOrCreate = default,
-            object? metadata = default,
+            global::Chroma.OneOf<object, global::Chroma.HashMap>? metadata = default,
             global::Chroma.OneOf<object, global::Chroma.Schema3>? schema = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

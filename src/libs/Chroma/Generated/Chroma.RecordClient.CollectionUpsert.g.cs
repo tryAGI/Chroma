@@ -40,7 +40,7 @@ namespace Chroma
         /// <remarks>
         /// await collection.upsert({ ids: ['id1', 'id2'], embeddings: [[0.1, 0.2], [0.3, 0.4]], documents: ['doc1', 'doc2'] });
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<string> CollectionUpsertAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.UpsertCollectionRecordsResponse> CollectionUpsertAsync(
             string tenant,
             string database,
             string collectionId,
@@ -251,7 +251,9 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::Chroma.UpsertCollectionRecordsResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -274,13 +276,15 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::Chroma.UpsertCollectionRecordsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -327,14 +331,14 @@ namespace Chroma
         /// <param name="uris"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CollectionUpsertAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.UpsertCollectionRecordsResponse> CollectionUpsertAsync(
             string tenant,
             string database,
             string collectionId,
             global::Chroma.EmbeddingsPayload embeddings,
             global::System.Collections.Generic.IList<string> ids,
             global::System.Collections.Generic.IList<string>? documents = default,
-            global::System.Collections.Generic.IList<object>? metadatas = default,
+            global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? metadatas = default,
             global::System.Collections.Generic.IList<string>? uris = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

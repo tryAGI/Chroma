@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Chroma
@@ -21,7 +19,8 @@ namespace Chroma
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_metadata")]
-        public object? NewMetadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>))]
+        public global::Chroma.OneOf<object, global::Chroma.HashMap>? NewMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +45,7 @@ namespace Chroma
 #endif
         public UpdateCollectionPayload(
             global::Chroma.OneOf<object, global::Chroma.UpdateCollectionConfiguration>? newConfiguration,
-            object? newMetadata,
+            global::Chroma.OneOf<object, global::Chroma.HashMap>? newMetadata,
             string? newName)
         {
             this.NewConfiguration = newConfiguration;

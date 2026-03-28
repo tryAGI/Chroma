@@ -17,7 +17,7 @@ namespace Chroma
         /// <remarks>
         /// await collection.modify({ name: 'new_name', metadata: { key: 'value' } });
         /// </remarks>
-        global::System.Threading.Tasks.Task<string> UpdateCollectionAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.UpdateCollectionResponse> UpdateCollectionAsync(
             string tenant,
             string database,
             string collectionId,
@@ -36,12 +36,12 @@ namespace Chroma
         /// <param name="newName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> UpdateCollectionAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.UpdateCollectionResponse> UpdateCollectionAsync(
             string tenant,
             string database,
             string collectionId,
             global::Chroma.OneOf<object, global::Chroma.UpdateCollectionConfiguration>? newConfiguration = default,
-            object? newMetadata = default,
+            global::Chroma.OneOf<object, global::Chroma.HashMap>? newMetadata = default,
             string? newName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

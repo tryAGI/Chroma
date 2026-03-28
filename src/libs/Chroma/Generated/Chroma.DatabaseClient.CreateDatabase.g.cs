@@ -34,7 +34,7 @@ namespace Chroma
         /// <remarks>
         /// chroma db create my-new-db
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<string> CreateDatabaseAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.CreateDatabaseResponse> CreateDatabaseAsync(
             string tenant,
 
             global::Chroma.CreateDatabasePayload request,
@@ -201,7 +201,9 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::Chroma.CreateDatabaseResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -224,13 +226,15 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::Chroma.CreateDatabaseResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -269,7 +273,7 @@ namespace Chroma
         /// <param name="name"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> CreateDatabaseAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.CreateDatabaseResponse> CreateDatabaseAsync(
             string tenant,
             string name,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -11,7 +11,7 @@ namespace Chroma
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> CreateTenantAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.CreateTenantResponse> CreateTenantAsync(
 
             global::Chroma.CreateTenantPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -22,7 +22,7 @@ namespace Chroma
         /// <param name="name"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> CreateTenantAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.CreateTenantResponse> CreateTenantAsync(
             string name,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

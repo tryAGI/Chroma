@@ -40,7 +40,7 @@ namespace Chroma
         /// <remarks>
         /// await collection.modify({ name: 'new_name', metadata: { key: 'value' } });
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<string> UpdateCollectionAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.UpdateCollectionResponse> UpdateCollectionAsync(
             string tenant,
             string database,
             string collectionId,
@@ -251,7 +251,9 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::Chroma.UpdateCollectionResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -274,13 +276,15 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::Chroma.UpdateCollectionResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -323,12 +327,12 @@ namespace Chroma
         /// <param name="newName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> UpdateCollectionAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.UpdateCollectionResponse> UpdateCollectionAsync(
             string tenant,
             string database,
             string collectionId,
             global::Chroma.OneOf<object, global::Chroma.UpdateCollectionConfiguration>? newConfiguration = default,
-            object? newMetadata = default,
+            global::Chroma.OneOf<object, global::Chroma.HashMap>? newMetadata = default,
             string? newName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
