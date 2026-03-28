@@ -15,7 +15,7 @@ namespace Chroma
         /// <remarks>
         /// chroma db create my-new-db
         /// </remarks>
-        global::System.Threading.Tasks.Task<string> CreateDatabaseAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.CreateDatabaseResponse> CreateDatabaseAsync(
             string tenant,
 
             global::Chroma.CreateDatabasePayload request,
@@ -28,7 +28,7 @@ namespace Chroma
         /// <param name="name"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> CreateDatabaseAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.CreateDatabaseResponse> CreateDatabaseAsync(
             string tenant,
             string name,
             global::System.Threading.CancellationToken cancellationToken = default);

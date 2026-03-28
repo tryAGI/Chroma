@@ -16,7 +16,7 @@ namespace Chroma
         /// <remarks>
         /// await client.deleteCollection({ name: 'my_collection' });
         /// </remarks>
-        global::System.Threading.Tasks.Task<string> DeleteCollectionAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.DeleteCollectionResponse> DeleteCollectionAsync(
             string tenant,
             string database,
             string collectionId,

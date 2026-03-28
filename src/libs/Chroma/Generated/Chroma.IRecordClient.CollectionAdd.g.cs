@@ -17,7 +17,7 @@ namespace Chroma
         /// <remarks>
         /// await collection.add({ ids: ['id1', 'id2'], embeddings: [[0.1, 0.2], [0.3, 0.4]], documents: ['doc1', 'doc2'] });
         /// </remarks>
-        global::System.Threading.Tasks.Task<string> CollectionAddAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.AddCollectionRecordsResponse> CollectionAddAsync(
             string tenant,
             string database,
             string collectionId,
@@ -42,14 +42,14 @@ namespace Chroma
         /// <param name="uris"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> CollectionAddAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.AddCollectionRecordsResponse> CollectionAddAsync(
             string tenant,
             string database,
             string collectionId,
             global::Chroma.EmbeddingsPayload embeddings,
             global::System.Collections.Generic.IList<string> ids,
             global::System.Collections.Generic.IList<string>? documents = default,
-            global::System.Collections.Generic.IList<object>? metadatas = default,
+            global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? metadatas = default,
             global::System.Collections.Generic.IList<string>? uris = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

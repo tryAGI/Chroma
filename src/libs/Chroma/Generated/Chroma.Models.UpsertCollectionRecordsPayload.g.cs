@@ -37,7 +37,7 @@ namespace Chroma
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadatas")]
-        public global::System.Collections.Generic.IList<object>? Metadatas { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? Metadatas { get; set; }
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace Chroma
             global::Chroma.EmbeddingsPayload embeddings,
             global::System.Collections.Generic.IList<string> ids,
             global::System.Collections.Generic.IList<string>? documents,
-            global::System.Collections.Generic.IList<object>? metadatas,
+            global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? metadatas,
             global::System.Collections.Generic.IList<string>? uris)
         {
             this.Embeddings = embeddings;

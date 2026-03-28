@@ -34,7 +34,7 @@ namespace Chroma
         /// <remarks>
         /// chroma db delete my-db
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<string> DeleteDatabaseAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.DeleteDatabaseResponse> DeleteDatabaseAsync(
             string tenant,
             string database,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -230,7 +230,9 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return
+                        global::Chroma.DeleteDatabaseResponse.FromJson(__content, JsonSerializerContext) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -253,13 +255,15 @@ namespace Chroma
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __content = await __response.Content.ReadAsStringAsync(
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return
+                        await global::Chroma.DeleteDatabaseResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
                 {
