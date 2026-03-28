@@ -2,6 +2,11 @@
 set -euo pipefail
 
 # OpenAPI spec: fetched from running Chroma server's /openapi.json endpoint
+# Environment variables:
+#   CHROMA_OPENAPI_HOST — Chroma server hostname (default: localhost)
+#   CHROMA_OPENAPI_PORT — Chroma server port (default: 8000)
+#   CHROMA_OPENAPI_URL  — Full spec URL override (default: http://{host}:{port}/openapi.json)
+# If CHROMA_OPENAPI_URL is unset, the script starts a temporary Chroma server via pip.
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "${script_dir}"
