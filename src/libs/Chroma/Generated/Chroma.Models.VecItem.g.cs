@@ -88,14 +88,14 @@ namespace Chroma
         /// </summary>
         /// <param name="configurationJson"></param>
         /// <param name="database"></param>
-        /// <param name="dimension"></param>
         /// <param name="id"></param>
         /// <param name="logPosition"></param>
-        /// <param name="metadata"></param>
         /// <param name="name"></param>
-        /// <param name="schema"></param>
         /// <param name="tenant"></param>
         /// <param name="version"></param>
+        /// <param name="dimension"></param>
+        /// <param name="metadata"></param>
+        /// <param name="schema"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -113,14 +113,14 @@ namespace Chroma
         {
             this.ConfigurationJson = configurationJson ?? throw new global::System.ArgumentNullException(nameof(configurationJson));
             this.Database = database ?? throw new global::System.ArgumentNullException(nameof(database));
+            this.Dimension = dimension;
             this.Id = id;
             this.LogPosition = logPosition;
+            this.Metadata = metadata;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Schema = schema;
             this.Tenant = tenant ?? throw new global::System.ArgumentNullException(nameof(tenant));
             this.Version = version;
-            this.Dimension = dimension;
-            this.Metadata = metadata;
-            this.Schema = schema;
         }
 
         /// <summary>

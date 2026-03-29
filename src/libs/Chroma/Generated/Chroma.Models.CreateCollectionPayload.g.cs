@@ -51,10 +51,10 @@ namespace Chroma
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateCollectionPayload" /> class.
         /// </summary>
+        /// <param name="name"></param>
         /// <param name="configuration"></param>
         /// <param name="getOrCreate"></param>
         /// <param name="metadata"></param>
-        /// <param name="name"></param>
         /// <param name="schema"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,10 +66,10 @@ namespace Chroma
             global::Chroma.OneOf<object, global::Chroma.HashMap>? metadata,
             global::Chroma.OneOf<object, global::Chroma.Schema3>? schema)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Configuration = configuration;
             this.GetOrCreate = getOrCreate;
             this.Metadata = metadata;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Schema = schema;
         }
 

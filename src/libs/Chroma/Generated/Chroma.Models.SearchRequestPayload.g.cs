@@ -31,10 +31,10 @@ namespace Chroma
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchRequestPayload" /> class.
         /// </summary>
+        /// <param name="searches"></param>
         /// <param name="readLevel">
         /// Specifies whether to include unindexed data in the search results.
         /// </param>
-        /// <param name="searches"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace Chroma
             global::System.Collections.Generic.IList<global::Chroma.SearchPayload> searches,
             global::Chroma.ReadLevel? readLevel)
         {
-            this.Searches = searches ?? throw new global::System.ArgumentNullException(nameof(searches));
             this.ReadLevel = readLevel;
+            this.Searches = searches ?? throw new global::System.ArgumentNullException(nameof(searches));
         }
 
         /// <summary>
