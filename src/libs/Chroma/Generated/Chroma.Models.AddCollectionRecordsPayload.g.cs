@@ -53,13 +53,13 @@ namespace Chroma
         /// <summary>
         /// Initializes a new instance of the <see cref="AddCollectionRecordsPayload" /> class.
         /// </summary>
-        /// <param name="documents"></param>
         /// <param name="embeddings">
         /// Embeddings for each record. Can contain the raw f32 arrays or base64 encoded strings.
         /// </param>
         /// <param name="ids">
         /// Unique identifiers for each record.
         /// </param>
+        /// <param name="documents"></param>
         /// <param name="metadatas"></param>
         /// <param name="uris"></param>
 #if NET7_0_OR_GREATER
@@ -72,9 +72,9 @@ namespace Chroma
             global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? metadatas,
             global::System.Collections.Generic.IList<string>? uris)
         {
+            this.Documents = documents;
             this.Embeddings = embeddings;
             this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
-            this.Documents = documents;
             this.Metadatas = metadatas;
             this.Uris = uris;
         }

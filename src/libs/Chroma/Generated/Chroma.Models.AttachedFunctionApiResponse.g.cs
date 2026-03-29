@@ -117,12 +117,12 @@ namespace Chroma
         /// <param name="outputCollection">
         /// Name of target collection where attached function output is stored
         /// </param>
+        /// <param name="tenantId">
+        /// Tenant name this attached function belongs to
+        /// </param>
         /// <param name="outputCollectionId"></param>
         /// <param name="params">
         /// Optional JSON parameters for the function
-        /// </param>
-        /// <param name="tenantId">
-        /// Tenant name this attached function belongs to
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -148,9 +148,9 @@ namespace Chroma
             this.MinRecordsForInvocation = minRecordsForInvocation;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OutputCollection = outputCollection ?? throw new global::System.ArgumentNullException(nameof(outputCollection));
-            this.TenantId = tenantId ?? throw new global::System.ArgumentNullException(nameof(tenantId));
             this.OutputCollectionId = outputCollectionId;
             this.Params = @params;
+            this.TenantId = tenantId ?? throw new global::System.ArgumentNullException(nameof(tenantId));
         }
 
         /// <summary>

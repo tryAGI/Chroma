@@ -43,11 +43,11 @@ namespace Chroma
         /// <param name="indices">
         /// Dimension indices
         /// </param>
-        /// <param name="tokens">
-        /// Tokens corresponding to each index
-        /// </param>
         /// <param name="values">
         /// Values corresponding to each index
+        /// </param>
+        /// <param name="tokens">
+        /// Tokens corresponding to each index
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,8 +58,8 @@ namespace Chroma
             global::System.Collections.Generic.IList<string>? tokens)
         {
             this.Indices = indices ?? throw new global::System.ArgumentNullException(nameof(indices));
-            this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));
             this.Tokens = tokens;
+            this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));
         }
 
         /// <summary>

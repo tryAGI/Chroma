@@ -45,15 +45,15 @@ namespace Chroma
         /// <summary>
         /// Initializes a new instance of the <see cref="Schema3" /> class.
         /// </summary>
-        /// <param name="cmek">
-        /// Customer-managed encryption key for collection data
-        /// </param>
         /// <param name="defaults">
         /// Default index configurations for each value type
         /// </param>
         /// <param name="keys">
         /// Key-specific index overrides<br/>
         /// TODO(Sanket): Needed for backwards compatibility. Should remove after deploy.
+        /// </param>
+        /// <param name="cmek">
+        /// Customer-managed encryption key for collection data
         /// </param>
         /// <param name="sourceAttachedFunctionId">
         /// ID of the attached function that created this output collection (if applicable)
@@ -67,9 +67,9 @@ namespace Chroma
             object? cmek,
             string? sourceAttachedFunctionId)
         {
+            this.Cmek = cmek;
             this.Defaults = defaults ?? throw new global::System.ArgumentNullException(nameof(defaults));
             this.Keys = keys ?? throw new global::System.ArgumentNullException(nameof(keys));
-            this.Cmek = cmek;
             this.SourceAttachedFunctionId = sourceAttachedFunctionId;
         }
 

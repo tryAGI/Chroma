@@ -52,9 +52,9 @@ namespace Chroma
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCollectionRecordsPayload" /> class.
         /// </summary>
+        /// <param name="ids"></param>
         /// <param name="documents"></param>
         /// <param name="embeddings"></param>
-        /// <param name="ids"></param>
         /// <param name="metadatas"></param>
         /// <param name="uris"></param>
 #if NET7_0_OR_GREATER
@@ -67,9 +67,9 @@ namespace Chroma
             global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? metadatas,
             global::System.Collections.Generic.IList<string>? uris)
         {
-            this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
             this.Documents = documents;
             this.Embeddings = embeddings;
+            this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
             this.Metadatas = metadatas;
             this.Uris = uris;
         }

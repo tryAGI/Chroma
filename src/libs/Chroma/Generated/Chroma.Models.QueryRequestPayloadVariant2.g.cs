@@ -42,10 +42,10 @@ namespace Chroma
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryRequestPayloadVariant2" /> class.
         /// </summary>
+        /// <param name="queryEmbeddings"></param>
         /// <param name="ids"></param>
         /// <param name="include"></param>
         /// <param name="nResults"></param>
-        /// <param name="queryEmbeddings"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -55,10 +55,10 @@ namespace Chroma
             global::System.Collections.Generic.IList<global::Chroma.Include>? include,
             int? nResults)
         {
-            this.QueryEmbeddings = queryEmbeddings ?? throw new global::System.ArgumentNullException(nameof(queryEmbeddings));
             this.Ids = ids;
             this.Include = include;
             this.NResults = nResults;
+            this.QueryEmbeddings = queryEmbeddings ?? throw new global::System.ArgumentNullException(nameof(queryEmbeddings));
         }
 
         /// <summary>
