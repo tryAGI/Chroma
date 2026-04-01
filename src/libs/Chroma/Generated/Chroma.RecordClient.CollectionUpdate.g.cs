@@ -259,7 +259,6 @@ namespace Chroma
             global::System.Collections.Generic.IList<string>? uris = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Chroma.UpdateCollectionRecordsPayload
             {
                 Documents = documents,

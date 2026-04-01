@@ -297,7 +297,6 @@ namespace Chroma
             object? @params = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Chroma.AttachFunctionRequest
             {
                 FunctionId = functionId,

@@ -351,7 +351,6 @@ namespace Chroma
             string resourceName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Chroma.UpdateTenantPayload
             {
                 ResourceName = resourceName,

@@ -294,7 +294,6 @@ namespace Chroma
             global::Chroma.OneOf<object, global::Chroma.Schema3>? schema = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Chroma.CreateCollectionPayload
             {
                 Configuration = configuration,
