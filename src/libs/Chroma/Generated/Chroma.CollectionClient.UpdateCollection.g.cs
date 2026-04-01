@@ -336,6 +336,7 @@ namespace Chroma
             string? newName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Chroma.UpdateCollectionPayload
             {
                 NewConfiguration = newConfiguration,

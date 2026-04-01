@@ -337,6 +337,7 @@ namespace Chroma
             global::Chroma.ReadLevel? readLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Chroma.SearchRequestPayload
             {
                 ReadLevel = readLevel,
