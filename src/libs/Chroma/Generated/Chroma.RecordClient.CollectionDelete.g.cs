@@ -328,7 +328,6 @@ namespace Chroma
             string collectionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Chroma.DeleteCollectionRecordsPayload
             {
             };
