@@ -39,8 +39,8 @@ namespace Chroma.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Chroma.RawWhereFields? value1 = default;
-            global::Chroma.GetRequestPayloadVariant2? value2 = default;
+            global::Chroma.RawWhereFields? rawWhereFields = default;
+            global::Chroma.GetRequestPayloadVariant2? getRequestPayloadVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -49,7 +49,7 @@ namespace Chroma.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.RawWhereFields> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.RawWhereFields).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        rawWhereFields = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -64,7 +64,7 @@ namespace Chroma.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.GetRequestPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.GetRequestPayloadVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.GetRequestPayloadVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        getRequestPayloadVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -75,13 +75,13 @@ namespace Chroma.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (rawWhereFields == null && getRequestPayloadVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.RawWhereFields> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.RawWhereFields).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    rawWhereFields = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -94,7 +94,7 @@ namespace Chroma.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.GetRequestPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.GetRequestPayloadVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.GetRequestPayloadVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    getRequestPayloadVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -105,9 +105,9 @@ namespace Chroma.JsonConverters
             }
 
             var __value = new global::Chroma.GetRequestPayload(
-                value1,
+                rawWhereFields,
 
-                value2
+                getRequestPayloadVariant2
                 );
 
             return __value;
@@ -122,17 +122,17 @@ namespace Chroma.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsRawWhereFields)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.RawWhereFields?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.RawWhereFields).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RawWhereFields!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsGetRequestPayloadVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.GetRequestPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.GetRequestPayloadVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.GetRequestPayloadVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GetRequestPayloadVariant2!, typeInfo);
             }
         }
     }
