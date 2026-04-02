@@ -37,8 +37,8 @@ namespace Chroma.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Chroma.RawWhereFields? value1 = default;
-            global::Chroma.DeleteCollectionRecordsPayloadVariant2? value2 = default;
+            global::Chroma.RawWhereFields? rawWhereFields = default;
+            global::Chroma.DeleteCollectionRecordsPayloadVariant2? deleteCollectionRecordsPayloadVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -47,7 +47,7 @@ namespace Chroma.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.RawWhereFields> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.RawWhereFields).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        rawWhereFields = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -62,7 +62,7 @@ namespace Chroma.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.DeleteCollectionRecordsPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.DeleteCollectionRecordsPayloadVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.DeleteCollectionRecordsPayloadVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        deleteCollectionRecordsPayloadVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -73,13 +73,13 @@ namespace Chroma.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (rawWhereFields == null && deleteCollectionRecordsPayloadVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.RawWhereFields> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.RawWhereFields).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    rawWhereFields = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -92,7 +92,7 @@ namespace Chroma.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.DeleteCollectionRecordsPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.DeleteCollectionRecordsPayloadVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.DeleteCollectionRecordsPayloadVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    deleteCollectionRecordsPayloadVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -103,9 +103,9 @@ namespace Chroma.JsonConverters
             }
 
             var __value = new global::Chroma.DeleteCollectionRecordsPayload(
-                value1,
+                rawWhereFields,
 
-                value2
+                deleteCollectionRecordsPayloadVariant2
                 );
 
             return __value;
@@ -120,17 +120,17 @@ namespace Chroma.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsRawWhereFields)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.RawWhereFields?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.RawWhereFields).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RawWhereFields!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsDeleteCollectionRecordsPayloadVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.DeleteCollectionRecordsPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.DeleteCollectionRecordsPayloadVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.DeleteCollectionRecordsPayloadVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteCollectionRecordsPayloadVariant2!, typeInfo);
             }
         }
     }
