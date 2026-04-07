@@ -232,6 +232,7 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.FloatValueType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.FloatInvertedIndexType>), TypeInfoPropertyName = "OneOfObjectFloatInvertedIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.ForkCollectionPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.ForkCountResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.FtsIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.FtsIndexType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.GetAttachedFunctionResponse))]
