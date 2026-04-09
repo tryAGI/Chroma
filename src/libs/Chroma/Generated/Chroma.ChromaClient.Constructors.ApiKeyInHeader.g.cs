@@ -6,6 +6,7 @@ namespace Chroma
     public sealed partial class ChromaClient
     {
         /// <inheritdoc cref="ChromaClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Chroma.EndPointAuthorization}?, bool)"/>
+
         public ChromaClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

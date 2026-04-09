@@ -5,6 +5,25 @@ namespace Chroma
 {
     public partial class TenantClient
     {
+
+
+        private static readonly global::Chroma.EndPointSecurityRequirement s_UpdateTenantSecurityRequirement0 =
+            new global::Chroma.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Chroma.EndPointAuthorizationRequirement[]
+                {                    new global::Chroma.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-chroma-token",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Chroma.EndPointSecurityRequirement[] s_UpdateTenantSecurityRequirements =
+            new global::Chroma.EndPointSecurityRequirement[]
+            {                s_UpdateTenantSecurityRequirement0,
+            };
         partial void PrepareUpdateTenantArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string tenantName,
@@ -46,9 +65,15 @@ namespace Chroma
                 tenantName: ref tenantName,
                 request: request);
 
+
+            var __authorizations = global::Chroma.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpdateTenantSecurityRequirements,
+                operationName: "UpdateTenantAsync");
+
             var __pathBuilder = new global::Chroma.PathBuilder(
                 path: $"/api/v2/tenants/{tenantName}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
@@ -58,7 +83,7 @@ namespace Chroma
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
