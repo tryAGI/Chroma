@@ -5,6 +5,25 @@ namespace Chroma
 {
     public partial class FunctionClient
     {
+
+
+        private static readonly global::Chroma.EndPointSecurityRequirement s_GetAttachedFunctionSecurityRequirement0 =
+            new global::Chroma.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Chroma.EndPointAuthorizationRequirement[]
+                {                    new global::Chroma.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-chroma-token",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Chroma.EndPointSecurityRequirement[] s_GetAttachedFunctionSecurityRequirements =
+            new global::Chroma.EndPointSecurityRequirement[]
+            {                s_GetAttachedFunctionSecurityRequirement0,
+            };
         partial void PrepareGetAttachedFunctionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string tenant,
@@ -53,9 +72,15 @@ namespace Chroma
                 collectionId: ref collectionId,
                 functionName: ref functionName);
 
+
+            var __authorizations = global::Chroma.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAttachedFunctionSecurityRequirements,
+                operationName: "GetAttachedFunctionAsync");
+
             var __pathBuilder = new global::Chroma.PathBuilder(
                 path: $"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/functions/{functionName}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -65,7 +90,7 @@ namespace Chroma
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
