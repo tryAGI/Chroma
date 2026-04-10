@@ -26,6 +26,7 @@ namespace Chroma
             Authorizations.Add(new global::Chroma.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApiKeyAuth",
                 Location = "Header",
                 Name = "x-chroma-token",
                 Value = apiKey,

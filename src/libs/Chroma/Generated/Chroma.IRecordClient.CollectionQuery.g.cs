@@ -14,6 +14,7 @@ namespace Chroma
         /// <param name="limit"></param>
         /// <param name="offset"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
         /// <remarks>
@@ -27,6 +28,7 @@ namespace Chroma
             global::Chroma.QueryRequestPayload request,
             int? limit = default,
             int? offset = default,
+            global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query collection<br/>
@@ -37,6 +39,7 @@ namespace Chroma
         /// <param name="collectionId"></param>
         /// <param name="limit"></param>
         /// <param name="offset"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.QueryResponse> CollectionQueryAsync(
@@ -45,6 +48,7 @@ namespace Chroma
             string collectionId,
             int? limit = default,
             int? offset = default,
+            global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
