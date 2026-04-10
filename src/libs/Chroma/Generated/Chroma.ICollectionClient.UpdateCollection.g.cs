@@ -12,6 +12,7 @@ namespace Chroma
         /// <param name="database"></param>
         /// <param name="collectionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
         /// <remarks>
@@ -23,6 +24,7 @@ namespace Chroma
             string collectionId,
 
             global::Chroma.UpdateCollectionPayload request,
+            global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update collection<br/>
@@ -34,6 +36,7 @@ namespace Chroma
         /// <param name="newConfiguration"></param>
         /// <param name="newMetadata"></param>
         /// <param name="newName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Chroma.UpdateCollectionResponse> UpdateCollectionAsync(
@@ -43,6 +46,7 @@ namespace Chroma
             global::Chroma.OneOf<object, global::Chroma.UpdateCollectionConfiguration>? newConfiguration = default,
             global::Chroma.OneOf<object, global::Chroma.HashMap>? newMetadata = default,
             string? newName = default,
+            global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
