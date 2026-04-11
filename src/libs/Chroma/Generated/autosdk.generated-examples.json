@@ -1,0 +1,268 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Get number of collections",
+      "Slug": "count-collections",
+      "Description": "Returns the total number of collections in a database.",
+      "Language": "http",
+      "Code": "### Get number of collections\n# @name count_collections\nGET {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections_count\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Count of collections\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "count_collections",
+      "Setup": null
+    },
+    {
+      "Order": 2,
+      "Title": "Create collection",
+      "Slug": "create-collection",
+      "Description": "Creates a new collection in a database.",
+      "Language": "http",
+      "Code": "### Create collection\n# @name create_collection\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022configuration\u0022: null,\n  \u0022get_or_create\u0022: false,\n  \u0022metadata\u0022: {\n    \u0022key\u0022: \u0022value\u0022\n  },\n  \u0022name\u0022: \u0022my_collection\u0022,\n  \u0022schema\u0022: null\n}\n\n## Responses\n# 200\n# Description: Collection created successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "create_collection",
+      "Setup": null
+    },
+    {
+      "Order": 3,
+      "Title": "Delete collection",
+      "Slug": "delete-collection",
+      "Description": "Deletes a collection in a database.",
+      "Language": "http",
+      "Code": "### Delete collection\n# @name delete_collection\nDELETE {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Collection deleted successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "delete_collection",
+      "Setup": null
+    },
+    {
+      "Order": 4,
+      "Title": "Fork collection",
+      "Slug": "fork-collection",
+      "Description": "Creates a fork of an existing collection.",
+      "Language": "http",
+      "Code": "### Fork collection\n# @name fork_collection\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/fork\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022new_name\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Collection forked successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "fork_collection",
+      "Setup": null
+    },
+    {
+      "Order": 5,
+      "Title": "Get fork count",
+      "Slug": "fork-count",
+      "Description": "Returns the number of forks for a collection.",
+      "Language": "http",
+      "Code": "### Get fork count\n# @name fork_count\nGET {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/fork_count\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Fork count retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "fork_count",
+      "Setup": null
+    },
+    {
+      "Order": 6,
+      "Title": "Get collection",
+      "Slug": "get-collection",
+      "Description": "Returns a collection by ID or name.",
+      "Language": "http",
+      "Code": "### Get collection\n# @name get_collection\nGET {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Collection found\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "get_collection",
+      "Setup": null
+    },
+    {
+      "Order": 7,
+      "Title": "List collections",
+      "Slug": "list-collections",
+      "Description": "Lists all collections in a database.",
+      "Language": "http",
+      "Code": "### List collections\n# @name list_collections\nGET {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections?limit=10\u0026offset=0\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: List of collections\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "list_collections",
+      "Setup": null
+    },
+    {
+      "Order": 8,
+      "Title": "Update collection",
+      "Slug": "update-collection",
+      "Description": "Updates an existing collection\u0027s name or metadata.",
+      "Language": "http",
+      "Code": "### Update collection\n# @name update_collection\nPUT {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022new_configuration\u0022: null,\n  \u0022new_metadata\u0022: {\n    \u0022key\u0022: \u0022value\u0022\n  },\n  \u0022new_name\u0022: \u0022updated_collection_name\u0022\n}\n\n## Responses\n# 200\n# Description: Collection updated successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "update_collection",
+      "Setup": null
+    },
+    {
+      "Order": 9,
+      "Title": "Delete database",
+      "Slug": "delete-database",
+      "Description": "Deletes a database by name.",
+      "Language": "http",
+      "Code": "### Delete database\n# @name delete_database\nDELETE {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Database deleted successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Database not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "delete_database",
+      "Setup": null
+    },
+    {
+      "Order": 10,
+      "Title": "Get database",
+      "Slug": "get-database",
+      "Description": "Returns a database by name.",
+      "Language": "http",
+      "Code": "### Get database\n# @name get_database\nGET {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Database retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Database not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "get_database",
+      "Setup": null
+    },
+    {
+      "Order": 11,
+      "Title": "List databases",
+      "Slug": "list-databases",
+      "Description": "Lists all databases for a tenant.",
+      "Language": "csharp",
+      "Code": "using var client = new ChromaClient(apiKey);\n\nvar response = await client.Database.ListDatabasesAsync(\n    tenant: \u00221e30d217-3d78-4f8c-b244-79381dc6a254\u0022,\n    limit: 10,\n    offset: 0\n);",
+      "Format": "sdk",
+      "OperationId": "list_databases",
+      "Setup": "This example assumes \u0060using Chroma;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 12,
+      "Title": "Attach function",
+      "Slug": "attach-function",
+      "Description": "Attaches a function to a collection.",
+      "Language": "http",
+      "Code": "### Attach function\n# @name attach_function\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/functions/attach\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022function_id\u0022: \u00221e30d217-3d78-4f8c-b244-79381dc6a254\u0022,\n  \u0022name\u0022: \u0022my_function\u0022,\n  \u0022output_collection\u0022: \u0022output_collection_name\u0022,\n  \u0022params\u0022: {}\n}\n\n## Responses\n# 200\n# Description:  Function attached successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "attach_function",
+      "Setup": null
+    },
+    {
+      "Order": 13,
+      "Title": "Detach function",
+      "Slug": "detach-function",
+      "Description": "Detaches a function from a collection.",
+      "Language": "http",
+      "Code": "### Detach function\n# @name detach_function\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/attached_functions/{{name}}/detach\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022delete_output\u0022: true\n}\n\n## Responses\n# 200\n# Description: Function detached successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "detach_function",
+      "Setup": null
+    },
+    {
+      "Order": 14,
+      "Title": "Get attached function",
+      "Slug": "get-attached-function",
+      "Description": "Returns an attached function by name.",
+      "Language": "http",
+      "Code": "### Get attached function\n# @name get_attached_function\nGET {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/functions/{{function_name}}\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Attached function retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Attached function not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "get_attached_function",
+      "Setup": null
+    },
+    {
+      "Order": 15,
+      "Title": "Add records",
+      "Slug": "collection-add",
+      "Description": "Adds records to a collection.",
+      "Language": "http",
+      "Code": "### Add records\n# @name collection_add\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/add\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022documents\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022embeddings\u0022: [\n    [\n      0\n    ]\n  ],\n  \u0022ids\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022metadatas\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022uris\u0022: [\n    \u0022string\u0022\n  ]\n}\n\n## Responses\n# 201\n# Description: Collection added successfully\n# Content-Type: application/json\n# 400\n# Description: Invalid data for collection addition",
+      "Format": "http",
+      "OperationId": "collection_add",
+      "Setup": null
+    },
+    {
+      "Order": 16,
+      "Title": "Get number of records",
+      "Slug": "collection-count",
+      "Description": "Returns the number of records in a collection.",
+      "Language": "http",
+      "Code": "### Get number of records\n# @name collection_count\nGET {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/count?read_level=index_and_wal\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Number of records in the collection\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "collection_count",
+      "Setup": null
+    },
+    {
+      "Order": 17,
+      "Title": "Delete records",
+      "Slug": "collection-delete",
+      "Description": "Deletes records in a collection. Can filter by IDs or metadata.",
+      "Language": "http",
+      "Code": "### Delete records\n# @name collection_delete\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/delete\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022where\u0022: \u0022string\u0022,\n  \u0022where_document\u0022: \u0022string\u0022,\n  \u0022ids\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022limit\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Records deleted successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "collection_delete",
+      "Setup": null
+    },
+    {
+      "Order": 18,
+      "Title": "Get records",
+      "Slug": "collection-get",
+      "Description": "Returns records from a collection by ID or metadata filter.",
+      "Language": "http",
+      "Code": "### Get records\n# @name collection_get\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/get\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022where\u0022: \u0022string\u0022,\n  \u0022where_document\u0022: \u0022string\u0022,\n  \u0022ids\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022include\u0022: [\n    \u0022distances\u0022\n  ],\n  \u0022limit\u0022: 0,\n  \u0022offset\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Records retrieved from the collection\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "collection_get",
+      "Setup": null
+    },
+    {
+      "Order": 19,
+      "Title": "Query collection",
+      "Slug": "collection-query",
+      "Description": "Queries a collection using dense vector search with metadata and full-text search filtering.",
+      "Language": "http",
+      "Code": "### Query collection\n# @name collection_query\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/query?limit=10\u0026offset=0\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022include\u0022: [\n    \u0022documents\u0022,\n    \u0022metadatas\u0022,\n    \u0022distances\u0022\n  ],\n  \u0022n_results\u0022: 10,\n  \u0022query_embeddings\u0022: [\n    [\n      0.1,\n      0.2,\n      0.3\n    ]\n  ]\n}\n\n## Responses\n# 200\n# Description: Records matching the query\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "collection_query",
+      "Setup": null
+    },
+    {
+      "Order": 20,
+      "Title": "Search records",
+      "Slug": "collection-search",
+      "Description": "Searches records from a collection with dense, sparse, or hybrid vector search.",
+      "Language": "http",
+      "Code": "### Search records\n# @name collection_search\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/search\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022read_level\u0022: \u0022IndexAndWal\u0022,\n  \u0022searches\u0022: [\n    {\n      \u0022n_results\u0022: 10,\n      \u0022query_embeddings\u0022: [\n        [\n          0.1,\n          0.2,\n          0.3\n        ]\n      ]\n    }\n  ]\n}\n\n## Responses\n# 200\n# Description: Records searched from the collection\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "collection_search",
+      "Setup": null
+    },
+    {
+      "Order": 21,
+      "Title": "Update records",
+      "Slug": "collection-update",
+      "Description": "Updates records in a collection by ID.",
+      "Language": "http",
+      "Code": "### Update records\n# @name collection_update\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/update\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022documents\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022embeddings\u0022: \u0022string\u0022,\n  \u0022ids\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022metadatas\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022uris\u0022: [\n    \u0022string\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: Collection updated successfully\n# Content-Type: application/json\n# 404\n# Description: Collection not found",
+      "Format": "http",
+      "OperationId": "collection_update",
+      "Setup": null
+    },
+    {
+      "Order": 22,
+      "Title": "Upsert records",
+      "Slug": "collection-upsert",
+      "Description": "Upserts records in a collection (create if not exists, otherwise update).",
+      "Language": "http",
+      "Code": "### Upsert records\n# @name collection_upsert\nPOST {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/upsert\nx-chroma-token: {{api_key}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022documents\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022embeddings\u0022: [\n    [\n      0\n    ]\n  ],\n  \u0022ids\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022metadatas\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022uris\u0022: [\n    \u0022string\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: Records upserted successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "collection_upsert",
+      "Setup": null
+    },
+    {
+      "Order": 23,
+      "Title": "Get indexing status",
+      "Slug": "indexing-status",
+      "Description": "Returns the indexing status of a collection.",
+      "Language": "http",
+      "Code": "### Get indexing status\n# @name indexing_status\nGET {{host}}/api/v2/tenants/{{tenant}}/databases/{{database}}/collections/{{collection_id}}/indexing_status\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Index status retrieved successfully\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Collection not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "indexing_status",
+      "Setup": null
+    },
+    {
+      "Order": 24,
+      "Title": "Get tenant",
+      "Slug": "get-tenant",
+      "Description": "Returns an existing tenant by name.",
+      "Language": "http",
+      "Code": "### Get tenant\n# @name get_tenant\nGET {{host}}/api/v2/tenants/{{tenant_name}}\nx-chroma-token: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Tenant found\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 404\n# Description: Tenant not found\n# Content-Type: application/json\n# 500\n# Description: Server error\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "get_tenant",
+      "Setup": null
+    }
+  ]
+}
