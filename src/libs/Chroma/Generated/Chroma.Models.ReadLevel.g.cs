@@ -11,6 +11,10 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        IndexAndBoundedWal,
+        /// <summary>
+        /// 
+        /// </summary>
         IndexAndWal,
         /// <summary>
         /// 
@@ -30,6 +34,7 @@ namespace Chroma
         {
             return value switch
             {
+                ReadLevel.IndexAndBoundedWal => "index_and_bounded_wal",
                 ReadLevel.IndexAndWal => "index_and_wal",
                 ReadLevel.IndexOnly => "index_only",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace Chroma
         {
             return value switch
             {
+                "index_and_bounded_wal" => ReadLevel.IndexAndBoundedWal,
                 "index_and_wal" => ReadLevel.IndexAndWal,
                 "index_only" => ReadLevel.IndexOnly,
                 _ => null,
