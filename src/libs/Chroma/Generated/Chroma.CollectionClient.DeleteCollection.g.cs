@@ -138,9 +138,9 @@ namespace Chroma
                 PrepareDeleteCollectionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database,
-                    collectionId: collectionId);
+                    tenant: tenant!,
+                    database: database!,
+                    collectionId: collectionId!);
 
                 return __httpRequest;
             }

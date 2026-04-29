@@ -130,8 +130,8 @@ namespace Chroma
                 PrepareGetDatabaseRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database);
+                    tenant: tenant!,
+                    database: database!);
 
                 return __httpRequest;
             }

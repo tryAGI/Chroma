@@ -133,8 +133,8 @@ namespace Chroma
                 PrepareCountCollectionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database);
+                    tenant: tenant!,
+                    database: database!);
 
                 return __httpRequest;
             }

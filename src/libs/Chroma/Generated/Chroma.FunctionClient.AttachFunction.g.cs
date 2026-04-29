@@ -149,9 +149,9 @@ namespace Chroma
                 PrepareAttachFunctionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database,
-                    collectionId: collectionId,
+                    tenant: tenant!,
+                    database: database!,
+                    collectionId: collectionId!,
                     request: request);
 
                 return __httpRequest;

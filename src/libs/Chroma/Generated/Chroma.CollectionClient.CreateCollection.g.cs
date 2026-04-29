@@ -147,8 +147,8 @@ namespace Chroma
                 PrepareCreateCollectionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database,
+                    tenant: tenant!,
+                    database: database!,
                     request: request);
 
                 return __httpRequest;

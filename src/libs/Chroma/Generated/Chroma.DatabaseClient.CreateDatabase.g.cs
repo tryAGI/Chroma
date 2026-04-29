@@ -142,7 +142,7 @@ namespace Chroma
                 PrepareCreateDatabaseRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
+                    tenant: tenant!,
                     request: request);
 
                 return __httpRequest;
