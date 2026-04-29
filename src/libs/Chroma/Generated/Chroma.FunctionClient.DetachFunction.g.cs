@@ -154,10 +154,10 @@ namespace Chroma
                 PrepareDetachFunctionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database,
-                    collectionId: collectionId,
-                    name: name,
+                    tenant: tenant!,
+                    database: database!,
+                    collectionId: collectionId!,
+                    name: name!,
                     request: request);
 
                 return __httpRequest;

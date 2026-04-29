@@ -142,7 +142,7 @@ namespace Chroma
                 PrepareListDatabasesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
+                    tenant: tenant!,
                     limit: limit,
                     offset: offset);
 

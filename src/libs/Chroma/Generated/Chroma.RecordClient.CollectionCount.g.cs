@@ -146,9 +146,9 @@ namespace Chroma
                 PrepareCollectionCountRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database,
-                    collectionId: collectionId,
+                    tenant: tenant!,
+                    database: database!,
+                    collectionId: collectionId!,
                     readLevel: readLevel);
 
                 return __httpRequest;

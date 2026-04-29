@@ -139,7 +139,7 @@ namespace Chroma
                 PrepareUpdateTenantRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenantName: tenantName,
+                    tenantName: tenantName!,
                     request: request);
 
                 return __httpRequest;

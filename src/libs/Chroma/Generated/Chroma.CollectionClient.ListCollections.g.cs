@@ -147,8 +147,8 @@ namespace Chroma
                 PrepareListCollectionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database,
+                    tenant: tenant!,
+                    database: database!,
                     limit: limit,
                     offset: offset);
 

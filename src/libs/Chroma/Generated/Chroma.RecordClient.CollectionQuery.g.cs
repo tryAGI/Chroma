@@ -164,9 +164,9 @@ namespace Chroma
                 PrepareCollectionQueryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database,
-                    collectionId: collectionId,
+                    tenant: tenant!,
+                    database: database!,
+                    collectionId: collectionId!,
                     limit: limit,
                     offset: offset,
                     request: request);

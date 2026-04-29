@@ -125,7 +125,7 @@ namespace Chroma
                 PrepareGetTenantRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenantName: tenantName);
+                    tenantName: tenantName!);
 
                 return __httpRequest;
             }

@@ -140,10 +140,10 @@ namespace Chroma
                 PrepareGetAttachedFunctionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant,
-                    database: database,
-                    collectionId: collectionId,
-                    functionName: functionName);
+                    tenant: tenant!,
+                    database: database!,
+                    collectionId: collectionId!,
+                    functionName: functionName!);
 
                 return __httpRequest;
             }
