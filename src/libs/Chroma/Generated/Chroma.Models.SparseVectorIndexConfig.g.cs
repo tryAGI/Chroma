@@ -9,6 +9,16 @@ namespace Chroma
     public sealed partial class SparseVectorIndexConfig
     {
         /// <summary>
+        /// Sparse index algorithm (cloud-only, tenant-gated).<br/>
+        /// Omitted from JSON when set to the default (Wand) so that old<br/>
+        /// servers/clients that do not know about this field can still<br/>
+        /// deserialize the schema.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("algorithm")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.SparseIndexAlgorithmJsonConverter))]
+        public global::Chroma.SparseIndexAlgorithm? Algorithm { get; set; }
+
+        /// <summary>
         /// Whether this embedding is BM25
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bm25")]
@@ -36,6 +46,12 @@ namespace Chroma
         /// <summary>
         /// Initializes a new instance of the <see cref="SparseVectorIndexConfig" /> class.
         /// </summary>
+        /// <param name="algorithm">
+        /// Sparse index algorithm (cloud-only, tenant-gated).<br/>
+        /// Omitted from JSON when set to the default (Wand) so that old<br/>
+        /// servers/clients that do not know about this field can still<br/>
+        /// deserialize the schema.
+        /// </param>
         /// <param name="bm25">
         /// Whether this embedding is BM25
         /// </param>
@@ -47,10 +63,12 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SparseVectorIndexConfig(
+            global::Chroma.SparseIndexAlgorithm? algorithm,
             bool? bm25,
             global::Chroma.OneOf<object, global::Chroma.EmbeddingFunctionConfiguration?>? embeddingFunction,
             string? sourceKey)
         {
+            this.Algorithm = algorithm;
             this.Bm25 = bm25;
             this.EmbeddingFunction = embeddingFunction;
             this.SourceKey = sourceKey;

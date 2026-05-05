@@ -57,6 +57,10 @@ namespace Chroma
 
             typeof(global::Chroma.JsonConverters.Space2NullableJsonConverter),
 
+            typeof(global::Chroma.JsonConverters.SparseIndexAlgorithmJsonConverter),
+
+            typeof(global::Chroma.JsonConverters.SparseIndexAlgorithmNullableJsonConverter),
+
             typeof(global::Chroma.JsonConverters.DeleteCollectionRecordsPayloadJsonConverter),
 
             typeof(global::Chroma.JsonConverters.EmbeddingFunctionConfigurationJsonConverter),
@@ -285,6 +289,7 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.Key>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.Key>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SpannIndexConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SparseIndexAlgorithm), TypeInfoPropertyName = "SparseIndexAlgorithm2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SparseVectorIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SparseVectorIndexType))]
