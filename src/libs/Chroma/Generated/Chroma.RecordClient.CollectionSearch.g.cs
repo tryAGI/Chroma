@@ -71,6 +71,42 @@ namespace Chroma
             global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CollectionSearchAsResponseAsync(
+                tenant: tenant,
+                database: database,
+                collectionId: collectionId,
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Search records<br/>
+        /// Searches records from a collection with dense, sparse, or hybrid vector search.
+        /// </summary>
+        /// <param name="tenant"></param>
+        /// <param name="database"></param>
+        /// <param name="collectionId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Chroma.ApiException"></exception>
+        /// <remarks>
+        /// import { Search, K, Knn } from 'chromadb';<br/>
+        /// const results = await collection.search(new Search().rank(Knn({ query: [0.1, 0.2, 0.3], limit: 10 })));
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::Chroma.AutoSDKHttpResponse<global::Chroma.SearchResponse>> CollectionSearchAsResponseAsync(
+            string tenant,
+            string database,
+            string collectionId,
+
+            global::Chroma.SearchRequestPayload request,
+            global::Chroma.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -104,6 +140,7 @@ namespace Chroma
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Chroma.PathBuilder(
                                 path: $"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/search",
                                 baseUri: HttpClient.BaseAddress);
@@ -186,6 +223,8 @@ namespace Chroma
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -196,6 +235,11 @@ namespace Chroma
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Chroma.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Chroma.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -213,6 +257,8 @@ namespace Chroma
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -222,8 +268,7 @@ namespace Chroma
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Chroma.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -232,6 +277,11 @@ namespace Chroma
                         __attempt < __maxAttempts &&
                         global::Chroma.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Chroma.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Chroma.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Chroma.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -248,14 +298,15 @@ namespace Chroma
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Chroma.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -295,6 +346,8 @@ namespace Chroma
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -315,6 +368,8 @@ namespace Chroma
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Unauthorized
@@ -453,9 +508,13 @@ namespace Chroma
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Chroma.SearchResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Chroma.SearchResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Chroma.AutoSDKHttpResponse<global::Chroma.SearchResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Chroma.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -483,9 +542,13 @@ namespace Chroma
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Chroma.SearchResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Chroma.SearchResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Chroma.AutoSDKHttpResponse<global::Chroma.SearchResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Chroma.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
