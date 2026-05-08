@@ -29,6 +29,19 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRawWhereFields(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.RawWhereFields? value)
+        {
+            value = RawWhereFields;
+            return IsRawWhereFields;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.QueryRequestPayloadVariant2? QueryRequestPayloadVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueryRequestPayloadVariant2))]
 #endif
         public bool IsQueryRequestPayloadVariant2 => QueryRequestPayloadVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQueryRequestPayloadVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.QueryRequestPayloadVariant2? value)
+        {
+            value = QueryRequestPayloadVariant2;
+            return IsQueryRequestPayloadVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Chroma
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Chroma.RawWhereFields?, TResult>? rawWhereFields = null,
-            global::System.Func<global::Chroma.QueryRequestPayloadVariant2?, TResult>? queryRequestPayloadVariant2 = null,
+            global::System.Func<global::Chroma.RawWhereFields, TResult>? rawWhereFields = null,
+            global::System.Func<global::Chroma.QueryRequestPayloadVariant2, TResult>? queryRequestPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Chroma
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Chroma.RawWhereFields?>? rawWhereFields = null,
-            global::System.Action<global::Chroma.QueryRequestPayloadVariant2?>? queryRequestPayloadVariant2 = null,
+            global::System.Action<global::Chroma.RawWhereFields>? rawWhereFields = null,
+
+            global::System.Action<global::Chroma.QueryRequestPayloadVariant2>? queryRequestPayloadVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRawWhereFields)
+            {
+                rawWhereFields?.Invoke(RawWhereFields!);
+            }
+            else if (IsQueryRequestPayloadVariant2)
+            {
+                queryRequestPayloadVariant2?.Invoke(QueryRequestPayloadVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Chroma.RawWhereFields>? rawWhereFields = null,
+            global::System.Action<global::Chroma.QueryRequestPayloadVariant2>? queryRequestPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
