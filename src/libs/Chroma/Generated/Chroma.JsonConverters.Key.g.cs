@@ -129,6 +129,7 @@ namespace Chroma.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.KeyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.KeyVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.KeyVariant1).Name}");
                     keyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -139,9 +140,13 @@ namespace Chroma.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keyVariant1 == null && keyVariant2 == null && keyVariant3 == null && keyVariant4 == null && keyVariant5 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.KeyVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.KeyVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.KeyVariant2).Name}");
                     keyVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -152,9 +157,13 @@ namespace Chroma.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keyVariant1 == null && keyVariant2 == null && keyVariant3 == null && keyVariant4 == null && keyVariant5 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.KeyVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.KeyVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.KeyVariant3).Name}");
                     keyVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -165,9 +174,13 @@ namespace Chroma.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keyVariant1 == null && keyVariant2 == null && keyVariant3 == null && keyVariant4 == null && keyVariant5 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.KeyVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.KeyVariant4> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.KeyVariant4).Name}");
                     keyVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -178,9 +191,13 @@ namespace Chroma.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keyVariant1 == null && keyVariant2 == null && keyVariant3 == null && keyVariant4 == null && keyVariant5 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.KeyVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.KeyVariant5> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.KeyVariant5).Name}");
                     keyVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
