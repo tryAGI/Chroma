@@ -49,5 +49,6 @@ namespace Chroma
         public GetTenantResponse()
         {
         }
+
     }
 }

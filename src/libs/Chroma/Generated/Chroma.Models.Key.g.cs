@@ -87,6 +87,13 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public global::Chroma.KeyVariant1 PickKeyVariant1() => IsKeyVariant1
+            ? KeyVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant2? KeyVariant2 { get; init; }
 #else
@@ -113,6 +120,13 @@ namespace Chroma
             value = KeyVariant2;
             return IsKeyVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.KeyVariant2 PickKeyVariant2() => IsKeyVariant2
+            ? KeyVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -147,6 +161,13 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public global::Chroma.KeyVariant3 PickKeyVariant3() => IsKeyVariant3
+            ? KeyVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant4? KeyVariant4 { get; init; }
 #else
@@ -177,6 +198,13 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public global::Chroma.KeyVariant4 PickKeyVariant4() => IsKeyVariant4
+            ? KeyVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant4' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant5? KeyVariant5 { get; init; }
 #else
@@ -203,6 +231,13 @@ namespace Chroma
             value = KeyVariant5;
             return IsKeyVariant5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.KeyVariant5 PickKeyVariant5() => IsKeyVariant5
+            ? KeyVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

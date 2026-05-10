@@ -43,6 +43,13 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public global::Chroma.RawWhereFields PickRawWhereFields() => IsRawWhereFields
+            ? RawWhereFields!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RawWhereFields' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.GetRequestPayloadVariant2? GetRequestPayloadVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace Chroma
             value = GetRequestPayloadVariant2;
             return IsGetRequestPayloadVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.GetRequestPayloadVariant2 PickGetRequestPayloadVariant2() => IsGetRequestPayloadVariant2
+            ? GetRequestPayloadVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GetRequestPayloadVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

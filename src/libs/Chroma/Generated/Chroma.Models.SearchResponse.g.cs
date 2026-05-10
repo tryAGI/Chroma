@@ -90,5 +90,6 @@ namespace Chroma
         public SearchResponse()
         {
         }
+
     }
 }

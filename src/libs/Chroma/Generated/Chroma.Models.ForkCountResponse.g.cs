@@ -42,5 +42,6 @@ namespace Chroma
         public ForkCountResponse()
         {
         }
+
     }
 }

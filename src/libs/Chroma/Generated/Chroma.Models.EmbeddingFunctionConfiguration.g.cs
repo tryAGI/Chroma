@@ -42,6 +42,13 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public global::Chroma.EmbeddingFunctionConfigurationVariant1 PickEmbeddingFunctionConfigurationVariant1() => IsEmbeddingFunctionConfigurationVariant1
+            ? EmbeddingFunctionConfigurationVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>? EmbeddingFunctionConfigurationVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22> PickEmbeddingFunctionConfigurationVariant2() => IsEmbeddingFunctionConfigurationVariant2
+            ? EmbeddingFunctionConfigurationVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.EmbeddingFunctionConfigurationVariant3? EmbeddingFunctionConfigurationVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Chroma
             value = EmbeddingFunctionConfigurationVariant3;
             return IsEmbeddingFunctionConfigurationVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.EmbeddingFunctionConfigurationVariant3 PickEmbeddingFunctionConfigurationVariant3() => IsEmbeddingFunctionConfigurationVariant3
+            ? EmbeddingFunctionConfigurationVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

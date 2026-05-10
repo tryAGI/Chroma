@@ -79,5 +79,6 @@ namespace Chroma
         public CreateCollectionPayload()
         {
         }
+
     }
 }

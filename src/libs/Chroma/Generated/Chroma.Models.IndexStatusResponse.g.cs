@@ -70,5 +70,6 @@ namespace Chroma
         public IndexStatusResponse()
         {
         }
+
     }
 }
