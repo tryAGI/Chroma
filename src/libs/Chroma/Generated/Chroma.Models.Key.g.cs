@@ -224,6 +224,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static Key FromKeyVariant1(global::Chroma.KeyVariant1? value) => new Key(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant2 value) => new Key((global::Chroma.KeyVariant2?)value);
 
         /// <summary>
@@ -238,6 +243,11 @@ namespace Chroma
         {
             KeyVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Key FromKeyVariant2(global::Chroma.KeyVariant2? value) => new Key(value);
 
         /// <summary>
         /// 
@@ -260,6 +270,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static Key FromKeyVariant3(global::Chroma.KeyVariant3? value) => new Key(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant4 value) => new Key((global::Chroma.KeyVariant4?)value);
 
         /// <summary>
@@ -278,6 +293,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static Key FromKeyVariant4(global::Chroma.KeyVariant4? value) => new Key(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant5 value) => new Key((global::Chroma.KeyVariant5?)value);
 
         /// <summary>
@@ -292,6 +312,11 @@ namespace Chroma
         {
             KeyVariant5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Key FromKeyVariant5(global::Chroma.KeyVariant5? value) => new Key(value);
 
         /// <summary>
         /// 

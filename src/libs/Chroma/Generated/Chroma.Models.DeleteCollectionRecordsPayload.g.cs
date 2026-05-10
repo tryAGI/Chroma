@@ -91,6 +91,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static DeleteCollectionRecordsPayload FromRawWhereFields(global::Chroma.RawWhereFields? value) => new DeleteCollectionRecordsPayload(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DeleteCollectionRecordsPayload(global::Chroma.DeleteCollectionRecordsPayloadVariant2 value) => new DeleteCollectionRecordsPayload((global::Chroma.DeleteCollectionRecordsPayloadVariant2?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace Chroma
         {
             DeleteCollectionRecordsPayloadVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DeleteCollectionRecordsPayload FromDeleteCollectionRecordsPayloadVariant2(global::Chroma.DeleteCollectionRecordsPayloadVariant2? value) => new DeleteCollectionRecordsPayload(value);
 
         /// <summary>
         /// 

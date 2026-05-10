@@ -90,6 +90,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static GetRequestPayload FromRawWhereFields(global::Chroma.RawWhereFields? value) => new GetRequestPayload(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetRequestPayload(global::Chroma.GetRequestPayloadVariant2 value) => new GetRequestPayload((global::Chroma.GetRequestPayloadVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace Chroma
         {
             GetRequestPayloadVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetRequestPayload FromGetRequestPayloadVariant2(global::Chroma.GetRequestPayloadVariant2? value) => new GetRequestPayload(value);
 
         /// <summary>
         /// 
