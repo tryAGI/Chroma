@@ -52,5 +52,6 @@ namespace Chroma
         public SearchRequestPayload()
         {
         }
+
     }
 }

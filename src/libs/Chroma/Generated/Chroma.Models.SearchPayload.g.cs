@@ -75,5 +75,6 @@ namespace Chroma
         public SearchPayload()
         {
         }
+
     }
 }

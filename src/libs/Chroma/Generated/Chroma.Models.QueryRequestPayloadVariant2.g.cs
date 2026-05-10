@@ -67,5 +67,6 @@ namespace Chroma
         public QueryRequestPayloadVariant2()
         {
         }
+
     }
 }

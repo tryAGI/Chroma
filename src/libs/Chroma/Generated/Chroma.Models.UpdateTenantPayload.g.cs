@@ -40,5 +40,6 @@ namespace Chroma
         public UpdateTenantPayload()
         {
         }
+
     }
 }

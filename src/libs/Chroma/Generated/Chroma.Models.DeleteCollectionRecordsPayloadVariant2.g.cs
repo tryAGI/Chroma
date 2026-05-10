@@ -48,5 +48,6 @@ namespace Chroma
         public DeleteCollectionRecordsPayloadVariant2()
         {
         }
+
     }
 }

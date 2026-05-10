@@ -195,5 +195,6 @@ namespace Chroma
         public SpannIndexConfig()
         {
         }
+
     }
 }

@@ -93,5 +93,6 @@ namespace Chroma
         public HnswIndexConfig()
         {
         }
+
     }
 }

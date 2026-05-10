@@ -112,5 +112,6 @@ namespace Chroma
         public SpannConfiguration()
         {
         }
+
     }
 }

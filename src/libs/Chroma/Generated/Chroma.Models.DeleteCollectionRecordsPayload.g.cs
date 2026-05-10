@@ -44,6 +44,13 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public global::Chroma.RawWhereFields PickRawWhereFields() => IsRawWhereFields
+            ? RawWhereFields!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RawWhereFields' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.DeleteCollectionRecordsPayloadVariant2? DeleteCollectionRecordsPayloadVariant2 { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace Chroma
             value = DeleteCollectionRecordsPayloadVariant2;
             return IsDeleteCollectionRecordsPayloadVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.DeleteCollectionRecordsPayloadVariant2 PickDeleteCollectionRecordsPayloadVariant2() => IsDeleteCollectionRecordsPayloadVariant2
+            ? DeleteCollectionRecordsPayloadVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteCollectionRecordsPayloadVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

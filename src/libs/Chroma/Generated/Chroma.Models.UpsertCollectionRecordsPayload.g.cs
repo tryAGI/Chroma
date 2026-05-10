@@ -84,5 +84,6 @@ namespace Chroma
         public UpsertCollectionRecordsPayload()
         {
         }
+
     }
 }
