@@ -119,6 +119,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingFunctionConfiguration FromEmbeddingFunctionConfigurationVariant1(global::Chroma.EmbeddingFunctionConfigurationVariant1? value) => new EmbeddingFunctionConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingFunctionConfiguration(global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22> value) => new EmbeddingFunctionConfiguration((global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingFunctionConfiguration FromEmbeddingFunctionConfigurationVariant2(global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>? value) => new EmbeddingFunctionConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingFunctionConfiguration(global::Chroma.EmbeddingFunctionConfigurationVariant3 value) => new EmbeddingFunctionConfiguration((global::Chroma.EmbeddingFunctionConfigurationVariant3?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Chroma
         {
             EmbeddingFunctionConfigurationVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingFunctionConfiguration FromEmbeddingFunctionConfigurationVariant3(global::Chroma.EmbeddingFunctionConfigurationVariant3? value) => new EmbeddingFunctionConfiguration(value);
 
         /// <summary>
         /// 
