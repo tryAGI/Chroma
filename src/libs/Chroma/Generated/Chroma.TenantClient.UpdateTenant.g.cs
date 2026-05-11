@@ -169,6 +169,8 @@ namespace Chroma
                     tenantName: tenantName!,
                     request: request);
 
+                global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
