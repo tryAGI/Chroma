@@ -196,6 +196,8 @@ namespace Chroma
                     name: name!,
                     request: request);
 
+                global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

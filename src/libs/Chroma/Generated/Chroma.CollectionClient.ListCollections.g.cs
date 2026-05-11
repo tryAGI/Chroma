@@ -186,6 +186,8 @@ namespace Chroma
                     limit: limit,
                     offset: offset);
 
+                global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

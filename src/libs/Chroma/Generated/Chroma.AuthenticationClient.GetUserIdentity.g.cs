@@ -140,6 +140,8 @@ namespace Chroma
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest);
 
+                global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

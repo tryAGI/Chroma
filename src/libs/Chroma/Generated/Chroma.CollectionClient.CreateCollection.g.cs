@@ -184,6 +184,8 @@ namespace Chroma
                     database: database!,
                     request: request);
 
+                global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

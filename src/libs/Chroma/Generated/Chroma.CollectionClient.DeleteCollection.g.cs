@@ -173,6 +173,8 @@ namespace Chroma
                     database: database!,
                     collectionId: collectionId!);
 
+                global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
