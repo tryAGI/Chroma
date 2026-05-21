@@ -213,6 +213,8 @@ namespace Chroma
                     offset: offset,
                     request: request);
 
+                global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

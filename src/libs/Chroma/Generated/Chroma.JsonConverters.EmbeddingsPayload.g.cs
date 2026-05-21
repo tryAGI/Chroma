@@ -108,7 +108,10 @@ namespace Chroma.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingsPayloadVariant1 == null && embeddingsPayloadVariant2 == null)
+            {
                 try
                 {
 

@@ -29,6 +29,26 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingsPayloadVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value)
+        {
+            value = EmbeddingsPayloadVariant1;
+            return IsEmbeddingsPayloadVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickEmbeddingsPayloadVariant1() => IsEmbeddingsPayloadVariant1
+            ? EmbeddingsPayloadVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPayloadVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? EmbeddingsPayloadVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPayloadVariant2))]
 #endif
         public bool IsEmbeddingsPayloadVariant2 => EmbeddingsPayloadVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsPayloadVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = EmbeddingsPayloadVariant2;
+            return IsEmbeddingsPayloadVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickEmbeddingsPayloadVariant2() => IsEmbeddingsPayloadVariant2
+            ? EmbeddingsPayloadVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPayloadVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -83,8 +123,8 @@ namespace Chroma
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? embeddingsPayloadVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? embeddingsPayloadVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? embeddingsPayloadVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? embeddingsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -108,8 +148,32 @@ namespace Chroma
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? embeddingsPayloadVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? embeddingsPayloadVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? embeddingsPayloadVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? embeddingsPayloadVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingsPayloadVariant1)
+            {
+                embeddingsPayloadVariant1?.Invoke(EmbeddingsPayloadVariant1!);
+            }
+            else if (IsEmbeddingsPayloadVariant2)
+            {
+                embeddingsPayloadVariant2?.Invoke(EmbeddingsPayloadVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? embeddingsPayloadVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? embeddingsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)

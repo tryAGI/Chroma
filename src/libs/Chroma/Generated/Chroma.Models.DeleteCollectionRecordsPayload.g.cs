@@ -31,6 +31,26 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRawWhereFields(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.RawWhereFields? value)
+        {
+            value = RawWhereFields;
+            return IsRawWhereFields;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.RawWhereFields PickRawWhereFields() => IsRawWhereFields
+            ? RawWhereFields!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RawWhereFields' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.DeleteCollectionRecordsPayloadVariant2? DeleteCollectionRecordsPayloadVariant2 { get; init; }
 #else
@@ -44,6 +64,26 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeleteCollectionRecordsPayloadVariant2))]
 #endif
         public bool IsDeleteCollectionRecordsPayloadVariant2 => DeleteCollectionRecordsPayloadVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeleteCollectionRecordsPayloadVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.DeleteCollectionRecordsPayloadVariant2? value)
+        {
+            value = DeleteCollectionRecordsPayloadVariant2;
+            return IsDeleteCollectionRecordsPayloadVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.DeleteCollectionRecordsPayloadVariant2 PickDeleteCollectionRecordsPayloadVariant2() => IsDeleteCollectionRecordsPayloadVariant2
+            ? DeleteCollectionRecordsPayloadVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteCollectionRecordsPayloadVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -65,6 +105,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static DeleteCollectionRecordsPayload FromRawWhereFields(global::Chroma.RawWhereFields? value) => new DeleteCollectionRecordsPayload(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DeleteCollectionRecordsPayload(global::Chroma.DeleteCollectionRecordsPayloadVariant2 value) => new DeleteCollectionRecordsPayload((global::Chroma.DeleteCollectionRecordsPayloadVariant2?)value);
 
         /// <summary>
@@ -79,6 +124,11 @@ namespace Chroma
         {
             DeleteCollectionRecordsPayloadVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DeleteCollectionRecordsPayload FromDeleteCollectionRecordsPayloadVariant2(global::Chroma.DeleteCollectionRecordsPayloadVariant2? value) => new DeleteCollectionRecordsPayload(value);
 
         /// <summary>
         /// 
@@ -120,8 +170,8 @@ namespace Chroma
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Chroma.RawWhereFields?, TResult>? rawWhereFields = null,
-            global::System.Func<global::Chroma.DeleteCollectionRecordsPayloadVariant2?, TResult>? deleteCollectionRecordsPayloadVariant2 = null,
+            global::System.Func<global::Chroma.RawWhereFields, TResult>? rawWhereFields = null,
+            global::System.Func<global::Chroma.DeleteCollectionRecordsPayloadVariant2, TResult>? deleteCollectionRecordsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,8 +195,32 @@ namespace Chroma
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Chroma.RawWhereFields?>? rawWhereFields = null,
-            global::System.Action<global::Chroma.DeleteCollectionRecordsPayloadVariant2?>? deleteCollectionRecordsPayloadVariant2 = null,
+            global::System.Action<global::Chroma.RawWhereFields>? rawWhereFields = null,
+
+            global::System.Action<global::Chroma.DeleteCollectionRecordsPayloadVariant2>? deleteCollectionRecordsPayloadVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRawWhereFields)
+            {
+                rawWhereFields?.Invoke(RawWhereFields!);
+            }
+            else if (IsDeleteCollectionRecordsPayloadVariant2)
+            {
+                deleteCollectionRecordsPayloadVariant2?.Invoke(DeleteCollectionRecordsPayloadVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Chroma.RawWhereFields>? rawWhereFields = null,
+            global::System.Action<global::Chroma.DeleteCollectionRecordsPayloadVariant2>? deleteCollectionRecordsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)

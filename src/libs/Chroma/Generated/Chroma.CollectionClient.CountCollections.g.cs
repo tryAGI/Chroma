@@ -164,6 +164,8 @@ namespace Chroma
                     tenant: tenant!,
                     database: database!);
 
+                global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

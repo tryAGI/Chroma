@@ -39,5 +39,6 @@ namespace Chroma
         public SearchPayloadSelect()
         {
         }
+
     }
 }

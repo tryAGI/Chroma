@@ -85,5 +85,6 @@ namespace Chroma
         public AddCollectionRecordsPayload()
         {
         }
+
     }
 }

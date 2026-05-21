@@ -185,6 +185,8 @@ namespace Chroma
                     collectionId: collectionId!,
                     readLevel: readLevel);
 
+                global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

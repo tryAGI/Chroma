@@ -29,6 +29,26 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingFunctionConfigurationVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.EmbeddingFunctionConfigurationVariant1? value)
+        {
+            value = EmbeddingFunctionConfigurationVariant1;
+            return IsEmbeddingFunctionConfigurationVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.EmbeddingFunctionConfigurationVariant1 PickEmbeddingFunctionConfigurationVariant1() => IsEmbeddingFunctionConfigurationVariant1
+            ? EmbeddingFunctionConfigurationVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>? EmbeddingFunctionConfigurationVariant2 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingFunctionConfigurationVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>? value)
+        {
+            value = EmbeddingFunctionConfigurationVariant2;
+            return IsEmbeddingFunctionConfigurationVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22> PickEmbeddingFunctionConfigurationVariant2() => IsEmbeddingFunctionConfigurationVariant2
+            ? EmbeddingFunctionConfigurationVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.EmbeddingFunctionConfigurationVariant3? EmbeddingFunctionConfigurationVariant3 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingFunctionConfigurationVariant3))]
 #endif
         public bool IsEmbeddingFunctionConfigurationVariant3 => EmbeddingFunctionConfigurationVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingFunctionConfigurationVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.EmbeddingFunctionConfigurationVariant3? value)
+        {
+            value = EmbeddingFunctionConfigurationVariant3;
+            return IsEmbeddingFunctionConfigurationVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.EmbeddingFunctionConfigurationVariant3 PickEmbeddingFunctionConfigurationVariant3() => IsEmbeddingFunctionConfigurationVariant3
+            ? EmbeddingFunctionConfigurationVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace Chroma
         {
             EmbeddingFunctionConfigurationVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingFunctionConfiguration FromEmbeddingFunctionConfigurationVariant1(global::Chroma.EmbeddingFunctionConfigurationVariant1? value) => new EmbeddingFunctionConfiguration(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingFunctionConfiguration FromEmbeddingFunctionConfigurationVariant2(global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>? value) => new EmbeddingFunctionConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingFunctionConfiguration(global::Chroma.EmbeddingFunctionConfigurationVariant3 value) => new EmbeddingFunctionConfiguration((global::Chroma.EmbeddingFunctionConfigurationVariant3?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace Chroma
         {
             EmbeddingFunctionConfigurationVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingFunctionConfiguration FromEmbeddingFunctionConfigurationVariant3(global::Chroma.EmbeddingFunctionConfigurationVariant3? value) => new EmbeddingFunctionConfiguration(value);
 
         /// <summary>
         /// 
@@ -157,9 +232,9 @@ namespace Chroma
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Chroma.EmbeddingFunctionConfigurationVariant1?, TResult>? embeddingFunctionConfigurationVariant1 = null,
+            global::System.Func<global::Chroma.EmbeddingFunctionConfigurationVariant1, TResult>? embeddingFunctionConfigurationVariant1 = null,
             global::System.Func<global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>?, TResult>? embeddingFunctionConfigurationVariant2 = null,
-            global::System.Func<global::Chroma.EmbeddingFunctionConfigurationVariant3?, TResult>? embeddingFunctionConfigurationVariant3 = null,
+            global::System.Func<global::Chroma.EmbeddingFunctionConfigurationVariant3, TResult>? embeddingFunctionConfigurationVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +262,39 @@ namespace Chroma
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Chroma.EmbeddingFunctionConfigurationVariant1?>? embeddingFunctionConfigurationVariant1 = null,
+            global::System.Action<global::Chroma.EmbeddingFunctionConfigurationVariant1>? embeddingFunctionConfigurationVariant1 = null,
+
             global::System.Action<global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>?>? embeddingFunctionConfigurationVariant2 = null,
-            global::System.Action<global::Chroma.EmbeddingFunctionConfigurationVariant3?>? embeddingFunctionConfigurationVariant3 = null,
+
+            global::System.Action<global::Chroma.EmbeddingFunctionConfigurationVariant3>? embeddingFunctionConfigurationVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingFunctionConfigurationVariant1)
+            {
+                embeddingFunctionConfigurationVariant1?.Invoke(EmbeddingFunctionConfigurationVariant1!);
+            }
+            else if (IsEmbeddingFunctionConfigurationVariant2)
+            {
+                embeddingFunctionConfigurationVariant2?.Invoke(EmbeddingFunctionConfigurationVariant2!);
+            }
+            else if (IsEmbeddingFunctionConfigurationVariant3)
+            {
+                embeddingFunctionConfigurationVariant3?.Invoke(EmbeddingFunctionConfigurationVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Chroma.EmbeddingFunctionConfigurationVariant1>? embeddingFunctionConfigurationVariant1 = null,
+            global::System.Action<global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>?>? embeddingFunctionConfigurationVariant2 = null,
+            global::System.Action<global::Chroma.EmbeddingFunctionConfigurationVariant3>? embeddingFunctionConfigurationVariant3 = null,
             bool validate = true)
         {
             if (validate)

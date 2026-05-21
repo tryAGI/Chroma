@@ -74,6 +74,26 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickKeyVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.KeyVariant1? value)
+        {
+            value = KeyVariant1;
+            return IsKeyVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.KeyVariant1 PickKeyVariant1() => IsKeyVariant1
+            ? KeyVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant2? KeyVariant2 { get; init; }
 #else
@@ -87,6 +107,26 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant2))]
 #endif
         public bool IsKeyVariant2 => KeyVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickKeyVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.KeyVariant2? value)
+        {
+            value = KeyVariant2;
+            return IsKeyVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.KeyVariant2 PickKeyVariant2() => IsKeyVariant2
+            ? KeyVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +148,26 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickKeyVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.KeyVariant3? value)
+        {
+            value = KeyVariant3;
+            return IsKeyVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.KeyVariant3 PickKeyVariant3() => IsKeyVariant3
+            ? KeyVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant4? KeyVariant4 { get; init; }
 #else
@@ -125,6 +185,26 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickKeyVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.KeyVariant4? value)
+        {
+            value = KeyVariant4;
+            return IsKeyVariant4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.KeyVariant4 PickKeyVariant4() => IsKeyVariant4
+            ? KeyVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant4' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant5? KeyVariant5 { get; init; }
 #else
@@ -138,6 +218,26 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant5))]
 #endif
         public bool IsKeyVariant5 => KeyVariant5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickKeyVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Chroma.KeyVariant5? value)
+        {
+            value = KeyVariant5;
+            return IsKeyVariant5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Chroma.KeyVariant5 PickKeyVariant5() => IsKeyVariant5
+            ? KeyVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -155,6 +255,11 @@ namespace Chroma
         {
             KeyVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Key FromKeyVariant1(global::Chroma.KeyVariant1? value) => new Key(value);
 
         /// <summary>
         /// 
@@ -177,6 +282,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static Key FromKeyVariant2(global::Chroma.KeyVariant2? value) => new Key(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant3 value) => new Key((global::Chroma.KeyVariant3?)value);
 
         /// <summary>
@@ -191,6 +301,11 @@ namespace Chroma
         {
             KeyVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Key FromKeyVariant3(global::Chroma.KeyVariant3? value) => new Key(value);
 
         /// <summary>
         /// 
@@ -213,6 +328,11 @@ namespace Chroma
         /// <summary>
         /// 
         /// </summary>
+        public static Key FromKeyVariant4(global::Chroma.KeyVariant4? value) => new Key(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant5 value) => new Key((global::Chroma.KeyVariant5?)value);
 
         /// <summary>
@@ -227,6 +347,11 @@ namespace Chroma
         {
             KeyVariant5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Key FromKeyVariant5(global::Chroma.KeyVariant5? value) => new Key(value);
 
         /// <summary>
         /// 
@@ -284,7 +409,7 @@ namespace Chroma
             global::System.Func<global::Chroma.KeyVariant2?, TResult>? keyVariant2 = null,
             global::System.Func<global::Chroma.KeyVariant3?, TResult>? keyVariant3 = null,
             global::System.Func<global::Chroma.KeyVariant4?, TResult>? keyVariant4 = null,
-            global::System.Func<global::Chroma.KeyVariant5?, TResult>? keyVariant5 = null,
+            global::System.Func<global::Chroma.KeyVariant5, TResult>? keyVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -321,10 +446,52 @@ namespace Chroma
         /// </summary>
         public void Match(
             global::System.Action<global::Chroma.KeyVariant1?>? keyVariant1 = null,
+
+            global::System.Action<global::Chroma.KeyVariant2?>? keyVariant2 = null,
+
+            global::System.Action<global::Chroma.KeyVariant3?>? keyVariant3 = null,
+
+            global::System.Action<global::Chroma.KeyVariant4?>? keyVariant4 = null,
+
+            global::System.Action<global::Chroma.KeyVariant5>? keyVariant5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsKeyVariant1)
+            {
+                keyVariant1?.Invoke(KeyVariant1!);
+            }
+            else if (IsKeyVariant2)
+            {
+                keyVariant2?.Invoke(KeyVariant2!);
+            }
+            else if (IsKeyVariant3)
+            {
+                keyVariant3?.Invoke(KeyVariant3!);
+            }
+            else if (IsKeyVariant4)
+            {
+                keyVariant4?.Invoke(KeyVariant4!);
+            }
+            else if (IsKeyVariant5)
+            {
+                keyVariant5?.Invoke(KeyVariant5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Chroma.KeyVariant1?>? keyVariant1 = null,
             global::System.Action<global::Chroma.KeyVariant2?>? keyVariant2 = null,
             global::System.Action<global::Chroma.KeyVariant3?>? keyVariant3 = null,
             global::System.Action<global::Chroma.KeyVariant4?>? keyVariant4 = null,
-            global::System.Action<global::Chroma.KeyVariant5?>? keyVariant5 = null,
+            global::System.Action<global::Chroma.KeyVariant5>? keyVariant5 = null,
             bool validate = true)
         {
             if (validate)

@@ -68,5 +68,6 @@ namespace Chroma
         public SparseVector()
         {
         }
+
     }
 }

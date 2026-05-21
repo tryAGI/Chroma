@@ -81,5 +81,6 @@ namespace Chroma
         public VectorIndexConfig()
         {
         }
+
     }
 }

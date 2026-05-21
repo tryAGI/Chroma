@@ -95,5 +95,6 @@ namespace Chroma
         public QueryResponse()
         {
         }
+
     }
 }
