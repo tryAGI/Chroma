@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+install_autosdk_cli() {
+  dotnet tool update --global autosdk.cli --prerelease >/dev/null 2>&1 || \
+    dotnet tool install --global autosdk.cli --prerelease
+}
+
+fetch_spec() {
+  curl "$@" \
+    --fail --silent --show-error --location \
+    --retry 5 --retry-delay 10 --retry-all-errors \
+    --connect-timeout 30 --max-time 300
+}
+
 # OpenAPI spec: fetched from running Chroma server's /openapi.json endpoint
 # Environment variables:
 #   CHROMA_OPENAPI_HOST — Chroma server hostname (default: localhost)
@@ -10,8 +22,7 @@ set -euo pipefail
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "${script_dir}"
-
-dotnet tool install --global autosdk.cli --prerelease
+install_autosdk_cli
 
 openapi_host="${CHROMA_OPENAPI_HOST:-localhost}"
 openapi_port="${CHROMA_OPENAPI_PORT:-8000}"
@@ -46,7 +57,7 @@ format_openapi() {
 }
 
 fetch_openapi() {
-  curl -fsS "${openapi_url}" -o "${raw_openapi}"
+  fetch_spec -fsS "${openapi_url}" -o "${raw_openapi}"
   format_openapi
 }
 
