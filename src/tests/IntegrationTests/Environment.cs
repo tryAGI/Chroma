@@ -29,6 +29,7 @@ public sealed class Environment : IAsyncDisposable
             case EnvironmentType.Local:
             {
                 var client = new ChromaClient(
+                    apiKey: "test",
                     baseUri: new Uri($"http://127.0.0.1:{ChromaPort}"));
 
                 return new Environment
@@ -51,6 +52,7 @@ public sealed class Environment : IAsyncDisposable
                 await container.StartAsync(cts.Token);
 
                 var client = new ChromaClient(
+                    apiKey: "test",
                     baseUri: new UriBuilder(
                         Uri.UriSchemeHttp,
                         container.Hostname,
