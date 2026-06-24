@@ -15,8 +15,11 @@ dotnet build Chroma.slnx
 # Build for release (also produces NuGet package)
 dotnet build Chroma.slnx -c Release
 
-# Run integration tests (no API key needed -- Chroma is a local database)
+# Run integration tests (no API key needed; uses Testcontainers when Docker is available)
 dotnet test src/tests/IntegrationTests/Chroma.IntegrationTests.csproj
+
+# Optional first-run pre-pull for faster container startup
+docker pull chromadb/chroma:latest
 
 # Regenerate SDK from OpenAPI spec
 cd src/libs/Chroma && ./generate.sh
@@ -56,6 +59,7 @@ The SDK code is **entirely auto-generated** -- do not manually edit files in `sr
 - The client class is named `ChromaClient`
 - The namespace is `Chroma`
 - Chroma is a self-hosted database, so no cloud API key is required for testing
+- Test environment override: `CHROMA_TEST_ENVIRONMENT=Local|Container`
 
 ### CI/CD
 
