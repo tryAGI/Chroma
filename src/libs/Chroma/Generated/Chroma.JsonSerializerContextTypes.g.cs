@@ -661,6 +661,10 @@ namespace Chroma
         /// 
         /// </summary>
         public global::Chroma.OneOf<object, global::Chroma.SpannIndexConfig>? Type158 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Chroma.Database>? Type159 { get; set; }
 
         /// <summary>
         /// 
@@ -730,5 +734,9 @@ namespace Chroma
         /// 
         /// </summary>
         public global::System.Collections.Generic.List<global::Chroma.VecItem>? ListType16 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Chroma.Database>? ListType17 { get; set; }
     }
 }

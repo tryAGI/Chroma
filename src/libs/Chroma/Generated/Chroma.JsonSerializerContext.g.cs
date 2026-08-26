@@ -327,6 +327,7 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.VectorIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.HnswIndexConfig>), TypeInfoPropertyName = "OneOfObjectHnswIndexConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.SpannIndexConfig>), TypeInfoPropertyName = "OneOfObjectSpannIndexConfig2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.Database>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.OneOf<object, global::Chroma.HashMap>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>>))]
@@ -344,6 +345,7 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.Key>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.VecItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.Database>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }

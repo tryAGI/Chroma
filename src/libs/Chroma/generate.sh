@@ -49,7 +49,17 @@ trap cleanup EXIT
 
 format_openapi() {
   if command -v jq >/dev/null 2>&1; then
-    jq -S --indent 2 . "${raw_openapi}" > openapi.json
+    # Chroma currently describes list_databases as Vec (the collection list
+    # schema), even though the endpoint returns Database objects. Keep this
+    # source-level workaround here so regeneration cannot restore the broken
+    # response type. See tryAGI/Chroma#144.
+    jq -S --indent 2 '
+      .paths["/api/v2/tenants/{tenant}/databases"]
+        .get.responses["200"].content["application/json"].schema = {
+          "type": "array",
+          "items": {"$ref": "#/components/schemas/Database"}
+        }
+    ' "${raw_openapi}" > openapi.json
   else
     echo "Failed to format OpenAPI spec: jq is not available."
     exit 1

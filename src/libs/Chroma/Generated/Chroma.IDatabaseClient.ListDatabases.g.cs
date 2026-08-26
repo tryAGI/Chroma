@@ -17,7 +17,7 @@ namespace Chroma
         /// <remarks>
         /// chroma db list
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Chroma.VecItem>> ListDatabasesAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Chroma.Database>> ListDatabasesAsync(
             string tenant,
             int? limit = default,
             int? offset = default,
@@ -36,7 +36,7 @@ namespace Chroma
         /// <remarks>
         /// chroma db list
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::Chroma.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Chroma.VecItem>>> ListDatabasesAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::Chroma.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Chroma.Database>>> ListDatabasesAsResponseAsync(
             string tenant,
             int? limit = default,
             int? offset = default,

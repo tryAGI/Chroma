@@ -3022,7 +3022,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Vec"
+                  "items": {
+                    "$ref": "#/components/schemas/Database"
+                  },
+                  "type": "array"
                 }
               }
             },

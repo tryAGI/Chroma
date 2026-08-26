@@ -58,7 +58,7 @@ namespace Chroma
         /// <remarks>
         /// chroma db list
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Chroma.VecItem>> ListDatabasesAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Chroma.Database>> ListDatabasesAsync(
             string tenant,
             int? limit = default,
             int? offset = default,
@@ -88,7 +88,7 @@ namespace Chroma
         /// <remarks>
         /// chroma db list
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::Chroma.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Chroma.VecItem>>> ListDatabasesAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Chroma.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Chroma.Database>>> ListDatabasesAsResponseAsync(
             string tenant,
             int? limit = default,
             int? offset = default,
@@ -452,9 +452,9 @@ namespace Chroma
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<global::Chroma.VecItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Chroma.VecItem>), JsonSerializerContext) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::Chroma.Database>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Chroma.Database>), JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Chroma.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Chroma.VecItem>>(
+                                    return new global::Chroma.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Chroma.Database>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Chroma.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -484,9 +484,9 @@ namespace Chroma
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<global::Chroma.VecItem>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Chroma.VecItem>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::Chroma.Database>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Chroma.Database>), JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Chroma.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Chroma.VecItem>>(
+                                    return new global::Chroma.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Chroma.Database>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Chroma.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
