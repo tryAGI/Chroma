@@ -4,12 +4,12 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DeleteCollectionRecordsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         public int? Deleted { get; set; }

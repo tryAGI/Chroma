@@ -4,19 +4,19 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class FtsIndexType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Chroma.FtsIndexConfig Config { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]

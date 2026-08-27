@@ -4,12 +4,12 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class KeyVariant5
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MetadataField")]
         [global::System.Text.Json.Serialization.JsonRequired]

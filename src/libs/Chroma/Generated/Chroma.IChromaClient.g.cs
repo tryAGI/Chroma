@@ -39,43 +39,43 @@ namespace Chroma
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AuthenticationClient Authentication { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CollectionClient Collection { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatabaseClient Database { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionClient Function { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecordClient Record { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SystemClient System { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TenantClient Tenant { get; }
 

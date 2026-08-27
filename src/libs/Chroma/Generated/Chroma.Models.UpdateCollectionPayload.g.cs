@@ -4,26 +4,26 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateCollectionPayload
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_configuration")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.UpdateCollectionConfiguration>))]
         public global::Chroma.OneOf<object, global::Chroma.UpdateCollectionConfiguration>? NewConfiguration { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_metadata")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>))]
         public global::Chroma.OneOf<object, global::Chroma.HashMap>? NewMetadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_name")]
         public string? NewName { get; set; }

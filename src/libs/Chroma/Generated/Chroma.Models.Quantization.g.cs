@@ -9,11 +9,11 @@ namespace Chroma
     public enum Quantization
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FourBitRabitQWithUSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

@@ -4,12 +4,12 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EmbeddingFunctionConfigurationVariant1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Legacy,
     }

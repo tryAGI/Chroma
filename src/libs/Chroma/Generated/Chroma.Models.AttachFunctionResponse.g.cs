@@ -4,12 +4,12 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AttachFunctionResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attached_function")]
         [global::System.Text.Json.Serialization.JsonRequired]

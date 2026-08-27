@@ -9,7 +9,7 @@ namespace Chroma
     public sealed partial class SparseVectorValueType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sparse_vector_index")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.SparseVectorIndexType>))]

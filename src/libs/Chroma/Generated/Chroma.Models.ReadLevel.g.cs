@@ -4,20 +4,20 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ReadLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IndexAndBoundedWal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IndexAndWal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IndexOnly,
     }

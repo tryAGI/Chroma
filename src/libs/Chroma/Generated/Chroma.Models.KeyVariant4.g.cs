@@ -4,12 +4,12 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum KeyVariant4
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Score,
     }

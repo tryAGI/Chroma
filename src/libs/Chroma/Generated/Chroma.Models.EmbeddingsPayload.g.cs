@@ -5,12 +5,12 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EmbeddingsPayload : global::System.IEquatable<EmbeddingsPayload>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? EmbeddingsPayloadVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Chroma
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPayloadVariant1))]
@@ -27,7 +27,7 @@ namespace Chroma
         public bool IsEmbeddingsPayloadVariant1 => EmbeddingsPayloadVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPayloadVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickEmbeddingsPayloadVariant1() => IsEmbeddingsPayloadVariant1
             ? EmbeddingsPayloadVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPayloadVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? EmbeddingsPayloadVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Chroma
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPayloadVariant2))]
@@ -64,7 +64,7 @@ namespace Chroma
         public bool IsEmbeddingsPayloadVariant2 => EmbeddingsPayloadVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmbeddingsPayloadVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<string> PickEmbeddingsPayloadVariant2() => IsEmbeddingsPayloadVariant2
             ? EmbeddingsPayloadVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPayloadVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EmbeddingsPayload(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? embeddingsPayloadVariant1,
@@ -96,23 +96,23 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EmbeddingsPayloadVariant2 as object ??
-            EmbeddingsPayloadVariant1 as object 
+            EmbeddingsPayloadVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             EmbeddingsPayloadVariant1?.ToString() ??
-            EmbeddingsPayloadVariant2?.ToString() 
+            EmbeddingsPayloadVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -120,7 +120,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? embeddingsPayloadVariant1 = null,
@@ -145,7 +145,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? embeddingsPayloadVariant1 = null,
@@ -169,7 +169,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? embeddingsPayloadVariant1 = null,
@@ -192,7 +192,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -213,18 +213,18 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EmbeddingsPayload other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(EmbeddingsPayloadVariant1, other.EmbeddingsPayloadVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(EmbeddingsPayloadVariant2, other.EmbeddingsPayloadVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(EmbeddingsPayloadVariant2, other.EmbeddingsPayloadVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EmbeddingsPayload obj1, EmbeddingsPayload obj2)
         {
@@ -232,7 +232,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EmbeddingsPayload obj1, EmbeddingsPayload obj2)
         {
@@ -240,7 +240,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

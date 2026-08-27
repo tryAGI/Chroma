@@ -55,7 +55,7 @@ namespace Chroma
     public readonly partial struct Key : global::System.IEquatable<Key>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant1? KeyVariant1 { get; init; }
@@ -64,7 +64,7 @@ namespace Chroma
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant1))]
@@ -72,7 +72,7 @@ namespace Chroma
         public bool IsKeyVariant1 => KeyVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickKeyVariant1(
 #if NET6_0_OR_GREATER
@@ -85,14 +85,14 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Chroma.KeyVariant1 PickKeyVariant1() => IsKeyVariant1
             ? KeyVariant1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant2? KeyVariant2 { get; init; }
@@ -101,7 +101,7 @@ namespace Chroma
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant2))]
@@ -109,7 +109,7 @@ namespace Chroma
         public bool IsKeyVariant2 => KeyVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickKeyVariant2(
 #if NET6_0_OR_GREATER
@@ -122,14 +122,14 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Chroma.KeyVariant2 PickKeyVariant2() => IsKeyVariant2
             ? KeyVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant3? KeyVariant3 { get; init; }
@@ -138,7 +138,7 @@ namespace Chroma
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant3))]
@@ -146,7 +146,7 @@ namespace Chroma
         public bool IsKeyVariant3 => KeyVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickKeyVariant3(
 #if NET6_0_OR_GREATER
@@ -159,14 +159,14 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Chroma.KeyVariant3 PickKeyVariant3() => IsKeyVariant3
             ? KeyVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant4? KeyVariant4 { get; init; }
@@ -175,7 +175,7 @@ namespace Chroma
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant4))]
@@ -183,7 +183,7 @@ namespace Chroma
         public bool IsKeyVariant4 => KeyVariant4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickKeyVariant4(
 #if NET6_0_OR_GREATER
@@ -196,14 +196,14 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Chroma.KeyVariant4 PickKeyVariant4() => IsKeyVariant4
             ? KeyVariant4!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant4' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.KeyVariant5? KeyVariant5 { get; init; }
@@ -212,7 +212,7 @@ namespace Chroma
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant5))]
@@ -220,7 +220,7 @@ namespace Chroma
         public bool IsKeyVariant5 => KeyVariant5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickKeyVariant5(
 #if NET6_0_OR_GREATER
@@ -233,23 +233,23 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Chroma.KeyVariant5 PickKeyVariant5() => IsKeyVariant5
             ? KeyVariant5!
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant5' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant1 value) => new Key((global::Chroma.KeyVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Chroma.KeyVariant1?(Key @this) => @this.KeyVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Key(global::Chroma.KeyVariant1? value)
         {
@@ -257,22 +257,22 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Key FromKeyVariant1(global::Chroma.KeyVariant1? value) => new Key(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant2 value) => new Key((global::Chroma.KeyVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Chroma.KeyVariant2?(Key @this) => @this.KeyVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Key(global::Chroma.KeyVariant2? value)
         {
@@ -280,22 +280,22 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Key FromKeyVariant2(global::Chroma.KeyVariant2? value) => new Key(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant3 value) => new Key((global::Chroma.KeyVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Chroma.KeyVariant3?(Key @this) => @this.KeyVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Key(global::Chroma.KeyVariant3? value)
         {
@@ -303,22 +303,22 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Key FromKeyVariant3(global::Chroma.KeyVariant3? value) => new Key(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant4 value) => new Key((global::Chroma.KeyVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Chroma.KeyVariant4?(Key @this) => @this.KeyVariant4;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Key(global::Chroma.KeyVariant4? value)
         {
@@ -326,22 +326,22 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Key FromKeyVariant4(global::Chroma.KeyVariant4? value) => new Key(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Key(global::Chroma.KeyVariant5 value) => new Key((global::Chroma.KeyVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Chroma.KeyVariant5?(Key @this) => @this.KeyVariant5;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Key(global::Chroma.KeyVariant5? value)
         {
@@ -349,12 +349,12 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Key FromKeyVariant5(global::Chroma.KeyVariant5? value) => new Key(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Key(
             global::Chroma.KeyVariant1? keyVariant1,
@@ -372,29 +372,29 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             KeyVariant5 as object ??
             KeyVariant4 as object ??
             KeyVariant3 as object ??
             KeyVariant2 as object ??
-            KeyVariant1 as object 
+            KeyVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             KeyVariant1?.ToValueString() ??
             KeyVariant2?.ToValueString() ??
             KeyVariant3?.ToValueString() ??
             KeyVariant4?.ToValueString() ??
-            KeyVariant5?.ToString() 
+            KeyVariant5?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -402,7 +402,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Chroma.KeyVariant1?, TResult>? keyVariant1 = null,
@@ -442,7 +442,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Chroma.KeyVariant1?>? keyVariant1 = null,
@@ -484,7 +484,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Chroma.KeyVariant1?>? keyVariant1 = null,
@@ -522,7 +522,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -549,7 +549,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Key other)
         {
@@ -558,12 +558,12 @@ namespace Chroma
                 global::System.Collections.Generic.EqualityComparer<global::Chroma.KeyVariant2?>.Default.Equals(KeyVariant2, other.KeyVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<global::Chroma.KeyVariant3?>.Default.Equals(KeyVariant3, other.KeyVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::Chroma.KeyVariant4?>.Default.Equals(KeyVariant4, other.KeyVariant4) &&
-                global::System.Collections.Generic.EqualityComparer<global::Chroma.KeyVariant5?>.Default.Equals(KeyVariant5, other.KeyVariant5) 
+                global::System.Collections.Generic.EqualityComparer<global::Chroma.KeyVariant5?>.Default.Equals(KeyVariant5, other.KeyVariant5)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Key obj1, Key obj2)
         {
@@ -571,7 +571,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Key obj1, Key obj2)
         {
@@ -579,7 +579,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

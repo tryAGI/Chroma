@@ -9,23 +9,23 @@ namespace Chroma
     public enum Include
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Distances,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Documents,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Embeddings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Metadatas,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uris,
     }

@@ -4,7 +4,7 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SearchRequestPayload
     {
@@ -16,7 +16,7 @@ namespace Chroma
         public global::Chroma.ReadLevel? ReadLevel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("searches")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,19 +4,19 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChecklistResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_batch_size")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MaxBatchSize { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("supports_base64_encoding")]
         [global::System.Text.Json.Serialization.JsonRequired]

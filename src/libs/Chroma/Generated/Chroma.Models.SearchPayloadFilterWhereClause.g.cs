@@ -4,7 +4,7 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SearchPayloadFilterWhereClause
     {

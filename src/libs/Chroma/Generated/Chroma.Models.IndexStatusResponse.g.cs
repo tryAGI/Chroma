@@ -4,33 +4,33 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class IndexStatusResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_indexed_ops")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long NumIndexedOps { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_unindexed_ops")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long NumUnindexedOps { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("op_indexing_progress")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required float OpIndexingProgress { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_ops")]
         [global::System.Text.Json.Serialization.JsonRequired]

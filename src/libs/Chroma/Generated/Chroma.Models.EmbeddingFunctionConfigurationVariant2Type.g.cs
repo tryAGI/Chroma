@@ -4,12 +4,12 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EmbeddingFunctionConfigurationVariant2Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Known,
     }

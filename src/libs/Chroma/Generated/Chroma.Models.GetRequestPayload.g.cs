@@ -11,7 +11,7 @@ namespace Chroma
     public readonly partial struct GetRequestPayload : global::System.IEquatable<GetRequestPayload>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.RawWhereFields? RawWhereFields { get; init; }
@@ -20,7 +20,7 @@ namespace Chroma
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RawWhereFields))]
@@ -28,7 +28,7 @@ namespace Chroma
         public bool IsRawWhereFields => RawWhereFields != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRawWhereFields(
 #if NET6_0_OR_GREATER
@@ -41,14 +41,14 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Chroma.RawWhereFields PickRawWhereFields() => IsRawWhereFields
             ? RawWhereFields!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RawWhereFields' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Chroma.GetRequestPayloadVariant2? GetRequestPayloadVariant2 { get; init; }
@@ -57,7 +57,7 @@ namespace Chroma
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetRequestPayloadVariant2))]
@@ -65,7 +65,7 @@ namespace Chroma
         public bool IsGetRequestPayloadVariant2 => GetRequestPayloadVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGetRequestPayloadVariant2(
 #if NET6_0_OR_GREATER
@@ -78,23 +78,23 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Chroma.GetRequestPayloadVariant2 PickGetRequestPayloadVariant2() => IsGetRequestPayloadVariant2
             ? GetRequestPayloadVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'GetRequestPayloadVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetRequestPayload(global::Chroma.RawWhereFields value) => new GetRequestPayload((global::Chroma.RawWhereFields?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Chroma.RawWhereFields?(GetRequestPayload @this) => @this.RawWhereFields;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetRequestPayload(global::Chroma.RawWhereFields? value)
         {
@@ -102,22 +102,22 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetRequestPayload FromRawWhereFields(global::Chroma.RawWhereFields? value) => new GetRequestPayload(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GetRequestPayload(global::Chroma.GetRequestPayloadVariant2 value) => new GetRequestPayload((global::Chroma.GetRequestPayloadVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Chroma.GetRequestPayloadVariant2?(GetRequestPayload @this) => @this.GetRequestPayloadVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetRequestPayload(global::Chroma.GetRequestPayloadVariant2? value)
         {
@@ -125,12 +125,12 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GetRequestPayload FromGetRequestPayloadVariant2(global::Chroma.GetRequestPayloadVariant2? value) => new GetRequestPayload(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GetRequestPayload(
             global::Chroma.RawWhereFields? rawWhereFields,
@@ -142,23 +142,23 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             GetRequestPayloadVariant2 as object ??
-            RawWhereFields as object 
+            RawWhereFields as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             RawWhereFields?.ToString() ??
-            GetRequestPayloadVariant2?.ToString() 
+            GetRequestPayloadVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -166,7 +166,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Chroma.RawWhereFields, TResult>? rawWhereFields = null,
@@ -191,7 +191,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Chroma.RawWhereFields>? rawWhereFields = null,
@@ -215,7 +215,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Chroma.RawWhereFields>? rawWhereFields = null,
@@ -238,7 +238,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -259,18 +259,18 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GetRequestPayload other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Chroma.RawWhereFields?>.Default.Equals(RawWhereFields, other.RawWhereFields) &&
-                global::System.Collections.Generic.EqualityComparer<global::Chroma.GetRequestPayloadVariant2?>.Default.Equals(GetRequestPayloadVariant2, other.GetRequestPayloadVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Chroma.GetRequestPayloadVariant2?>.Default.Equals(GetRequestPayloadVariant2, other.GetRequestPayloadVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GetRequestPayload obj1, GetRequestPayload obj2)
         {
@@ -278,7 +278,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GetRequestPayload obj1, GetRequestPayload obj2)
         {
@@ -286,7 +286,7 @@ namespace Chroma
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

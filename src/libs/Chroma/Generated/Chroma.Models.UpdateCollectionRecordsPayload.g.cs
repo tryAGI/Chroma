@@ -12,33 +12,33 @@ namespace Chroma
     public sealed partial class UpdateCollectionRecordsPayload
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
         public global::System.Collections.Generic.IList<string>? Documents { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.UpdateEmbeddingsPayload?>))]
         public global::Chroma.OneOf<object, global::Chroma.UpdateEmbeddingsPayload?>? Embeddings { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Ids { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadatas")]
         public global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? Metadatas { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uris")]
         public global::System.Collections.Generic.IList<string>? Uris { get; set; }

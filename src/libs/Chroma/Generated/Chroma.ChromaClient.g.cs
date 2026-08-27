@@ -10,7 +10,7 @@ namespace Chroma
     public sealed partial class ChromaClient : global::Chroma.IChromaClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "http://localhost:8000/";
 
@@ -37,7 +37,7 @@ namespace Chroma
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Chroma.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -47,7 +47,7 @@ namespace Chroma
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AuthenticationClient Authentication => new AuthenticationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -56,7 +56,7 @@ namespace Chroma
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CollectionClient Collection => new CollectionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -65,7 +65,7 @@ namespace Chroma
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DatabaseClient Database => new DatabaseClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -74,7 +74,7 @@ namespace Chroma
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionClient Function => new FunctionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -83,7 +83,7 @@ namespace Chroma
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecordClient Record => new RecordClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -92,7 +92,7 @@ namespace Chroma
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SystemClient System => new SystemClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -101,7 +101,7 @@ namespace Chroma
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TenantClient Tenant => new TenantClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

@@ -9,7 +9,7 @@ namespace Chroma
     public sealed partial class BoolValueType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bool_inverted_index")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.BoolInvertedIndexType>))]

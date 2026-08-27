@@ -2758,8 +2758,7 @@
         "summary": "Reset database",
         "tags": [
           "System"
-        ],
-        "x-hidden": true
+        ]
       }
     },
     "/api/v2/tenants": {

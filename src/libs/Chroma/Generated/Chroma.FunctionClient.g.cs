@@ -10,7 +10,7 @@ namespace Chroma
     public sealed partial class FunctionClient : global::Chroma.IFunctionClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "http://localhost:8000/";
 
@@ -37,7 +37,7 @@ namespace Chroma
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Chroma.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

@@ -53,12 +53,17 @@ format_openapi() {
     # schema), even though the endpoint returns Database objects. Keep this
     # source-level workaround here so regeneration cannot restore the broken
     # response type. See tryAGI/Chroma#144.
+    # Chroma also marks the reset endpoint as hidden even though it is part of
+    # the documented v2 system API. AutoSDK intentionally honors x-hidden, so
+    # remove that provider visibility marker to expose System.ResetAsync. See
+    # tryAGI/Chroma#146.
     jq -S --indent 2 '
       .paths["/api/v2/tenants/{tenant}/databases"]
         .get.responses["200"].content["application/json"].schema = {
           "type": "array",
           "items": {"$ref": "#/components/schemas/Database"}
         }
+      | del(.paths["/api/v2/reset"].post["x-hidden"])
     ' "${raw_openapi}" > openapi.json
   else
     echo "Failed to format OpenAPI spec: jq is not available."

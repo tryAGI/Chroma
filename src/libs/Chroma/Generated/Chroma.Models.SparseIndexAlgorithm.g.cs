@@ -11,11 +11,11 @@ namespace Chroma
     public enum SparseIndexAlgorithm
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxScore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wand,
     }

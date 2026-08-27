@@ -20,7 +20,7 @@ namespace Chroma.JsonConverters
                     {
                         return global::Chroma.Space2Extensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -4,20 +4,20 @@
 namespace Chroma
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Space2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cosine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ip,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         L2,
     }

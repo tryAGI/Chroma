@@ -3,11 +3,11 @@
 
 namespace Chroma
 {
-    public partial class RecordClient
+    public partial class SystemClient
     {
 
 
-        private static readonly global::Chroma.EndPointSecurityRequirement s_CollectionSearchSecurityRequirement0 =
+        private static readonly global::Chroma.EndPointSecurityRequirement s_ResetSecurityRequirement0 =
             new global::Chroma.EndPointSecurityRequirement
             {
                 Authorizations = new global::Chroma.EndPointAuthorizationRequirement[]
@@ -21,62 +21,36 @@ namespace Chroma
                     },
                 },
             };
-        private static readonly global::Chroma.EndPointSecurityRequirement[] s_CollectionSearchSecurityRequirements =
+        private static readonly global::Chroma.EndPointSecurityRequirement[] s_ResetSecurityRequirements =
             new global::Chroma.EndPointSecurityRequirement[]
-            {                s_CollectionSearchSecurityRequirement0,
+            {                s_ResetSecurityRequirement0,
             };
-        partial void PrepareCollectionSearchArguments(
+        partial void PrepareResetArguments(
+            global::System.Net.Http.HttpClient httpClient);
+        partial void PrepareResetRequest(
             global::System.Net.Http.HttpClient httpClient,
-            ref string tenant,
-            ref string database,
-            ref string collectionId,
-            global::Chroma.SearchRequestPayload request);
-        partial void PrepareCollectionSearchRequest(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string tenant,
-            string database,
-            string collectionId,
-            global::Chroma.SearchRequestPayload request);
-        partial void ProcessCollectionSearchResponse(
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+        partial void ProcessResetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCollectionSearchResponseContent(
+        partial void ProcessResetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Search records<br/>
-        /// Searches records from a collection with dense, sparse, or hybrid vector search.
+        /// Reset database<br/>
+        /// Resets the database. Requires authorization.
         /// </summary>
-        /// <param name="tenant"></param>
-        /// <param name="database"></param>
-        /// <param name="collectionId"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
-        /// <remarks>
-        /// import { Search, K, Knn } from 'chromadb';<br/>
-        /// const results = await collection.search(new Search().rank(Knn({ query: [0.1, 0.2, 0.3], limit: 10 })));
-        /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::Chroma.SearchResponse> CollectionSearchAsync(
-            string tenant,
-            string database,
-            string collectionId,
-
-            global::Chroma.SearchRequestPayload request,
+        public async global::System.Threading.Tasks.Task<string> ResetAsync(
             global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CollectionSearchAsResponseAsync(
-                tenant: tenant,
-                database: database,
-                collectionId: collectionId,
-
-                request: request,
+            var __response = await ResetAsResponseAsync(
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -84,45 +58,26 @@ namespace Chroma
             return __response.Body;
         }
         /// <summary>
-        /// Search records<br/>
-        /// Searches records from a collection with dense, sparse, or hybrid vector search.
+        /// Reset database<br/>
+        /// Resets the database. Requires authorization.
         /// </summary>
-        /// <param name="tenant"></param>
-        /// <param name="database"></param>
-        /// <param name="collectionId"></param>
-        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Chroma.ApiException"></exception>
-        /// <remarks>
-        /// import { Search, K, Knn } from 'chromadb';<br/>
-        /// const results = await collection.search(new Search().rank(Knn({ query: [0.1, 0.2, 0.3], limit: 10 })));
-        /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::Chroma.AutoSDKHttpResponse<global::Chroma.SearchResponse>> CollectionSearchAsResponseAsync(
-            string tenant,
-            string database,
-            string collectionId,
-
-            global::Chroma.SearchRequestPayload request,
+        public async global::System.Threading.Tasks.Task<global::Chroma.AutoSDKHttpResponse<string>> ResetAsResponseAsync(
             global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCollectionSearchArguments(
-                httpClient: HttpClient,
-                tenant: ref tenant,
-                database: ref database,
-                collectionId: ref collectionId,
-                request: request);
+            PrepareResetArguments(
+                httpClient: HttpClient);
 
 
             var __authorizations = global::Chroma.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CollectionSearchSecurityRequirements,
-                operationName: "CollectionSearchAsync");
+                securityRequirements: s_ResetSecurityRequirements,
+                operationName: "ResetAsync");
 
             using var __timeoutCancellationTokenSource = global::Chroma.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -142,7 +97,7 @@ namespace Chroma
             {
 
                             var __pathBuilder = new global::Chroma.PathBuilder(
-                                path: $"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/search",
+                                path: "/api/v2/reset",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Chroma.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -173,12 +128,6 @@ namespace Chroma
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::Chroma.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -187,13 +136,9 @@ namespace Chroma
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCollectionSearchRequest(
+                PrepareResetRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest,
-                    tenant: tenant!,
-                    database: database!,
-                    collectionId: collectionId!,
-                    request: request);
+                    httpRequestMessage: __httpRequest);
 
                 global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -212,9 +157,9 @@ namespace Chroma
                     await global::Chroma.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Chroma.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CollectionSearch",
-                                methodName: "CollectionSearchAsync",
-                                pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/search\"",
+                                operationId: "Reset",
+                                methodName: "ResetAsync",
+                                pathTemplate: "\"/api/v2/reset\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -246,9 +191,9 @@ namespace Chroma
                         await global::Chroma.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Chroma.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CollectionSearch",
-                                methodName: "CollectionSearchAsync",
-                                pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/search\"",
+                                operationId: "Reset",
+                                methodName: "ResetAsync",
+                                pathTemplate: "\"/api/v2/reset\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -287,9 +232,9 @@ namespace Chroma
                         await global::Chroma.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Chroma.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CollectionSearch",
-                                methodName: "CollectionSearchAsync",
-                                pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/search\"",
+                                operationId: "Reset",
+                                methodName: "ResetAsync",
+                                pathTemplate: "\"/api/v2/reset\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -327,7 +272,7 @@ namespace Chroma
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCollectionSearchResponse(
+                ProcessResetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -335,9 +280,9 @@ namespace Chroma
                     await global::Chroma.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Chroma.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CollectionSearch",
-                                methodName: "CollectionSearchAsync",
-                                pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/search\"",
+                                operationId: "Reset",
+                                methodName: "ResetAsync",
+                                pathTemplate: "\"/api/v2/reset\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -357,9 +302,9 @@ namespace Chroma
                     await global::Chroma.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Chroma.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CollectionSearch",
-                                methodName: "CollectionSearchAsync",
-                                pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/search\"",
+                                operationId: "Reset",
+                                methodName: "ResetAsync",
+                                pathTemplate: "\"/api/v2/reset\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -406,43 +351,6 @@ namespace Chroma
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Collection not found
-                            if ((int)__response.StatusCode == 404)
-                            {
-                                string? __content_404 = null;
-                                global::System.Exception? __exception_404 = null;
-                                global::Chroma.ErrorResponse? __value_404 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::Chroma.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_404 = global::Chroma.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_404 = __ex;
-                                }
-
-
-                                throw global::Chroma.ApiException<global::Chroma.ErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_404,
-                                    responseBody: __content_404,
-                                    responseObject: __value_404,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
@@ -498,7 +406,7 @@ namespace Chroma
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCollectionSearchResponseContent(
+                                ProcessResetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -507,13 +415,11 @@ namespace Chroma
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Chroma.SearchResponse.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Chroma.AutoSDKHttpResponse<global::Chroma.SearchResponse>(
+                                    return new global::Chroma.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Chroma.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -533,19 +439,17 @@ namespace Chroma
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                                    var __content = await __response.Content.ReadAsStringAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Chroma.SearchResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Chroma.AutoSDKHttpResponse<global::Chroma.SearchResponse>(
+                                    return new global::Chroma.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Chroma.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -580,43 +484,6 @@ namespace Chroma
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Search records<br/>
-        /// Searches records from a collection with dense, sparse, or hybrid vector search.
-        /// </summary>
-        /// <param name="tenant"></param>
-        /// <param name="database"></param>
-        /// <param name="collectionId"></param>
-        /// <param name="readLevel">
-        /// Specifies whether to include unindexed data in the search results.
-        /// </param>
-        /// <param name="searches"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Chroma.SearchResponse> CollectionSearchAsync(
-            string tenant,
-            string database,
-            string collectionId,
-            global::System.Collections.Generic.IList<global::Chroma.SearchPayload> searches,
-            global::Chroma.ReadLevel? readLevel = default,
-            global::Chroma.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::Chroma.SearchRequestPayload
-            {
-                ReadLevel = readLevel,
-                Searches = searches,
-            };
-
-            return await CollectionSearchAsync(
-                tenant: tenant,
-                database: database,
-                collectionId: collectionId,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
