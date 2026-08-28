@@ -12,15 +12,13 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_function")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.EmbeddingFunctionConfiguration?>))]
-        public global::Chroma.OneOf<object, global::Chroma.EmbeddingFunctionConfiguration?>? EmbeddingFunction { get; set; }
+        public global::Chroma.EmbeddingFunctionConfiguration? EmbeddingFunction { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hnsw")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HnswIndexConfig>))]
-        public global::Chroma.OneOf<object, global::Chroma.HnswIndexConfig>? Hnsw { get; set; }
+        public global::Chroma.HnswIndexConfig? Hnsw { get; set; }
 
         /// <summary>
         /// Key to source the vector from
@@ -32,15 +30,13 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("space")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Space2?>))]
-        public global::Chroma.OneOf<object, global::Chroma.Space2?>? Space { get; set; }
+        public global::Chroma.Space? Space { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spann")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.SpannIndexConfig>))]
-        public global::Chroma.OneOf<object, global::Chroma.SpannIndexConfig>? Spann { get; set; }
+        public global::Chroma.SpannIndexConfig? Spann { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,11 +58,11 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VectorIndexConfig(
-            global::Chroma.OneOf<object, global::Chroma.EmbeddingFunctionConfiguration?>? embeddingFunction,
-            global::Chroma.OneOf<object, global::Chroma.HnswIndexConfig>? hnsw,
+            global::Chroma.EmbeddingFunctionConfiguration? embeddingFunction,
+            global::Chroma.HnswIndexConfig? hnsw,
             string? sourceKey,
-            global::Chroma.OneOf<object, global::Chroma.Space2?>? space,
-            global::Chroma.OneOf<object, global::Chroma.SpannIndexConfig>? spann)
+            global::Chroma.Space? space,
+            global::Chroma.SpannIndexConfig? spann)
         {
             this.EmbeddingFunction = embeddingFunction;
             this.Hnsw = hnsw;

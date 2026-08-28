@@ -65,8 +65,8 @@ namespace Chroma
             string tenant,
             string database,
             string collectionId,
-            global::Chroma.OneOf<object, global::Chroma.UpdateCollectionConfiguration>? newConfiguration = default,
-            global::Chroma.OneOf<object, global::Chroma.HashMap>? newMetadata = default,
+            global::Chroma.UpdateCollectionConfiguration? newConfiguration = default,
+            global::Chroma.HashMap? newMetadata = default,
             string? newName = default,
             global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

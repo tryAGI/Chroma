@@ -13,43 +13,37 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bool")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.BoolValueType>))]
-        public global::Chroma.OneOf<object, global::Chroma.BoolValueType>? Bool { get; set; }
+        public global::Chroma.BoolValueType? Bool { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("float")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.FloatValueType>))]
-        public global::Chroma.OneOf<object, global::Chroma.FloatValueType>? Float { get; set; }
+        public global::Chroma.FloatValueType? Float { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("float_list")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.FloatListValueType>))]
-        public global::Chroma.OneOf<object, global::Chroma.FloatListValueType>? FloatList { get; set; }
+        public global::Chroma.FloatListValueType? FloatList { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("int")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.IntValueType>))]
-        public global::Chroma.OneOf<object, global::Chroma.IntValueType>? Int { get; set; }
+        public global::Chroma.IntValueType? Int { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sparse_vector")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.SparseVectorValueType>))]
-        public global::Chroma.OneOf<object, global::Chroma.SparseVectorValueType>? SparseVector { get; set; }
+        public global::Chroma.SparseVectorValueType? SparseVector { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("string")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.StringValueType>))]
-        public global::Chroma.OneOf<object, global::Chroma.StringValueType>? String { get; set; }
+        public global::Chroma.StringValueType? String { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,12 +64,12 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ValueTypes(
-            global::Chroma.OneOf<object, global::Chroma.BoolValueType>? @bool,
-            global::Chroma.OneOf<object, global::Chroma.FloatValueType>? @float,
-            global::Chroma.OneOf<object, global::Chroma.FloatListValueType>? floatList,
-            global::Chroma.OneOf<object, global::Chroma.IntValueType>? @int,
-            global::Chroma.OneOf<object, global::Chroma.SparseVectorValueType>? sparseVector,
-            global::Chroma.OneOf<object, global::Chroma.StringValueType>? @string)
+            global::Chroma.BoolValueType? @bool,
+            global::Chroma.FloatValueType? @float,
+            global::Chroma.FloatListValueType? floatList,
+            global::Chroma.IntValueType? @int,
+            global::Chroma.SparseVectorValueType? sparseVector,
+            global::Chroma.StringValueType? @string)
         {
             this.Bool = @bool;
             this.Float = @float;

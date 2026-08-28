@@ -12,8 +12,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("float_inverted_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.FloatInvertedIndexType>))]
-        public global::Chroma.OneOf<object, global::Chroma.FloatInvertedIndexType>? FloatInvertedIndex { get; set; }
+        public global::Chroma.FloatInvertedIndexType? FloatInvertedIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +28,7 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FloatValueType(
-            global::Chroma.OneOf<object, global::Chroma.FloatInvertedIndexType>? floatInvertedIndex)
+            global::Chroma.FloatInvertedIndexType? floatInvertedIndex)
         {
             this.FloatInvertedIndex = floatInvertedIndex;
         }

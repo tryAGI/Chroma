@@ -29,7 +29,7 @@
           },
           "metadatas": {
             "items": {
-              "anyOf": [
+              "oneOf": [
                 {
                   "type": "null"
                 },
@@ -2042,7 +2042,7 @@
           },
           "metadatas": {
             "items": {
-              "anyOf": [
+              "oneOf": [
                 {
                   "type": "null"
                 },
@@ -2216,7 +2216,7 @@
           },
           "metadatas": {
             "items": {
-              "anyOf": [
+              "oneOf": [
                 {
                   "type": "null"
                 },

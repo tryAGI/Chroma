@@ -12,8 +12,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sparse_vector_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.SparseVectorIndexType>))]
-        public global::Chroma.OneOf<object, global::Chroma.SparseVectorIndexType>? SparseVectorIndex { get; set; }
+        public global::Chroma.SparseVectorIndexType? SparseVectorIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +28,7 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SparseVectorValueType(
-            global::Chroma.OneOf<object, global::Chroma.SparseVectorIndexType>? sparseVectorIndex)
+            global::Chroma.SparseVectorIndexType? sparseVectorIndex)
         {
             this.SparseVectorIndex = sparseVectorIndex;
         }

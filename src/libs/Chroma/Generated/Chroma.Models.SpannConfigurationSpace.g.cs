@@ -6,7 +6,7 @@ namespace Chroma
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class UpsertCollectionRecordsPayloadMetadata
+    public sealed partial class SpannConfigurationSpace
     {
 
         /// <summary>

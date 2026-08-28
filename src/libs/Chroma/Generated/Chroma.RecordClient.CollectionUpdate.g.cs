@@ -520,10 +520,10 @@ namespace Chroma
             string database,
             string collectionId,
             global::System.Collections.Generic.IList<string> ids,
-            global::System.Collections.Generic.IList<string>? documents = default,
-            global::Chroma.OneOf<object, global::Chroma.UpdateEmbeddingsPayload?>? embeddings = default,
-            global::System.Collections.Generic.IList<global::Chroma.HashMap>? metadatas = default,
-            global::System.Collections.Generic.IList<string>? uris = default,
+            global::System.Collections.Generic.IList<string?>? documents = default,
+            global::Chroma.UpdateEmbeddingsPayload? embeddings = default,
+            global::System.Collections.Generic.IList<global::Chroma.HashMap?>? metadatas = default,
+            global::System.Collections.Generic.IList<string?>? uris = default,
             global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

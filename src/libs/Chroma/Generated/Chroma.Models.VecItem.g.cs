@@ -46,8 +46,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>))]
-        public global::Chroma.OneOf<object, global::Chroma.HashMap>? Metadata { get; set; }
+        public global::Chroma.HashMap? Metadata { get; set; }
 
         /// <summary>
         ///
@@ -60,8 +59,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Schema3>))]
-        public global::Chroma.OneOf<object, global::Chroma.Schema3>? Schema { get; set; }
+        public global::Chroma.Schema? Schema { get; set; }
 
         /// <summary>
         ///
@@ -108,8 +106,8 @@ namespace Chroma
             string tenant,
             int version,
             int? dimension,
-            global::Chroma.OneOf<object, global::Chroma.HashMap>? metadata,
-            global::Chroma.OneOf<object, global::Chroma.Schema3>? schema)
+            global::Chroma.HashMap? metadata,
+            global::Chroma.Schema? schema)
         {
             this.ConfigurationJson = configurationJson ?? throw new global::System.ArgumentNullException(nameof(configurationJson));
             this.Database = database ?? throw new global::System.ArgumentNullException(nameof(database));

@@ -15,14 +15,13 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
-        public global::System.Collections.Generic.IList<string>? Documents { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Documents { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.UpdateEmbeddingsPayload?>))]
-        public global::Chroma.OneOf<object, global::Chroma.UpdateEmbeddingsPayload?>? Embeddings { get; set; }
+        public global::Chroma.UpdateEmbeddingsPayload? Embeddings { get; set; }
 
         /// <summary>
         ///
@@ -35,13 +34,13 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadatas")]
-        public global::System.Collections.Generic.IList<global::Chroma.HashMap>? Metadatas { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.HashMap?>? Metadatas { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uris")]
-        public global::System.Collections.Generic.IList<string>? Uris { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Uris { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,10 +61,10 @@ namespace Chroma
 #endif
         public UpdateCollectionRecordsPayload(
             global::System.Collections.Generic.IList<string> ids,
-            global::System.Collections.Generic.IList<string>? documents,
-            global::Chroma.OneOf<object, global::Chroma.UpdateEmbeddingsPayload?>? embeddings,
-            global::System.Collections.Generic.IList<global::Chroma.HashMap>? metadatas,
-            global::System.Collections.Generic.IList<string>? uris)
+            global::System.Collections.Generic.IList<string?>? documents,
+            global::Chroma.UpdateEmbeddingsPayload? embeddings,
+            global::System.Collections.Generic.IList<global::Chroma.HashMap?>? metadatas,
+            global::System.Collections.Generic.IList<string?>? uris)
         {
             this.Documents = documents;
             this.Embeddings = embeddings;

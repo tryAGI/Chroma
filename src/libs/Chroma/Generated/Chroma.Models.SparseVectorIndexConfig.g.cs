@@ -28,8 +28,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_function")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.EmbeddingFunctionConfiguration?>))]
-        public global::Chroma.OneOf<object, global::Chroma.EmbeddingFunctionConfiguration?>? EmbeddingFunction { get; set; }
+        public global::Chroma.EmbeddingFunctionConfiguration? EmbeddingFunction { get; set; }
 
         /// <summary>
         /// Key to source the sparse vector from
@@ -65,7 +64,7 @@ namespace Chroma
         public SparseVectorIndexConfig(
             global::Chroma.SparseIndexAlgorithm? algorithm,
             bool? bm25,
-            global::Chroma.OneOf<object, global::Chroma.EmbeddingFunctionConfiguration?>? embeddingFunction,
+            global::Chroma.EmbeddingFunctionConfiguration? embeddingFunction,
             string? sourceKey)
         {
             this.Algorithm = algorithm;

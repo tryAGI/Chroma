@@ -6,7 +6,7 @@ namespace Chroma
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class AddCollectionRecordsPayloadMetadata
+    public sealed partial class HnswConfigurationSpace
     {
 
         /// <summary>
