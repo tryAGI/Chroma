@@ -44,11 +44,11 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? Type4 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.HashMap>? Type4 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.HashMap>? Type5 { get; set; }
+        public global::Chroma.HashMap? Type5 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -56,75 +56,75 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.HashMap? Type7 { get; set; }
+        public global::Chroma.AddCollectionRecordsResponse? Type7 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.AddCollectionRecordsResponse? Type8 { get; set; }
+        public global::Chroma.AttachFunctionRequest? Type8 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.AttachFunctionRequest? Type9 { get; set; }
+        public global::Chroma.AttachFunctionResponse? Type9 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.AttachFunctionResponse? Type10 { get; set; }
+        public global::Chroma.AttachedFunctionInfo? Type10 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.AttachedFunctionInfo? Type11 { get; set; }
+        public bool? Type11 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public bool? Type12 { get; set; }
+        public global::Chroma.AttachedFunctionApiResponse? Type12 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.AttachedFunctionApiResponse? Type13 { get; set; }
+        public long? Type13 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public long? Type14 { get; set; }
+        public global::System.Guid? Type14 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Guid? Type15 { get; set; }
+        public global::Chroma.OneOf<object, global::System.Guid?>? Type15 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::System.Guid?>? Type16 { get; set; }
+        public global::Chroma.BoolInvertedIndexConfig? Type16 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.BoolInvertedIndexConfig? Type17 { get; set; }
+        public global::Chroma.BoolInvertedIndexType? Type17 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.BoolInvertedIndexType? Type18 { get; set; }
+        public global::Chroma.BoolValueType? Type18 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.BoolValueType? Type19 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.BoolInvertedIndexType>? Type19 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.BoolInvertedIndexType>? Type20 { get; set; }
+        public global::Chroma.ChecklistResponse? Type20 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.ChecklistResponse? Type21 { get; set; }
+        public int? Type21 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public int? Type22 { get; set; }
+        public global::Chroma.Collection? Type22 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.Collection? Type23 { get; set; }
+        public global::Chroma.CollectionConfiguration? Type23 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.CollectionConfiguration? Type24 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.HashMap>? Type24 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -336,335 +336,339 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.GetTenantResponse? Type77 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? Type77 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.GetUserIdentityResponse? Type78 { get; set; }
+        public global::Chroma.GetTenantResponse? Type78 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<bool?, long?, double?, string, global::Chroma.SparseVector, global::System.Collections.Generic.IList<bool>, global::System.Collections.Generic.IList<long>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<string>>? Type79 { get; set; }
+        public global::Chroma.GetUserIdentityResponse? Type79 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public double? Type80 { get; set; }
+        public global::Chroma.OneOf<bool?, long?, double?, string, global::Chroma.SparseVector, global::System.Collections.Generic.IList<bool>, global::System.Collections.Generic.IList<long>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<string>>? Type80 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SparseVector? Type81 { get; set; }
+        public double? Type81 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<bool>? Type82 { get; set; }
+        public global::Chroma.SparseVector? Type82 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<long>? Type83 { get; set; }
+        public global::System.Collections.Generic.IList<bool>? Type83 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type84 { get; set; }
+        public global::System.Collections.Generic.IList<long>? Type84 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.HeartbeatResponse? Type85 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type85 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.Space2?>? Type86 { get; set; }
+        public global::Chroma.HeartbeatResponse? Type86 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.Space2? Type87 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.Space2?>? Type87 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.HnswIndexConfig? Type88 { get; set; }
+        public global::Chroma.Space2? Type88 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.IndexStatusResponse? Type89 { get; set; }
+        public global::Chroma.HnswIndexConfig? Type89 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.IntInvertedIndexConfig? Type90 { get; set; }
+        public global::Chroma.IndexStatusResponse? Type90 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.IntInvertedIndexType? Type91 { get; set; }
+        public global::Chroma.IntInvertedIndexConfig? Type91 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.IntValueType? Type92 { get; set; }
+        public global::Chroma.IntInvertedIndexType? Type92 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.IntInvertedIndexType>? Type93 { get; set; }
+        public global::Chroma.IntValueType? Type93 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.Key? Type94 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.IntInvertedIndexType>? Type94 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.KeyVariant1? Type95 { get; set; }
+        public global::Chroma.Key? Type95 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.KeyVariant2? Type96 { get; set; }
+        public global::Chroma.KeyVariant1? Type96 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.KeyVariant3? Type97 { get; set; }
+        public global::Chroma.KeyVariant2? Type97 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.KeyVariant4? Type98 { get; set; }
+        public global::Chroma.KeyVariant3? Type98 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.KeyVariant5? Type99 { get; set; }
+        public global::Chroma.KeyVariant4? Type99 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.Quantization? Type100 { get; set; }
+        public global::Chroma.KeyVariant5? Type100 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.QueryRequestPayload? Type101 { get; set; }
+        public global::Chroma.Quantization? Type101 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.QueryRequestPayloadVariant2? Type102 { get; set; }
+        public global::Chroma.QueryRequestPayload? Type102 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.QueryResponse? Type103 { get; set; }
+        public global::Chroma.QueryRequestPayloadVariant2? Type103 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Type104 { get; set; }
+        public global::Chroma.QueryResponse? Type104 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? Type105 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Type105 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>>? Type106 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? Type106 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.ReadLevel? Type107 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>>? Type107 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.ValueTypes? Type108 { get; set; }
+        public global::Chroma.ReadLevel? Type108 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Chroma.ValueTypes>? Type109 { get; set; }
+        public global::Chroma.ValueTypes? Type109 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SearchPayload? Type110 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Chroma.ValueTypes>? Type110 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SearchPayloadFilter? Type111 { get; set; }
+        public global::Chroma.SearchPayload? Type111 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SearchPayloadGroupBy? Type112 { get; set; }
+        public global::Chroma.SearchPayloadFilter? Type112 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SearchPayloadLimit? Type113 { get; set; }
+        public global::Chroma.SearchPayloadGroupBy? Type113 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SearchPayloadSelect? Type114 { get; set; }
+        public global::Chroma.SearchPayloadLimit? Type114 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SearchRequestPayload? Type115 { get; set; }
+        public global::Chroma.SearchPayloadSelect? Type115 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.SearchPayload>? Type116 { get; set; }
+        public global::Chroma.SearchRequestPayload? Type116 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SearchResponse? Type117 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.SearchPayload>? Type117 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.Key>>? Type118 { get; set; }
+        public global::Chroma.SearchResponse? Type118 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.Key>? Type119 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.Key>>? Type119 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SpannIndexConfig? Type120 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.Key>? Type120 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SparseIndexAlgorithm? Type121 { get; set; }
+        public global::Chroma.SpannIndexConfig? Type121 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type122 { get; set; }
+        public global::Chroma.SparseIndexAlgorithm? Type122 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SparseVectorIndexConfig? Type123 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type123 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SparseVectorIndexType? Type124 { get; set; }
+        public global::Chroma.SparseVectorIndexConfig? Type124 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.SparseVectorValueType? Type125 { get; set; }
+        public global::Chroma.SparseVectorIndexType? Type125 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.SparseVectorIndexType>? Type126 { get; set; }
+        public global::Chroma.SparseVectorValueType? Type126 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.StringInvertedIndexConfig? Type127 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.SparseVectorIndexType>? Type127 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.StringInvertedIndexType? Type128 { get; set; }
+        public global::Chroma.StringInvertedIndexConfig? Type128 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.StringValueType? Type129 { get; set; }
+        public global::Chroma.StringInvertedIndexType? Type129 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.FtsIndexType>? Type130 { get; set; }
+        public global::Chroma.StringValueType? Type130 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.StringInvertedIndexType>? Type131 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.FtsIndexType>? Type131 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateCollectionConfiguration? Type132 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.StringInvertedIndexType>? Type132 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.UpdateHnswConfiguration>? Type133 { get; set; }
+        public global::Chroma.UpdateCollectionConfiguration? Type133 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateHnswConfiguration? Type134 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.UpdateHnswConfiguration>? Type134 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.UpdateSpannConfiguration>? Type135 { get; set; }
+        public global::Chroma.UpdateHnswConfiguration? Type135 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateSpannConfiguration? Type136 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.UpdateSpannConfiguration>? Type136 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateCollectionPayload? Type137 { get; set; }
+        public global::Chroma.UpdateSpannConfiguration? Type137 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.UpdateCollectionConfiguration>? Type138 { get; set; }
+        public global::Chroma.UpdateCollectionPayload? Type138 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateCollectionRecordsPayload? Type139 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.UpdateCollectionConfiguration>? Type139 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.UpdateEmbeddingsPayload?>? Type140 { get; set; }
+        public global::Chroma.UpdateCollectionRecordsPayload? Type140 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateEmbeddingsPayload? Type141 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.UpdateEmbeddingsPayload?>? Type141 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateCollectionRecordsResponse? Type142 { get; set; }
+        public global::Chroma.UpdateEmbeddingsPayload? Type142 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateCollectionResponse? Type143 { get; set; }
+        public global::Chroma.UpdateCollectionRecordsResponse? Type143 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateTenantPayload? Type144 { get; set; }
+        public global::Chroma.UpdateCollectionResponse? Type144 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpdateTenantResponse? Type145 { get; set; }
+        public global::Chroma.UpdateTenantPayload? Type145 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpsertCollectionRecordsPayload? Type146 { get; set; }
+        public global::Chroma.UpdateTenantResponse? Type146 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.UpsertCollectionRecordsResponse? Type147 { get; set; }
+        public global::Chroma.UpsertCollectionRecordsPayload? Type147 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.BoolValueType>? Type148 { get; set; }
+        public global::Chroma.UpsertCollectionRecordsResponse? Type148 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.FloatValueType>? Type149 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.BoolValueType>? Type149 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.FloatListValueType>? Type150 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.FloatValueType>? Type150 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.IntValueType>? Type151 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.FloatListValueType>? Type151 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.SparseVectorValueType>? Type152 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.IntValueType>? Type152 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.StringValueType>? Type153 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.SparseVectorValueType>? Type153 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.VecItem>? Type154 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.StringValueType>? Type154 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.VecItem? Type155 { get; set; }
+        public global::System.Collections.Generic.IList<global::Chroma.VecItem>? Type155 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.VectorIndexConfig? Type156 { get; set; }
+        public global::Chroma.VecItem? Type156 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.HnswIndexConfig>? Type157 { get; set; }
+        public global::Chroma.VectorIndexConfig? Type157 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<object, global::Chroma.SpannIndexConfig>? Type158 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.HnswIndexConfig>? Type158 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Chroma.Database>? Type159 { get; set; }
+        public global::Chroma.OneOf<object, global::Chroma.SpannIndexConfig>? Type159 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Chroma.Database>? Type160 { get; set; }
 
         /// <summary>
         ///
@@ -673,7 +677,7 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Chroma.OneOf<object, global::Chroma.HashMap>>? ListType1 { get; set; }
+        public global::System.Collections.Generic.List<global::Chroma.HashMap>? ListType1 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -689,54 +693,58 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.OneOf<bool?, long?, double?, string, global::Chroma.SparseVector, global::System.Collections.Generic.List<bool>, global::System.Collections.Generic.List<long>, global::System.Collections.Generic.List<double>, global::System.Collections.Generic.List<string>>? ListType5 { get; set; }
+        public global::System.Collections.Generic.List<global::Chroma.OneOf<object, global::Chroma.HashMap>>? ListType5 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<bool>? ListType6 { get; set; }
+        public global::Chroma.OneOf<bool?, long?, double?, string, global::Chroma.SparseVector, global::System.Collections.Generic.List<bool>, global::System.Collections.Generic.List<long>, global::System.Collections.Generic.List<double>, global::System.Collections.Generic.List<string>>? ListType6 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<long>? ListType7 { get; set; }
+        public global::System.Collections.Generic.List<bool>? ListType7 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<double>? ListType8 { get; set; }
+        public global::System.Collections.Generic.List<long>? ListType8 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>? ListType9 { get; set; }
+        public global::System.Collections.Generic.List<double>? ListType9 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>>>? ListType10 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>? ListType10 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::Chroma.OneOf<object, global::Chroma.HashMap>>>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>>>? ListType11 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Chroma.SearchPayload>? ListType12 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::Chroma.OneOf<object, global::Chroma.HashMap>>>? ListType12 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::Chroma.Key>>? ListType13 { get; set; }
+        public global::System.Collections.Generic.List<global::Chroma.SearchPayload>? ListType13 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Chroma.Key>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::Chroma.Key>>? ListType14 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<int>? ListType15 { get; set; }
+        public global::System.Collections.Generic.List<global::Chroma.Key>? ListType15 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Chroma.VecItem>? ListType16 { get; set; }
+        public global::System.Collections.Generic.List<int>? ListType16 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Chroma.Database>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::Chroma.VecItem>? ListType17 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Chroma.Database>? ListType18 { get; set; }
     }
 }

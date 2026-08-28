@@ -57,6 +57,10 @@ format_openapi() {
     # the documented v2 system API. AutoSDK intentionally honors x-hidden, so
     # remove that provider visibility marker to expose System.ResetAsync. See
     # tryAGI/Chroma#146.
+    # AutoSDK currently treats a nullable oneOf item as OneOf<object, HashMap>,
+    # which makes the object branch fail source-generated JSON serialization.
+    # The null and HashMap branches are disjoint, so spelling the same schema as
+    # anyOf lets AutoSDK emit IList<HashMap>? instead. See tryAGI/Chroma#147.
     jq -S --indent 2 '
       .paths["/api/v2/tenants/{tenant}/databases"]
         .get.responses["200"].content["application/json"].schema = {
@@ -64,6 +68,15 @@ format_openapi() {
           "items": {"$ref": "#/components/schemas/Database"}
         }
       | del(.paths["/api/v2/reset"].post["x-hidden"])
+      | [
+          "AddCollectionRecordsPayload",
+          "UpdateCollectionRecordsPayload",
+          "UpsertCollectionRecordsPayload"
+        ] as $payloads
+      | reduce $payloads[] as $payload (.;
+          .components.schemas[$payload].properties.metadatas.items |=
+            if .oneOf then {"anyOf": .oneOf} else . end
+        )
     ' "${raw_openapi}" > openapi.json
   else
     echo "Failed to format OpenAPI spec: jq is not available."

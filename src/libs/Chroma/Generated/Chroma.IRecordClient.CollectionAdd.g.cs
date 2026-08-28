@@ -74,7 +74,7 @@ namespace Chroma
             global::Chroma.EmbeddingsPayload embeddings,
             global::System.Collections.Generic.IList<string> ids,
             global::System.Collections.Generic.IList<string>? documents = default,
-            global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>? metadatas = default,
+            global::System.Collections.Generic.IList<global::Chroma.HashMap>? metadatas = default,
             global::System.Collections.Generic.IList<string>? uris = default,
             global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -75,8 +75,6 @@ namespace Chroma
 
             typeof(global::Chroma.JsonConverters.UpdateEmbeddingsPayloadJsonConverter),
 
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
             typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::System.Guid?>),
 
             typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.BoolInvertedIndexType>),
@@ -137,10 +135,6 @@ namespace Chroma
 
             typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.UpdateEmbeddingsPayload?>),
 
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
             typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.BoolValueType>),
 
             typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.FloatValueType>),
@@ -172,10 +166,9 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.EmbeddingsPayload), TypeInfoPropertyName = "EmbeddingsPayload2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.HashMap>), TypeInfoPropertyName = "OneOfObjectHashMap2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.HashMap>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.HashMap))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.AddCollectionRecordsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.AttachFunctionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.AttachFunctionResponse))]
@@ -193,6 +186,7 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.Collection))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.CollectionConfiguration))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.HashMap>), TypeInfoPropertyName = "OneOfObjectHashMap2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.Schema3>), TypeInfoPropertyName = "OneOfObjectSchema32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.Schema3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.EmbeddingFunctionConfiguration?>), TypeInfoPropertyName = "OneOfObjectEmbeddingFunctionConfiguration2")]
@@ -245,6 +239,7 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.Include>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.GetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.Include), TypeInfoPropertyName = "Include2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.GetTenantResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.GetUserIdentityResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<bool?, long?, double?, string, global::Chroma.SparseVector, global::System.Collections.Generic.IList<bool>, global::System.Collections.Generic.IList<long>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<string>>), TypeInfoPropertyName = "OneOfBooleanInt64DoubleStringSparseVectorIListBooleanIListInt64IListDoubleIListString2")]
@@ -329,10 +324,11 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.SpannIndexConfig>), TypeInfoPropertyName = "OneOfObjectSpannIndexConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.Database>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.OneOf<object, global::Chroma.HashMap>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.HashMap>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<float>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.Include>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.OneOf<object, global::Chroma.HashMap>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<bool?, long?, double?, string, global::Chroma.SparseVector, global::System.Collections.Generic.List<bool>, global::System.Collections.Generic.List<long>, global::System.Collections.Generic.List<double>, global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<bool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
