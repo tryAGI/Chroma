@@ -12,22 +12,19 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_function")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.EmbeddingFunctionConfiguration?>))]
-        public global::Chroma.OneOf<object, global::Chroma.EmbeddingFunctionConfiguration?>? EmbeddingFunction { get; set; }
+        public global::Chroma.EmbeddingFunctionConfiguration? EmbeddingFunction { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hnsw")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HnswConfiguration>))]
-        public global::Chroma.OneOf<object, global::Chroma.HnswConfiguration>? Hnsw { get; set; }
+        public global::Chroma.HnswConfiguration? Hnsw { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spann")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.SpannConfiguration>))]
-        public global::Chroma.OneOf<object, global::Chroma.SpannConfiguration>? Spann { get; set; }
+        public global::Chroma.SpannConfiguration? Spann { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,9 +42,9 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CollectionConfiguration(
-            global::Chroma.OneOf<object, global::Chroma.EmbeddingFunctionConfiguration?>? embeddingFunction,
-            global::Chroma.OneOf<object, global::Chroma.HnswConfiguration>? hnsw,
-            global::Chroma.OneOf<object, global::Chroma.SpannConfiguration>? spann)
+            global::Chroma.EmbeddingFunctionConfiguration? embeddingFunction,
+            global::Chroma.HnswConfiguration? hnsw,
+            global::Chroma.SpannConfiguration? spann)
         {
             this.EmbeddingFunction = embeddingFunction;
             this.Hnsw = hnsw;

@@ -13,14 +13,14 @@ namespace Chroma
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> Documents { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string?>?> Documents { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> Embeddings { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>?> Embeddings { get; set; }
 
         /// <summary>
         ///
@@ -34,14 +34,14 @@ namespace Chroma
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadatas")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>> Metadatas { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.HashMap?>?> Metadatas { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scores")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> Scores { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float?>?> Scores { get; set; }
 
         /// <summary>
         ///
@@ -69,11 +69,11 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SearchResponse(
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> documents,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> embeddings,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string?>?> documents,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>?> embeddings,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> ids,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>> metadatas,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> scores,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.HashMap?>?> metadatas,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float?>?> scores,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.Key>> select)
         {
             this.Documents = documents ?? throw new global::System.ArgumentNullException(nameof(documents));

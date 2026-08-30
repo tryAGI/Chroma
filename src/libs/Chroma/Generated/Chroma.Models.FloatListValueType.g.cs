@@ -12,8 +12,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.VectorIndexType>))]
-        public global::Chroma.OneOf<object, global::Chroma.VectorIndexType>? VectorIndex { get; set; }
+        public global::Chroma.VectorIndexType? VectorIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +28,7 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FloatListValueType(
-            global::Chroma.OneOf<object, global::Chroma.VectorIndexType>? vectorIndex)
+            global::Chroma.VectorIndexType? vectorIndex)
         {
             this.VectorIndex = vectorIndex;
         }

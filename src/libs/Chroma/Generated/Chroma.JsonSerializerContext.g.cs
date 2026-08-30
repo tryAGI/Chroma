@@ -53,9 +53,9 @@ namespace Chroma
 
             typeof(global::Chroma.JsonConverters.ReadLevelNullableJsonConverter),
 
-            typeof(global::Chroma.JsonConverters.Space2JsonConverter),
+            typeof(global::Chroma.JsonConverters.SpaceJsonConverter),
 
-            typeof(global::Chroma.JsonConverters.Space2NullableJsonConverter),
+            typeof(global::Chroma.JsonConverters.SpaceNullableJsonConverter),
 
             typeof(global::Chroma.JsonConverters.SparseIndexAlgorithmJsonConverter),
 
@@ -75,95 +75,9 @@ namespace Chroma
 
             typeof(global::Chroma.JsonConverters.UpdateEmbeddingsPayloadJsonConverter),
 
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::System.Guid?>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.BoolInvertedIndexType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Schema3>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.EmbeddingFunctionConfiguration?>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HnswConfiguration>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.SpannConfiguration>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.CollectionConfiguration>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Schema3>),
-
             typeof(global::Chroma.JsonConverters.AllOfJsonConverter<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>),
 
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.VectorIndexType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.FloatInvertedIndexType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
             typeof(global::Chroma.JsonConverters.OneOfJsonConverter<bool?, long?, double?, string, global::Chroma.SparseVector, global::System.Collections.Generic.IList<bool>, global::System.Collections.Generic.IList<long>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<string>>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Space2?>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.IntInvertedIndexType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Space2?>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.EmbeddingFunctionConfiguration?>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.SparseVectorIndexType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.FtsIndexType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.StringInvertedIndexType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.EmbeddingFunctionConfiguration?>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.UpdateHnswConfiguration>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.UpdateSpannConfiguration>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.UpdateCollectionConfiguration>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.UpdateEmbeddingsPayload?>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.BoolValueType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.FloatValueType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.FloatListValueType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.IntValueType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.SparseVectorValueType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.StringValueType>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Schema3>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.EmbeddingFunctionConfiguration?>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HnswIndexConfig>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Space2?>),
-
-            typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.SpannIndexConfig>),
 
             typeof(global::Chroma.JsonConverters.UnixTimestampJsonConverter),
             // PLL 28/08/2026
@@ -171,14 +85,15 @@ namespace Chroma
 
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.AddCollectionRecordsPayload))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string?>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.EmbeddingsPayload), TypeInfoPropertyName = "EmbeddingsPayload2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.HashMap>), TypeInfoPropertyName = "OneOfObjectHashMap2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>), TypeInfoPropertyName = "IListString_System_Collections_Generic_IList_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.HashMap?>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.HashMap))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.AddCollectionRecordsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.AttachFunctionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.AttachFunctionResponse))]
@@ -187,25 +102,18 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.AttachedFunctionApiResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::System.Guid?>), TypeInfoPropertyName = "OneOfObjectGuid2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.BoolInvertedIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.BoolInvertedIndexType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.BoolValueType))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.BoolInvertedIndexType>), TypeInfoPropertyName = "OneOfObjectBoolInvertedIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.ChecklistResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.Collection))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.CollectionConfiguration))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.Schema3>), TypeInfoPropertyName = "OneOfObjectSchema32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.Schema3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.EmbeddingFunctionConfiguration?>), TypeInfoPropertyName = "OneOfObjectEmbeddingFunctionConfiguration2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.EmbeddingFunctionConfiguration), TypeInfoPropertyName = "EmbeddingFunctionConfiguration2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.HnswConfiguration>), TypeInfoPropertyName = "OneOfObjectHnswConfiguration2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.Schema))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.EmbeddingFunctionConfiguration))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.HnswConfiguration))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.SpannConfiguration>), TypeInfoPropertyName = "OneOfObjectSpannConfiguration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SpannConfiguration))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.CreateCollectionPayload))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.CollectionConfiguration>), TypeInfoPropertyName = "OneOfObjectCollectionConfiguration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.CreateDatabasePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.CreateDatabaseResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.CreateTenantPayload))]
@@ -227,17 +135,15 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.EmbeddingFunctionConfigurationVariant2Type), TypeInfoPropertyName = "EmbeddingFunctionConfigurationVariant2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.EmbeddingFunctionConfigurationVariant3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.EmbeddingFunctionConfigurationVariant3Type), TypeInfoPropertyName = "EmbeddingFunctionConfigurationVariant3Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<float>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>), TypeInfoPropertyName = "IListIListSingle_System_Collections_Generic_IList_global_System_Collections_Generic_IList_float")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<float>), TypeInfoPropertyName = "IListSingle_System_Collections_Generic_IList_float")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(float))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.FloatInvertedIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.FloatInvertedIndexType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.FloatListValueType))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.VectorIndexType>), TypeInfoPropertyName = "OneOfObjectVectorIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.VectorIndexType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.FloatValueType))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.FloatInvertedIndexType>), TypeInfoPropertyName = "OneOfObjectFloatInvertedIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.ForkCollectionPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.ForkCountResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.FtsIndexConfig))]
@@ -257,14 +163,12 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.HeartbeatResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.Space2?>), TypeInfoPropertyName = "OneOfObjectSpace22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.Space2), TypeInfoPropertyName = "Space22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.Space), TypeInfoPropertyName = "Space2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.HnswIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.IndexStatusResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.IntInvertedIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.IntInvertedIndexType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.IntValueType))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.IntInvertedIndexType>), TypeInfoPropertyName = "OneOfObjectIntInvertedIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.Key), TypeInfoPropertyName = "Key2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.KeyVariant1), TypeInfoPropertyName = "KeyVariant12")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.KeyVariant2), TypeInfoPropertyName = "KeyVariant22")]
@@ -275,9 +179,13 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.QueryRequestPayload), TypeInfoPropertyName = "QueryRequestPayload2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.QueryRequestPayloadVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.QueryResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.OneOf<object, global::Chroma.HashMap>>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float?>>), TypeInfoPropertyName = "IListIListSingle_System_Collections_Generic_IList_global_System_Collections_Generic_IList_float_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<float?>), TypeInfoPropertyName = "IListSingle_System_Collections_Generic_IList_float_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string?>>), TypeInfoPropertyName = "IListIListString_System_Collections_Generic_IList_global_System_Collections_Generic_IList_string")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>>), TypeInfoPropertyName = "IList_float_f9b521f5e6b0e125")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>), TypeInfoPropertyName = "IListIListSingle_System_Collections_Generic_IList_global_System_Collections_Generic_IList_float_4")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>), TypeInfoPropertyName = "IListIListString_System_Collections_Generic_IList_global_System_Collections_Generic_IList_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.HashMap?>>), TypeInfoPropertyName = "IListIListHashMap_System_Collections_Generic_IList_global_System_Collections_Generic_IList_global_Chroma_HashMap")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.ReadLevel), TypeInfoPropertyName = "ReadLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.ValueTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Chroma.ValueTypes>))]
@@ -289,6 +197,10 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SearchRequestPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.SearchPayload>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SearchResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string?>?>), TypeInfoPropertyName = "IListIListString_System_Collections_Generic_IList_global_System_Collections_Generic_IList_string_4")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>?>), TypeInfoPropertyName = "IList_float_f184b748c9245cca")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.HashMap?>?>), TypeInfoPropertyName = "IListIListHashMap_System_Collections_Generic_IList_global_System_Collections_Generic_IList_global_Chroma_HashMap_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float?>?>), TypeInfoPropertyName = "IListIListSingle_System_Collections_Generic_IList_global_System_Collections_Generic_IList_float_5")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Chroma.Key>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.Key>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SpannIndexConfig))]
@@ -297,53 +209,47 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SparseVectorIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SparseVectorIndexType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.SparseVectorValueType))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.SparseVectorIndexType>), TypeInfoPropertyName = "OneOfObjectSparseVectorIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.StringInvertedIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.StringInvertedIndexType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.StringValueType))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.FtsIndexType>), TypeInfoPropertyName = "OneOfObjectFtsIndexType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.StringInvertedIndexType>), TypeInfoPropertyName = "OneOfObjectStringInvertedIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateCollectionConfiguration))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.UpdateHnswConfiguration>), TypeInfoPropertyName = "OneOfObjectUpdateHnswConfiguration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateHnswConfiguration))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.UpdateSpannConfiguration>), TypeInfoPropertyName = "OneOfObjectUpdateSpannConfiguration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateSpannConfiguration))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateCollectionPayload))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.UpdateCollectionConfiguration>), TypeInfoPropertyName = "OneOfObjectUpdateCollectionConfiguration2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateCollectionRecordsPayload))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.UpdateEmbeddingsPayload?>), TypeInfoPropertyName = "OneOfObjectUpdateEmbeddingsPayload2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateEmbeddingsPayload), TypeInfoPropertyName = "UpdateEmbeddingsPayload2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateEmbeddingsPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateCollectionRecordsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateCollectionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateTenantPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpdateTenantResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpsertCollectionRecordsPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.UpsertCollectionRecordsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.BoolValueType>), TypeInfoPropertyName = "OneOfObjectBoolValueType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.FloatValueType>), TypeInfoPropertyName = "OneOfObjectFloatValueType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.FloatListValueType>), TypeInfoPropertyName = "OneOfObjectFloatListValueType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.IntValueType>), TypeInfoPropertyName = "OneOfObjectIntValueType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.SparseVectorValueType>), TypeInfoPropertyName = "OneOfObjectSparseVectorValueType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.StringValueType>), TypeInfoPropertyName = "OneOfObjectStringValueType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.VecItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.VecItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.VectorIndexConfig))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.HnswIndexConfig>), TypeInfoPropertyName = "OneOfObjectHnswIndexConfig2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<object, global::Chroma.SpannIndexConfig>), TypeInfoPropertyName = "OneOfObjectSpannIndexConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Chroma.Database>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.OneOf<object, global::Chroma.HashMap>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<float>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>), TypeInfoPropertyName = "ListString_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.HashMap?>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>>), TypeInfoPropertyName = "ListListSingle_System_Collections_Generic_List_global_System_Collections_Generic_List_float")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<float>), TypeInfoPropertyName = "ListSingle_System_Collections_Generic_List_float")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.Include>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.OneOf<bool?, long?, double?, string, global::Chroma.SparseVector, global::System.Collections.Generic.List<bool>, global::System.Collections.Generic.List<long>, global::System.Collections.Generic.List<double>, global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<bool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::Chroma.OneOf<object, global::Chroma.HashMap>>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<float?>>), TypeInfoPropertyName = "ListListSingle_System_Collections_Generic_List_global_System_Collections_Generic_List_float_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<float?>), TypeInfoPropertyName = "ListSingle_System_Collections_Generic_List_float_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<string?>>), TypeInfoPropertyName = "ListListString_System_Collections_Generic_List_global_System_Collections_Generic_List_string")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>?>>), TypeInfoPropertyName = "List_float_1999e098a7369f5e")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>?>), TypeInfoPropertyName = "ListListSingle_System_Collections_Generic_List_global_System_Collections_Generic_List_float_4")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>), TypeInfoPropertyName = "ListListString_System_Collections_Generic_List_global_System_Collections_Generic_List_string_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::Chroma.HashMap?>>), TypeInfoPropertyName = "ListListHashMap_System_Collections_Generic_List_global_System_Collections_Generic_List_global_Chroma_HashMap")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.SearchPayload>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<string?>?>), TypeInfoPropertyName = "ListListString_System_Collections_Generic_List_global_System_Collections_Generic_List_string_4")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<float>?>?>), TypeInfoPropertyName = "List_float_36e16dcf0d3b5792")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::Chroma.HashMap?>?>), TypeInfoPropertyName = "ListListHashMap_System_Collections_Generic_List_global_System_Collections_Generic_List_global_Chroma_HashMap_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<float?>?>), TypeInfoPropertyName = "ListListSingle_System_Collections_Generic_List_global_System_Collections_Generic_List_float_5")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::Chroma.Key>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.Key>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]

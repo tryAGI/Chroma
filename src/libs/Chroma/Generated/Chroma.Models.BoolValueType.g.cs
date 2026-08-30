@@ -12,8 +12,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bool_inverted_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.BoolInvertedIndexType>))]
-        public global::Chroma.OneOf<object, global::Chroma.BoolInvertedIndexType>? BoolInvertedIndex { get; set; }
+        public global::Chroma.BoolInvertedIndexType? BoolInvertedIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +28,7 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BoolValueType(
-            global::Chroma.OneOf<object, global::Chroma.BoolInvertedIndexType>? boolInvertedIndex)
+            global::Chroma.BoolInvertedIndexType? boolInvertedIndex)
         {
             this.BoolInvertedIndex = boolInvertedIndex;
         }

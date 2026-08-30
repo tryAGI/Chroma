@@ -3,10 +3,10 @@
 namespace Chroma.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class Space2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Chroma.Space2?>
+    public sealed class SpaceNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Chroma.Space?>
     {
         /// <inheritdoc />
-        public override global::Chroma.Space2? Read(
+        public override global::Chroma.Space? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Chroma.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Chroma.Space2Extensions.ToEnum(stringValue);
+                        return global::Chroma.SpaceExtensions.ToEnum(stringValue);
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace Chroma.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Chroma.Space2)numValue;
+                    return (global::Chroma.Space)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Chroma.Space2?);
+                    return default(global::Chroma.Space?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace Chroma.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Chroma.Space2? value,
+            global::Chroma.Space? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace Chroma.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::Chroma.Space2Extensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::Chroma.SpaceExtensions.ToValueString(value.Value));
             }
         }
     }

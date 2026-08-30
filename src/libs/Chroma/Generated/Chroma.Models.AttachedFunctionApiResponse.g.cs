@@ -68,8 +68,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_collection_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::System.Guid?>))]
-        public global::Chroma.OneOf<object, global::System.Guid?>? OutputCollectionId { get; set; }
+        public global::System.Guid? OutputCollectionId { get; set; }
 
         /// <summary>
         /// Optional JSON parameters for the function
@@ -137,7 +136,7 @@ namespace Chroma
             string name,
             string outputCollection,
             string tenantId,
-            global::Chroma.OneOf<object, global::System.Guid?>? outputCollectionId,
+            global::System.Guid? outputCollectionId,
             string? @params)
         {
             this.CompletionOffset = completionOffset;

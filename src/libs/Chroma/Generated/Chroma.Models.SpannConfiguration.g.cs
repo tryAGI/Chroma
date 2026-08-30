@@ -48,8 +48,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("space")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Space2?>))]
-        public global::Chroma.OneOf<object, global::Chroma.Space2?>? Space { get; set; }
+        public global::Chroma.Space? Space { get; set; }
 
         /// <summary>
         ///
@@ -91,7 +90,7 @@ namespace Chroma
             int? mergeThreshold,
             int? reassignNeighborCount,
             int? searchNprobe,
-            global::Chroma.OneOf<object, global::Chroma.Space2?>? space,
+            global::Chroma.Space? space,
             int? splitThreshold,
             int? writeNprobe)
         {

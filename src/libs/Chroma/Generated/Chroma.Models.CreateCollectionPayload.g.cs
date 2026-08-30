@@ -12,8 +12,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configuration")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.CollectionConfiguration>))]
-        public global::Chroma.OneOf<object, global::Chroma.CollectionConfiguration>? Configuration { get; set; }
+        public global::Chroma.CollectionConfiguration? Configuration { get; set; }
 
         /// <summary>
         ///
@@ -25,8 +24,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.HashMap>))]
-        public global::Chroma.OneOf<object, global::Chroma.HashMap>? Metadata { get; set; }
+        public global::Chroma.HashMap? Metadata { get; set; }
 
         /// <summary>
         ///
@@ -39,8 +37,7 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.Schema3>))]
-        public global::Chroma.OneOf<object, global::Chroma.Schema3>? Schema { get; set; }
+        public global::Chroma.Schema? Schema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,10 +58,10 @@ namespace Chroma
 #endif
         public CreateCollectionPayload(
             string name,
-            global::Chroma.OneOf<object, global::Chroma.CollectionConfiguration>? configuration,
+            global::Chroma.CollectionConfiguration? configuration,
             bool? getOrCreate,
-            global::Chroma.OneOf<object, global::Chroma.HashMap>? metadata,
-            global::Chroma.OneOf<object, global::Chroma.Schema3>? schema)
+            global::Chroma.HashMap? metadata,
+            global::Chroma.Schema? schema)
         {
             this.Configuration = configuration;
             this.GetOrCreate = getOrCreate;

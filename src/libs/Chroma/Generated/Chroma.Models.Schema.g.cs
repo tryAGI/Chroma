@@ -7,7 +7,7 @@ namespace Chroma
     /// Schema representation for collection index configurations<br/>
     /// This represents the server-side schema structure used for index management
     /// </summary>
-    public sealed partial class Schema3
+    public sealed partial class Schema
     {
         /// <summary>
         /// Customer-managed encryption key for collection data
@@ -43,7 +43,7 @@ namespace Chroma
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Schema3" /> class.
+        /// Initializes a new instance of the <see cref="Schema" /> class.
         /// </summary>
         /// <param name="defaults">
         /// Default index configurations for each value type
@@ -61,7 +61,7 @@ namespace Chroma
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public Schema3(
+        public Schema(
             global::Chroma.ValueTypes defaults,
             global::System.Collections.Generic.Dictionary<string, global::Chroma.ValueTypes> keys,
             object? cmek,
@@ -74,9 +74,9 @@ namespace Chroma
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Schema3" /> class.
+        /// Initializes a new instance of the <see cref="Schema" /> class.
         /// </summary>
-        public Schema3()
+        public Schema()
         {
         }
 

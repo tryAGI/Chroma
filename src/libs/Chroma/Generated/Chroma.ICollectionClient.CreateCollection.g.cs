@@ -62,10 +62,10 @@ namespace Chroma
             string tenant,
             string database,
             string name,
-            global::Chroma.OneOf<object, global::Chroma.CollectionConfiguration>? configuration = default,
+            global::Chroma.CollectionConfiguration? configuration = default,
             bool? getOrCreate = default,
-            global::Chroma.OneOf<object, global::Chroma.HashMap>? metadata = default,
-            global::Chroma.OneOf<object, global::Chroma.Schema3>? schema = default,
+            global::Chroma.HashMap? metadata = default,
+            global::Chroma.Schema? schema = default,
             global::Chroma.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -12,15 +12,13 @@ namespace Chroma
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fts_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.FtsIndexType>))]
-        public global::Chroma.OneOf<object, global::Chroma.FtsIndexType>? FtsIndex { get; set; }
+        public global::Chroma.FtsIndexType? FtsIndex { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("string_inverted_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Chroma.JsonConverters.OneOfJsonConverter<object, global::Chroma.StringInvertedIndexType>))]
-        public global::Chroma.OneOf<object, global::Chroma.StringInvertedIndexType>? StringInvertedIndex { get; set; }
+        public global::Chroma.StringInvertedIndexType? StringInvertedIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,8 +35,8 @@ namespace Chroma
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public StringValueType(
-            global::Chroma.OneOf<object, global::Chroma.FtsIndexType>? ftsIndex,
-            global::Chroma.OneOf<object, global::Chroma.StringInvertedIndexType>? stringInvertedIndex)
+            global::Chroma.FtsIndexType? ftsIndex,
+            global::Chroma.StringInvertedIndexType? stringInvertedIndex)
         {
             this.FtsIndex = ftsIndex;
             this.StringInvertedIndex = stringInvertedIndex;
