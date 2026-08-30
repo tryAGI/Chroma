@@ -11,7 +11,9 @@ namespace Chroma.IntegrationTests;
 
 public partial class Tests
 {
-    //// Reset the Chroma database. The server must allow resets for this endpoint to succeed.
+    //// Reset permanently deletes all data and is disabled by default on the Chroma server.
+    //// Enable it only in a disposable environment with `allow_reset: true` in the YAML
+    //// configuration, or with the `CHROMA_ALLOW_RESET=true` environment override.
 
     [TestMethod]
     public async Task Example_Reset()

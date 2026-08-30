@@ -5,12 +5,32 @@ namespace Chroma;
 /// </summary>
 public sealed class WhereFilter
 {
+    private bool _combineWithOr;
+    private readonly global::System.Collections.Generic.List<global::System.Collections.Generic.Dictionary<string, object?>> _clauses =
+        new global::System.Collections.Generic.List<global::System.Collections.Generic.Dictionary<string, object?>>();
+
     /// <summary>
     /// Gets the metadata clauses combined by this filter.
     /// </summary>
     [global::System.Text.Json.Serialization.JsonPropertyName("$and")]
-    public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, object?>> And { get; } =
-        new global::System.Collections.Generic.List<global::System.Collections.Generic.Dictionary<string, object?>>();
+    public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, object?>>? And =>
+        _combineWithOr ? null : _clauses;
+
+    /// <summary>
+    /// Gets the metadata clauses when this filter combines them with <c>$or</c>.
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonPropertyName("$or")]
+    public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, object?>>? OrClauses =>
+        _combineWithOr ? _clauses : null;
+
+    /// <summary>
+    /// Combines clauses added directly to this filter with <c>$or</c> instead of <c>$and</c>.
+    /// </summary>
+    public WhereFilter Or()
+    {
+        _combineWithOr = true;
+        return this;
+    }
 
     /// <summary>
     /// Adds an equality clause.
@@ -46,13 +66,23 @@ public sealed class WhereFilter
     /// Adds a set-membership clause.
     /// </summary>
     public WhereFilter In(string field, global::System.Collections.Generic.IEnumerable<object> values) =>
-        AddComparison(field, "$in", values?.ToList() ?? throw new global::System.ArgumentNullException(nameof(values)));
+        AddComparison(field, "$in", MaterializeValues(values, nameof(values)));
 
     /// <summary>
     /// Adds a negative set-membership clause.
     /// </summary>
     public WhereFilter NotIn(string field, global::System.Collections.Generic.IEnumerable<object> values) =>
-        AddComparison(field, "$nin", values?.ToList() ?? throw new global::System.ArgumentNullException(nameof(values)));
+        AddComparison(field, "$nin", MaterializeValues(values, nameof(values)));
+
+    /// <summary>
+    /// Adds a nested group whose filters are combined with <c>$and</c>.
+    /// </summary>
+    public WhereFilter All(params WhereFilter[] filters) => AddGroup("$and", filters);
+
+    /// <summary>
+    /// Adds a nested group whose filters are combined with <c>$or</c>.
+    /// </summary>
+    public WhereFilter Any(params WhereFilter[] filters) => AddGroup("$or", filters);
 
     /// <summary>
     /// Converts this filter to an AOT-safe JSON value accepted by <see cref="RawWhereFields.Where"/>.
@@ -71,16 +101,48 @@ public sealed class WhereFilter
     private WhereFilter Add(string field, object? value)
     {
         global::System.ArgumentException.ThrowIfNullOrWhiteSpace(field);
-        And.Add(new global::System.Collections.Generic.Dictionary<string, object?>
+        _clauses.Add(new global::System.Collections.Generic.Dictionary<string, object?>
         {
             [field] = value,
         });
 
         return this;
     }
+
+    private WhereFilter AddGroup(string logicalOperator, WhereFilter[] filters)
+    {
+        global::System.ArgumentNullException.ThrowIfNull(filters);
+        if (filters.Length == 0)
+        {
+            throw new global::System.ArgumentException("At least one filter is required.", nameof(filters));
+        }
+        if (global::System.Array.Exists(filters, static filter => filter is null))
+        {
+            throw new global::System.ArgumentException("Filters cannot contain null values.", nameof(filters));
+        }
+
+        return Add(logicalOperator, filters);
+    }
+
+    private static global::System.Collections.Generic.List<object> MaterializeValues(
+        global::System.Collections.Generic.IEnumerable<object> values,
+        string parameterName)
+    {
+        global::System.ArgumentNullException.ThrowIfNull(values, parameterName);
+        var materialized = values.ToList();
+        if (materialized.Count == 0)
+        {
+            throw new global::System.ArgumentException("At least one value is required.", parameterName);
+        }
+
+        return materialized;
+    }
 }
 
+[global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+    DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.WhereFilter))]
+[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.WhereFilter[]))]
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
