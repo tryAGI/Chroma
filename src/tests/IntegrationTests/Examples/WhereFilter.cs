@@ -46,4 +46,48 @@ public partial class Tests
         clauses[1].GetProperty("page").GetProperty("$gt").GetInt32().Should().Be(10);
         clauses[2].GetProperty("language").GetProperty("$in").GetArrayLength().Should().Be(2);
     }
+
+    [TestMethod]
+    public void Example_WhereFilter_SerializesOrAndNestedGroups()
+    {
+        var where = new WhereFilter()
+            .Equals("published", true)
+            .Any(
+                new WhereFilter().Equals("language", "en"),
+                new WhereFilter().Equals("language", "fr"));
+
+        JsonElement root = where.ToJsonElement();
+        JsonElement clauses = root.GetProperty("$and");
+
+        clauses.GetArrayLength().Should().Be(2);
+        JsonElement alternatives = clauses[1].GetProperty("$or");
+        alternatives.GetArrayLength().Should().Be(2);
+        alternatives[0].GetProperty("$and")[0].GetProperty("language").GetString().Should().Be("en");
+        alternatives[1].GetProperty("$and")[0].GetProperty("language").GetString().Should().Be("fr");
+    }
+
+    [TestMethod]
+    public void Example_WhereFilter_SerializesRootOr()
+    {
+        JsonElement root = new WhereFilter()
+            .Or()
+            .Equals("category", "books")
+            .Equals("category", "articles")
+            .ToJsonElement();
+
+        root.TryGetProperty("$and", out _).Should().BeFalse();
+        root.GetProperty("$or").GetArrayLength().Should().Be(2);
+    }
+
+    [TestMethod]
+    public void Example_WhereFilter_RejectsEmptyValueAndFilterGroups()
+    {
+        var filter = new WhereFilter();
+
+        var inAction = () => filter.In("language", []);
+        var groupAction = () => filter.Any();
+
+        inAction.Should().Throw<ArgumentException>();
+        groupAction.Should().Throw<ArgumentException>();
+    }
 }

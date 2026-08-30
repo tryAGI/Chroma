@@ -80,9 +80,6 @@ namespace Chroma
             typeof(global::Chroma.JsonConverters.OneOfJsonConverter<bool?, long?, double?, string, global::Chroma.SparseVector, global::System.Collections.Generic.IList<bool>, global::System.Collections.Generic.IList<long>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<string>>),
 
             typeof(global::Chroma.JsonConverters.UnixTimestampJsonConverter),
-            // PLL 28/08/2026
-            typeof(global::Chroma.JsonConverters.WhereFilterConverter),
-
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
@@ -255,8 +252,6 @@ namespace Chroma
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.VecItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Chroma.Database>))]
-    // PLL 28/08/2026 (to generate the file SourceGenerationContext.WhereFilter.g.cs)
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.WhereFilter))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
