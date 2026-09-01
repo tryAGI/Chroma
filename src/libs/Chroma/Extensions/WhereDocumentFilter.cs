@@ -91,7 +91,7 @@ public sealed class WhereDocumentFilter
             throw new global::System.InvalidOperationException("At least one document filter clause is required.");
         }
 
-        if (_clauses.Count == 1 && !_combineWithOr)
+        if (_clauses.Count == 1)
         {
             return global::System.Text.Json.JsonSerializer.SerializeToElement(
                 _clauses[0],
