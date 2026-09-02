@@ -22,6 +22,19 @@ public partial class Tests
     }
 
     [TestMethod]
+    public void Example_WhereDocumentFilter_FlattensSingleClauseRegardlessOfLogicalMode()
+    {
+        JsonElement root = new WhereDocumentFilter()
+            .Or()
+            .Contains("machine learning")
+            .ToJsonElement();
+
+        root.GetProperty("$contains").GetString().Should().Be("machine learning");
+        root.TryGetProperty("$and", out _).Should().BeFalse();
+        root.TryGetProperty("$or", out _).Should().BeFalse();
+    }
+
+    [TestMethod]
     public void Example_WhereDocumentFilter_SerializesLogicalGroups()
     {
         JsonElement root = new WhereDocumentFilter()

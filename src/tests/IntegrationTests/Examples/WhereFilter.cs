@@ -62,8 +62,8 @@ public partial class Tests
         clauses.GetArrayLength().Should().Be(2);
         JsonElement alternatives = clauses[1].GetProperty("$or");
         alternatives.GetArrayLength().Should().Be(2);
-        alternatives[0].GetProperty("$and")[0].GetProperty("language").GetString().Should().Be("en");
-        alternatives[1].GetProperty("$and")[0].GetProperty("language").GetString().Should().Be("fr");
+        alternatives[0].GetProperty("language").GetString().Should().Be("en");
+        alternatives[1].GetProperty("language").GetString().Should().Be("fr");
     }
 
     [TestMethod]
@@ -77,6 +77,19 @@ public partial class Tests
 
         root.TryGetProperty("$and", out _).Should().BeFalse();
         root.GetProperty("$or").GetArrayLength().Should().Be(2);
+    }
+
+    [TestMethod]
+    public void Example_WhereFilter_FlattensSingleClauseRegardlessOfLogicalMode()
+    {
+        JsonElement root = new WhereFilter()
+            .Or()
+            .Equals("category", "books")
+            .ToJsonElement();
+
+        root.GetProperty("category").GetString().Should().Be("books");
+        root.TryGetProperty("$and", out _).Should().BeFalse();
+        root.TryGetProperty("$or", out _).Should().BeFalse();
     }
 
     [TestMethod]

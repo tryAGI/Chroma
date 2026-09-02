@@ -87,10 +87,24 @@ public sealed class WhereFilter
     /// <summary>
     /// Converts this filter to an AOT-safe JSON value accepted by <see cref="RawWhereFields.Where"/>.
     /// </summary>
-    public global::System.Text.Json.JsonElement ToJsonElement() =>
-        global::System.Text.Json.JsonSerializer.SerializeToElement(
+    public global::System.Text.Json.JsonElement ToJsonElement()
+    {
+        if (_clauses.Count == 0)
+        {
+            throw new global::System.InvalidOperationException("At least one filter clause is required.");
+        }
+
+        if (_clauses.Count == 1)
+        {
+            return global::System.Text.Json.JsonSerializer.SerializeToElement(
+                _clauses[0],
+                WhereFilterJsonSerializerContext.Default.DictionaryStringObject);
+        }
+
+        return global::System.Text.Json.JsonSerializer.SerializeToElement(
             this,
             WhereFilterJsonSerializerContext.Default.WhereFilter);
+    }
 
     private WhereFilter AddComparison(string field, string comparison, object? value) =>
         Add(field, new global::System.Collections.Generic.Dictionary<string, object?>
@@ -121,7 +135,17 @@ public sealed class WhereFilter
             throw new global::System.ArgumentException("Filters cannot contain null values.", nameof(filters));
         }
 
-        return Add(logicalOperator, filters);
+        return AddValue(logicalOperator, filters.Select(static filter => filter.ToJsonElement()).ToList());
+    }
+
+    private WhereFilter AddValue(string operation, object value)
+    {
+        _clauses.Add(new global::System.Collections.Generic.Dictionary<string, object?>
+        {
+            [operation] = value,
+        });
+
+        return this;
     }
 
     private static global::System.Collections.Generic.List<object> MaterializeValues(
@@ -143,6 +167,8 @@ public sealed class WhereFilter
     DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.WhereFilter))]
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Chroma.WhereFilter[]))]
+[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object?>))]
+[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Text.Json.JsonElement>))]
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
