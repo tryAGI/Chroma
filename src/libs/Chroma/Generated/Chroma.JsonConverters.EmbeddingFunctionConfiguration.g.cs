@@ -165,19 +165,19 @@ namespace Chroma.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.EmbeddingFunctionConfigurationVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.EmbeddingFunctionConfigurationVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.EmbeddingFunctionConfigurationVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingFunctionConfigurationVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEmbeddingFunctionConfigurationVariant1(), typeInfo);
             }
             else if (value.IsEmbeddingFunctionConfigurationVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingFunctionConfigurationVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEmbeddingFunctionConfigurationVariant2(), typeInfo);
             }
             else if (value.IsEmbeddingFunctionConfigurationVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Chroma.EmbeddingFunctionConfigurationVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Chroma.EmbeddingFunctionConfigurationVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Chroma.EmbeddingFunctionConfigurationVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingFunctionConfigurationVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEmbeddingFunctionConfigurationVariant3(), typeInfo);
             }
         }
     }

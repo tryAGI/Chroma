@@ -42,8 +42,8 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.EmbeddingFunctionConfigurationVariant1 PickEmbeddingFunctionConfigurationVariant1() => IsEmbeddingFunctionConfigurationVariant1
-            ? EmbeddingFunctionConfigurationVariant1!
+        public global::Chroma.EmbeddingFunctionConfigurationVariant1 PickEmbeddingFunctionConfigurationVariant1() => EmbeddingFunctionConfigurationVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22> PickEmbeddingFunctionConfigurationVariant2() => IsEmbeddingFunctionConfigurationVariant2
-            ? EmbeddingFunctionConfigurationVariant2!.Value
+        public global::Chroma.AllOf<global::Chroma.EmbeddingFunctionNewConfiguration, global::Chroma.EmbeddingFunctionConfigurationVariant22> PickEmbeddingFunctionConfigurationVariant2() => EmbeddingFunctionConfigurationVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.EmbeddingFunctionConfigurationVariant3 PickEmbeddingFunctionConfigurationVariant3() => IsEmbeddingFunctionConfigurationVariant3
-            ? EmbeddingFunctionConfigurationVariant3!
+        public global::Chroma.EmbeddingFunctionConfigurationVariant3 PickEmbeddingFunctionConfigurationVariant3() => EmbeddingFunctionConfigurationVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsEmbeddingFunctionConfigurationVariant1 && embeddingFunctionConfigurationVariant1 != null)
+            if (EmbeddingFunctionConfigurationVariant1 is { } __value0 && embeddingFunctionConfigurationVariant1 != null)
             {
-                return embeddingFunctionConfigurationVariant1(EmbeddingFunctionConfigurationVariant1!);
+                return embeddingFunctionConfigurationVariant1(__value0);
             }
-            else if (IsEmbeddingFunctionConfigurationVariant2 && embeddingFunctionConfigurationVariant2 != null)
+            else if (EmbeddingFunctionConfigurationVariant2 is { } __value1 && embeddingFunctionConfigurationVariant2 != null)
             {
-                return embeddingFunctionConfigurationVariant2(EmbeddingFunctionConfigurationVariant2!);
+                return embeddingFunctionConfigurationVariant2(__value1);
             }
-            else if (IsEmbeddingFunctionConfigurationVariant3 && embeddingFunctionConfigurationVariant3 != null)
+            else if (EmbeddingFunctionConfigurationVariant3 is { } __value2 && embeddingFunctionConfigurationVariant3 != null)
             {
-                return embeddingFunctionConfigurationVariant3(EmbeddingFunctionConfigurationVariant3!);
+                return embeddingFunctionConfigurationVariant3(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsEmbeddingFunctionConfigurationVariant1)
+            if (EmbeddingFunctionConfigurationVariant1 is { } __value0)
             {
-                embeddingFunctionConfigurationVariant1?.Invoke(EmbeddingFunctionConfigurationVariant1!);
+                embeddingFunctionConfigurationVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingFunctionConfigurationVariant2)
+            else if (EmbeddingFunctionConfigurationVariant2 is { } __value1)
             {
-                embeddingFunctionConfigurationVariant2?.Invoke(EmbeddingFunctionConfigurationVariant2!);
+                embeddingFunctionConfigurationVariant2?.Invoke(__value1);
             }
-            else if (IsEmbeddingFunctionConfigurationVariant3)
+            else if (EmbeddingFunctionConfigurationVariant3 is { } __value2)
             {
-                embeddingFunctionConfigurationVariant3?.Invoke(EmbeddingFunctionConfigurationVariant3!);
+                embeddingFunctionConfigurationVariant3?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsEmbeddingFunctionConfigurationVariant1)
+            if (EmbeddingFunctionConfigurationVariant1 is { } __value0)
             {
-                embeddingFunctionConfigurationVariant1?.Invoke(EmbeddingFunctionConfigurationVariant1!);
+                embeddingFunctionConfigurationVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingFunctionConfigurationVariant2)
+            else if (EmbeddingFunctionConfigurationVariant2 is { } __value1)
             {
-                embeddingFunctionConfigurationVariant2?.Invoke(EmbeddingFunctionConfigurationVariant2!);
+                embeddingFunctionConfigurationVariant2?.Invoke(__value1);
             }
-            else if (IsEmbeddingFunctionConfigurationVariant3)
+            else if (EmbeddingFunctionConfigurationVariant3 is { } __value2)
             {
-                embeddingFunctionConfigurationVariant3?.Invoke(EmbeddingFunctionConfigurationVariant3!);
+                embeddingFunctionConfigurationVariant3?.Invoke(__value2);
             }
         }
 

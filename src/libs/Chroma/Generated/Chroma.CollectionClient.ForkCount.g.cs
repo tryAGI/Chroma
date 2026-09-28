@@ -169,9 +169,9 @@ namespace Chroma
                 PrepareForkCountRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant!,
-                    database: database!,
-                    collectionId: collectionId!);
+                    tenant: tenant,
+                    database: database,
+                    collectionId: collectionId);
 
                 global::Chroma.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -195,7 +195,7 @@ namespace Chroma
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/fork_count\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -229,7 +229,7 @@ namespace Chroma
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/fork_count\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -270,7 +270,7 @@ namespace Chroma
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/fork_count\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -318,7 +318,7 @@ namespace Chroma
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/fork_count\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -340,7 +340,7 @@ namespace Chroma
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/fork_count\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
