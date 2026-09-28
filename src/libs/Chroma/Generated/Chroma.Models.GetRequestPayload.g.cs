@@ -43,8 +43,8 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.RawWhereFields PickRawWhereFields() => IsRawWhereFields
-            ? RawWhereFields!
+        public global::Chroma.RawWhereFields PickRawWhereFields() => RawWhereFields is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RawWhereFields' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.GetRequestPayloadVariant2 PickGetRequestPayloadVariant2() => IsGetRequestPayloadVariant2
-            ? GetRequestPayloadVariant2!
+        public global::Chroma.GetRequestPayloadVariant2 PickGetRequestPayloadVariant2() => GetRequestPayloadVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GetRequestPayloadVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -178,13 +178,13 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsRawWhereFields && rawWhereFields != null)
+            if (RawWhereFields is { } __value0 && rawWhereFields != null)
             {
-                return rawWhereFields(RawWhereFields!);
+                return rawWhereFields(__value0);
             }
-            else if (IsGetRequestPayloadVariant2 && getRequestPayloadVariant2 != null)
+            else if (GetRequestPayloadVariant2 is { } __value1 && getRequestPayloadVariant2 != null)
             {
-                return getRequestPayloadVariant2(GetRequestPayloadVariant2!);
+                return getRequestPayloadVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsRawWhereFields)
+            if (RawWhereFields is { } __value0)
             {
-                rawWhereFields?.Invoke(RawWhereFields!);
+                rawWhereFields?.Invoke(__value0);
             }
-            else if (IsGetRequestPayloadVariant2)
+            else if (GetRequestPayloadVariant2 is { } __value1)
             {
-                getRequestPayloadVariant2?.Invoke(GetRequestPayloadVariant2!);
+                getRequestPayloadVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsRawWhereFields)
+            if (RawWhereFields is { } __value0)
             {
-                rawWhereFields?.Invoke(RawWhereFields!);
+                rawWhereFields?.Invoke(__value0);
             }
-            else if (IsGetRequestPayloadVariant2)
+            else if (GetRequestPayloadVariant2 is { } __value1)
             {
-                getRequestPayloadVariant2?.Invoke(GetRequestPayloadVariant2!);
+                getRequestPayloadVariant2?.Invoke(__value1);
             }
         }
 

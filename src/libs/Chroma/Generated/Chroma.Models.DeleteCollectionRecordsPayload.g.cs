@@ -44,8 +44,8 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.RawWhereFields PickRawWhereFields() => IsRawWhereFields
-            ? RawWhereFields!
+        public global::Chroma.RawWhereFields PickRawWhereFields() => RawWhereFields is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RawWhereFields' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::Chroma.DeleteCollectionRecordsPayloadVariant2 PickDeleteCollectionRecordsPayloadVariant2() => IsDeleteCollectionRecordsPayloadVariant2
-            ? DeleteCollectionRecordsPayloadVariant2!
+        public global::Chroma.DeleteCollectionRecordsPayloadVariant2 PickDeleteCollectionRecordsPayloadVariant2() => DeleteCollectionRecordsPayloadVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteCollectionRecordsPayloadVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -179,13 +179,13 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsRawWhereFields && rawWhereFields != null)
+            if (RawWhereFields is { } __value0 && rawWhereFields != null)
             {
-                return rawWhereFields(RawWhereFields!);
+                return rawWhereFields(__value0);
             }
-            else if (IsDeleteCollectionRecordsPayloadVariant2 && deleteCollectionRecordsPayloadVariant2 != null)
+            else if (DeleteCollectionRecordsPayloadVariant2 is { } __value1 && deleteCollectionRecordsPayloadVariant2 != null)
             {
-                return deleteCollectionRecordsPayloadVariant2(DeleteCollectionRecordsPayloadVariant2!);
+                return deleteCollectionRecordsPayloadVariant2(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsRawWhereFields)
+            if (RawWhereFields is { } __value0)
             {
-                rawWhereFields?.Invoke(RawWhereFields!);
+                rawWhereFields?.Invoke(__value0);
             }
-            else if (IsDeleteCollectionRecordsPayloadVariant2)
+            else if (DeleteCollectionRecordsPayloadVariant2 is { } __value1)
             {
-                deleteCollectionRecordsPayloadVariant2?.Invoke(DeleteCollectionRecordsPayloadVariant2!);
+                deleteCollectionRecordsPayloadVariant2?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsRawWhereFields)
+            if (RawWhereFields is { } __value0)
             {
-                rawWhereFields?.Invoke(RawWhereFields!);
+                rawWhereFields?.Invoke(__value0);
             }
-            else if (IsDeleteCollectionRecordsPayloadVariant2)
+            else if (DeleteCollectionRecordsPayloadVariant2 is { } __value1)
             {
-                deleteCollectionRecordsPayloadVariant2?.Invoke(DeleteCollectionRecordsPayloadVariant2!);
+                deleteCollectionRecordsPayloadVariant2?.Invoke(__value1);
             }
         }
 

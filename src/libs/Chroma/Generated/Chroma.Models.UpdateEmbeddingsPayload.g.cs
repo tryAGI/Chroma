@@ -42,8 +42,8 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?> PickUpdateEmbeddingsPayloadVariant1() => IsUpdateEmbeddingsPayloadVariant1
-            ? UpdateEmbeddingsPayloadVariant1!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?> PickUpdateEmbeddingsPayloadVariant1() => UpdateEmbeddingsPayloadVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateEmbeddingsPayloadVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Chroma
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string?> PickUpdateEmbeddingsPayloadVariant2() => IsUpdateEmbeddingsPayloadVariant2
-            ? UpdateEmbeddingsPayloadVariant2!
+        public global::System.Collections.Generic.IList<string?> PickUpdateEmbeddingsPayloadVariant2() => UpdateEmbeddingsPayloadVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateEmbeddingsPayloadVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -132,13 +132,13 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsUpdateEmbeddingsPayloadVariant1 && updateEmbeddingsPayloadVariant1 != null)
+            if (UpdateEmbeddingsPayloadVariant1 is { } __value0 && updateEmbeddingsPayloadVariant1 != null)
             {
-                return updateEmbeddingsPayloadVariant1(UpdateEmbeddingsPayloadVariant1!);
+                return updateEmbeddingsPayloadVariant1(__value0);
             }
-            else if (IsUpdateEmbeddingsPayloadVariant2 && updateEmbeddingsPayloadVariant2 != null)
+            else if (UpdateEmbeddingsPayloadVariant2 is { } __value1 && updateEmbeddingsPayloadVariant2 != null)
             {
-                return updateEmbeddingsPayloadVariant2(UpdateEmbeddingsPayloadVariant2!);
+                return updateEmbeddingsPayloadVariant2(__value1);
             }
 
             return default(TResult);
@@ -158,13 +158,13 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsUpdateEmbeddingsPayloadVariant1)
+            if (UpdateEmbeddingsPayloadVariant1 is { } __value0)
             {
-                updateEmbeddingsPayloadVariant1?.Invoke(UpdateEmbeddingsPayloadVariant1!);
+                updateEmbeddingsPayloadVariant1?.Invoke(__value0);
             }
-            else if (IsUpdateEmbeddingsPayloadVariant2)
+            else if (UpdateEmbeddingsPayloadVariant2 is { } __value1)
             {
-                updateEmbeddingsPayloadVariant2?.Invoke(UpdateEmbeddingsPayloadVariant2!);
+                updateEmbeddingsPayloadVariant2?.Invoke(__value1);
             }
         }
 
@@ -181,13 +181,13 @@ namespace Chroma
                 Validate();
             }
 
-            if (IsUpdateEmbeddingsPayloadVariant1)
+            if (UpdateEmbeddingsPayloadVariant1 is { } __value0)
             {
-                updateEmbeddingsPayloadVariant1?.Invoke(UpdateEmbeddingsPayloadVariant1!);
+                updateEmbeddingsPayloadVariant1?.Invoke(__value0);
             }
-            else if (IsUpdateEmbeddingsPayloadVariant2)
+            else if (UpdateEmbeddingsPayloadVariant2 is { } __value1)
             {
-                updateEmbeddingsPayloadVariant2?.Invoke(UpdateEmbeddingsPayloadVariant2!);
+                updateEmbeddingsPayloadVariant2?.Invoke(__value1);
             }
         }
 
